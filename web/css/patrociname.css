@@ -1,0 +1,62 @@
+/*
+ * CSS Patrociname
+ */
+
+body {
+    background-color: #CCC;
+    background-image: url('../imas/background.jpg');
+    background-size: 1920px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+/* Header */
+header div {
+    background-color: #CCC;
+}
+
+/* main */
+main {
+    margin: 25px auto;
+}
+
+.row, .cards {
+    background-color: rgba(255,255,255,0.65);
+}
+
+.api {
+    margin-top: 45px;
+}
+
+/* Index */
+form h4 {
+    margin-top: 25px;
+}
+
+#registerSearcher {
+    display: none;
+    visibility: hidden;
+}
+
+#formSearcher {
+    display: none;
+    visibility: hidden;
+}
+
+#registerSponsor {
+    display: none;
+    visibility: hidden;
+}
+
+#formSponsor {
+    display: none;
+    visibility: hidden;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+}
