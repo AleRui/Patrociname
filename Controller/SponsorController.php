@@ -106,7 +106,7 @@ class SponsorController extends BaseController {
   }
 
   public function checkCIF() {
-    mostrar($_POST);
+    showPretty($_POST);
 
     require_once 'config/Session.php';
     $session = Session::getSession();
@@ -131,7 +131,7 @@ class SponsorController extends BaseController {
     //
     $data = json_decode($true_data);
     //
-    mostrar($data);
+    showPretty($data);
     //
     if ($data->denominacion) {
       echo $data->denominacion . '<br>';
@@ -175,7 +175,7 @@ class SponsorController extends BaseController {
     $sponsor = unserialize($_SESSION['sponsor']);
     $idSponsor = $sponsor->getIdSponsor();
     //
-    mostrar($_POST);
+    showPretty($_POST);
     //
     $idSponsorBundle = $_POST['idSponsorBundle'];
     //

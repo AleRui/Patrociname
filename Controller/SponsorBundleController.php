@@ -51,7 +51,7 @@ class SponsorBundleController extends BaseController {
 
 	public function updateSponsorWay() {
 		echo 'Estoy en SponsorBundle<br>';
-		mostrar($_POST);
+		showPretty($_POST);
 		require_once 'Model/SponsorBundleModel.php';
 		$sponsorBundle = new SponsorBundleModel();
 		$repsonse = $sponsorBundle->updateSponsorWay_two($_POST['idSponsorBundle'],

@@ -14,38 +14,57 @@ require "libs/funct.php";
 
 // ------------------------------------------
 
+echo 'ConexionDB:<br>';
+
 require_once "core/Connection.php";
 
-$database = Connection::getInstance();
+$db = Connection::getInstance();
 
-mostrar($database);
+showPretty($db);
 
 echo '<hr/>';
 
 // -----------------------------------------
 
+echo 'Prueba Query normal<br>';
+
 require_once "core/BaseModel.php";
 
-$baseModel = new BaseModel('searcher');
-//
-//
 $sql = 'SELECT * FROM searcher';
-$result = $baseModel->check_queryPDO($sql);
-echo ($result)?'true<br>':'false<br>';
 
-$result2 = $baseModel->getObject($sql);
-mostrar($result2);
+$query = BaseModel::doQuery($sql);
 
-$all = $baseModel->getAll();
-mostrar($all);
+echo gettype($query);
+showPretty($query);
 
-$element_with_id_1 = $baseModel->getAllById("idSearcher", 1);
-mostrar($element_with_id_1);
-//
+$obj = BaseModel::getObject($query);
+showPretty($obj);
+
+echo '<hr/>';
 
 // ---------------------------------------
 
-require_once "Model/SearcherModel.php";
+echo 'Prueba Query Mal<br>';
+
+require_once "core/BaseModel.php";
+
+$sql = 'SELECT * FROM searchr';
+
+$query = BaseModel::doQuery($sql);
+
+echo gettype($query);
+showPretty($query);
+
+$obj = BaseModel::getObject($query);
+showPretty($obj);
+
+echo '<hr/>';
+
+// ---------------------------------------
+
+
+
+/*require_once "Model/SearcherModel.php";
 
 $modelSearcher = new SearcherModel('searcher');
 //
@@ -74,3 +93,5 @@ $response = $searcherModel->checkExistEmail('asdf');
 echo 'Existe el email "asdf": '.$response.'<br>';
 
 // ----------------------------------------
+
+*/
