@@ -6,8 +6,9 @@
  * Time: 19:02
  */
 
-function showPretty($obj) {
-  echo '<pre>';
-  echo print_r($obj);
-  echo '</pre>';
+function showPretty($obj)
+{
+    echo '<pre>';
+    echo print_r($obj);
+    echo '</pre>';
 }

@@ -27,7 +27,7 @@ class BaseModel {
 
 	public static function getObject ($query)
     {
-        return is_object($query) ? $obj = $query->fetchAll() : null;
+        return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_OBJ) : null;
     }
     //
     /*public function check_queryPDO($sql): bool{
