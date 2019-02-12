@@ -7,10 +7,11 @@
  */
 
 return array(
-  //"driver"    =>"mysql",
-  "host"      =>"localhost:3308",
+  "driver"    =>"mysql",
+  "host"      =>"localhost",
+  "port"      =>"3308",
   "user"      =>"root",
   "pass"      =>"",
   "database"  =>"patrociname_v2",
-  //"charset"   =>"utf8"
+  "charset"   =>"utf8"
 );

@@ -9,6 +9,7 @@
  */
 
 require_once 'core/BaseController.php';
+require_once  '../Model/SearcherModel.php';
 
 echo 'SearcherController<br>';
 
@@ -21,6 +22,39 @@ class SearcherController extends BaseController
     }
 
     //METODOS
+    public function sessionStart()
+    {
+        echo 'sessionStart<br>';
+        showPretty($_POST);
+        if ($_POST['mail'] && $_POST['pass']) {
+            //
+            //require_once 'Model/SearcherModel.php';
+            //$searcherModel = new SearcherModel;
+            //$result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
+            $result = SearcherModel::
+            die();
+            if ($result['exist']) {
+                // START SESSION
+                require_once 'Model/Searcher.php';
+                $searcher = new Searcher();
+                $searcher->setIdSearcher($result['objResult'][0]->idSearcher);
+                $searcher->setMailSearcher($result['objResult'][0]->mailSearcher);
+                $searcherSerialized = serialize($searcher);
+                //
+                require_once 'config/Session.php';
+                $session = Session::getSession();
+                $session->setSessionValue("searcher", $searcherSerialized);
+                //
+                $this->index();
+            } else {
+                //header('Location:?controller=index&action=index');
+            }
+        } else {
+            //header('Location:?controller=index&action=index');
+        }
+    }
+
+    /*
     public function index()
     {
         //
@@ -81,40 +115,11 @@ class SearcherController extends BaseController
                 //
                 $this->index();
             } else {
-                header('Location:?controller=index&action=index');
+                //header('Location:?controller=index&action=index');
             }
         }
     }
 
-    public function sessionStart()
-    {
-        echo 'sessionStart<br>';
-        showPretty($_POST);
-        if ($_POST['mail'] && $_POST['pass']) {
-            //
-            require_once 'Model/SearcherModel.php';
-            $searcherModel = new SearcherModel;
-            $result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
-            if ($result['exist']) {
-                // START SESSION
-                require_once 'Model/Searcher.php';
-                $searcher = new Searcher();
-                $searcher->setIdSearcher($result['objResult'][0]->idSearcher);
-                $searcher->setMailSearcher($result['objResult'][0]->mailSearcher);
-                $searcherSerialized = serialize($searcher);
-                //
-                require_once 'config/Session.php';
-                $session = Session::getSession();
-                $session->setSessionValue("searcher", $searcherSerialized);
-                //
-                $this->index();
-            } else {
-                header('Location:?controller=index&action=index');
-            }
-        } else {
-            header('Location:?controller=index&action=index');
-        }
-    }
 
     public function checkExistEmail()
     {
@@ -138,5 +143,6 @@ class SearcherController extends BaseController
             header('Location:?controller=index&action=index');
         }
     }
+    */
 
 }

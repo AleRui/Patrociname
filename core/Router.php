@@ -22,10 +22,13 @@ class Router {
     $routeController = 'Controller/'.$nameController.'.php';
     $actionController = $this->action;
     //
+      echo $routeController.'<br>';
+      echo $actionController.'<br>';
+    //
     // Check if exist controller
     if ( !is_file($routeController) ) {
       echo 'No existe la ruta de ese Controlador<br>';
-      $routeController = Controller/IndexController.php;
+      $routeController = 'Controller/IndexController.php';
     }
     //
     require_once $routeController;
