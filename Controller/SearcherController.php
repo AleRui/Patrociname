@@ -9,7 +9,7 @@
  */
 
 require_once 'core/BaseController.php';
-require_once  '../Model/SearcherModel.php';
+require_once  './Model/SearcherModel.php';
 
 echo 'SearcherController<br>';
 
@@ -28,10 +28,8 @@ class SearcherController extends BaseController
         showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
-            //require_once 'Model/SearcherModel.php';
-            //$searcherModel = new SearcherModel;
-            //$result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
-            $result = SearcherModel::
+            $searcherModel = new SearcherModel;
+            $result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
             die();
             if ($result['exist']) {
                 // START SESSION

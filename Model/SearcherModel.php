@@ -2,8 +2,6 @@
 
 require_once 'core/BaseModel.php';
 
-echo 'SearcherModel';
-
 
 class SearcherModel extends BaseModel
 {
@@ -17,11 +15,18 @@ class SearcherModel extends BaseModel
     }
 
     //
-    public static function checkExitSearcher($mail, $pass)
+    public function checkExitSearcher($mail, $pass)
     {
+        echo 'SearcherModel -> checkExistSearcher<br>';
         //
         $sql = "SELECT * FROM $this->table WHERE mailSearcher = $mail AND passSearcher = MD5($pass)";
+        echo $sql.'<br>';
         //
+        $query = $this->doQuery($sql);
+        showPretty($query);
+        echo gettype($query);
+        //$res = $this->getObject();
+        //showPretty($res);
 
         //
         /*$connection = self::getConnection()->connection_PDO();

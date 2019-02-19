@@ -21,11 +21,11 @@ class BaseModel {
     }
 
     // METODOS
-    public static function doQuery ($sql) {
+    public function doQuery ($sql) {
         return self::getConnection()->query($sql);
 	}
 
-	public static function getObject ($query)
+	public function getObject ($query)
     {
         return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_OBJ) : null;
     }
