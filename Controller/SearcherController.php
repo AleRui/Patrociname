@@ -10,12 +10,14 @@
 
 require_once 'core/BaseController.php';
 require_once 'Model/Searcher.php';
-require_once  './Model/SearcherModel.php';
+require_once './Model/SearcherModel.php';
+require_once 'core/Session.php';
 
 echo 'SearcherController<br>';
 
 class SearcherController extends BaseController
 {
+    private $table = 'searcher';
 
     public function __construct()
     {
@@ -29,27 +31,13 @@ class SearcherController extends BaseController
         showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
-            $searcherModel = new SearcherModel;
-            $result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
-            //echo gettype($result);
-            if ( count($result)) {
-                echo 'Hay Searcher<br>';
-                showPretty($result);
-                // SI HYA RESULTDAO HAY QUE COMENZAR LA SESSIÓN
-            }
-            die();
-            if ($result['exist']) {
-                // START SESSION
-                require_once 'Model/Searcher.php';
-                $searcher = new Searcher();
-                $searcher->setIdSearcher($result['objResult'][0]->idSearcher);
-                $searcher->setMailSearcher($result['objResult'][0]->mailSearcher);
-                $searcherSerialized = serialize($searcher);
-                //
-                require_once 'config/Session.php';
-                $session = Session::getSession();
-                $session->setSessionValue("searcher", $searcherSerialized);
-                //
+            $searcher = new SearcherModel($this->table);
+            $result = $searcher->checkExitSearcher($_POST['mail'], $_POST['pass']);
+            //
+            if (count($result)) {
+                // COMENZAR LA SESSIÓN
+                Session::getSession(serialize($result[0]));
+                //showPretty($_SESSION);
                 $this->index();
             } else {
                 //header('Location:?controller=index&action=index');
@@ -59,13 +47,12 @@ class SearcherController extends BaseController
         }
     }
 
-    /*
     public function index()
     {
-        //
-        require_once 'config/Session.php';
-        $session = Session::getSession();
-        if ($session->checkActiveSession() == false) {
+        echo 'Searcher:index()<br>';
+        showPretty($_SESSION);
+        Session::getSession($_SESSION['user'])->checkActiveSession();
+        /*if ($session->checkActiveSession() == false) {
             //
             header('Location:?controller=index&action=index');
             //
@@ -85,10 +72,10 @@ class SearcherController extends BaseController
                 $_SESSION['sponsorBundle'] = serialize($sponsorBundle);
             }
             $this->view('searcher');
-        }
+        }*/
     }
 
-    public function registerSearcher()
+    /*public function registerSearcher()
     {
         //
         require_once 'Model/SearcherModel.php';
@@ -147,7 +134,6 @@ class SearcherController extends BaseController
         if ($session->checkActiveSession() === false) {
             header('Location:?controller=index&action=index');
         }
-    }
-    */
+    }*/
 
 }

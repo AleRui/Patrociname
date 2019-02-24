@@ -13,9 +13,9 @@ class BaseModel
 
     private $table;
 
-    public function __construct($table)
+    public function __construct($child_table)
     {
-        $this->table = (string)$table;
+        $this->table = (string)$child_table;
     }
 
     /**
@@ -25,8 +25,6 @@ class BaseModel
     {
         return Connection::getInstance()->connection_PDO();
     }
-
-    // METODOS
 
     /**
      * @param $sql
@@ -46,7 +44,13 @@ class BaseModel
      */
     public function getObject($query)
     {
-        return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table.'Model') : null;
+        return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table) : null;
     }
+
+    public function mostrarTabla()
+    {
+        return $this->table;
+    }
+
 
 }

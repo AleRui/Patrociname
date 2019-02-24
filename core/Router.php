@@ -6,41 +6,46 @@
  * Time: 20:54
  */
 
-class Router {
+class Router
+{
 
-  private $controller;
-  private $action;
+    private $controller;
+    private $action;
 
-  public function __construct($controller, $action) {
-    $this->controller = $controller;
-    $this->action = $action;
-  }
+    public function __construct($controller, $action)
+    {
+        $this->controller = $controller;
+        $this->action = $action;
+    }
 
     /**
      * @throws $objController
      */
-  public function charge_Controller() {
-    //
-    $nameController = ucwords($this->controller).'Controller';
-    $routeController = 'Controller/'.$nameController.'.php';
-    $actionController = $this->action;
-    //
-    if ( !is_file($routeController) ) {
-      echo 'No existe la ruta de ese Controlador<br>';
-      $routeController = 'Controller/IndexController.php';
+    public function charge_Controller()
+    {
+        //
+        $nameController = ucwords($this->controller) . 'Controller';
+        $routeController = 'Controller/' . $nameController . '.php';
+        $actionController = $this->action;
+        //
+        if (!is_file($routeController)) {
+            //echo 'No existe la ruta de ese Controlador<br>';
+            $routeController = 'Controller/IndexController.php';
+        }
+        //
+        require_once $routeController;
+        $objController = new $nameController();
+        //
+        if (!method_exists($objController, $actionController)) {
+            $actionController = 'index';
+            $this->controller = '';
+        }
+        //
+        //showPretty($objController);
+        //echo '$this->controller: '.$this->controller.'<br>';
+        //echo '$actionController: '.$actionController.'<br>';
+        $objController->$actionController();
     }
-    //
-    require_once $routeController;
-    $objController = new $nameController();
-    //
-    if ( !method_exists( $objController, $actionController) ) {
-      $actionController = 'index';
-      $this->controller = '';
-    }
-    //
-    showPretty($objController);
-    $objController->$actionController(/*$this->controller*/);
-  }
 
 
 }
