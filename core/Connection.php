@@ -37,8 +37,8 @@ class Connection // Singleton
      */
     public function connection_PDO() // Singleton public static
     {
-        $dataBaseConfig = require 'config/dB_hp.php';
-        //$dataBaseConfig = require 'config/db_ws.php';
+        //$dataBaseConfig = require 'config/dB_hp.php';
+        $dataBaseConfig = require 'config/db_ws.php';
 
         $driver = $dataBaseConfig["driver"];
         $host = $dataBaseConfig["host"];
@@ -61,6 +61,9 @@ class Connection // Singleton
 
     }
 
+    /**
+     * @throws null
+     */
     public function __destruct() // Singleton private
     {
         Connection::$connectionDB = null;
@@ -74,6 +77,9 @@ class Connection // Singleton
         throw new Exception('Feature disabled.');
     }
 
+    /**
+     * @throws Exception
+     */
     public function __wakeup() //Singleton
     {
         throw new Exception('Feature disabled.');

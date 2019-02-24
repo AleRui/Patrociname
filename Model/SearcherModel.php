@@ -19,14 +19,16 @@ class SearcherModel extends BaseModel
     {
         echo 'SearcherModel -> checkExistSearcher<br>';
         //
-        $sql = "SELECT * FROM $this->table WHERE mailSearcher = $mail AND passSearcher = MD5($pass)";
-        echo $sql.'<br>';
+        $sql = "SELECT idSearcher, mailSearcher FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
+        $params = array(
+            ':mail' => $mail,
+            ':pass' => $pass
+        );
         //
-        $query = $this->doQuery($sql);
-        showPretty($query);
-        echo gettype($query);
-        //$res = $this->getObject();
-        //showPretty($res);
+        $query = $this->doQuery($sql, $params);
+        //
+        $res = $this->getObject($query);
+        showPretty($res);
 
         //
         /*$connection = self::getConnection()->connection_PDO();

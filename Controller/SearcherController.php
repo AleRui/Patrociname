@@ -30,6 +30,7 @@ class SearcherController extends BaseController
             //
             $searcherModel = new SearcherModel;
             $result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
+            echo $result;
             die();
             if ($result['exist']) {
                 // START SESSION

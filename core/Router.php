@@ -16,16 +16,15 @@ class Router {
     $this->action = $action;
   }
 
+    /**
+     * @throws $objController
+     */
   public function charge_Controller() {
     //
     $nameController = ucwords($this->controller).'Controller';
     $routeController = 'Controller/'.$nameController.'.php';
     $actionController = $this->action;
     //
-      echo $routeController.'<br>';
-      echo $actionController.'<br>';
-    //
-    // Check if exist controller
     if ( !is_file($routeController) ) {
       echo 'No existe la ruta de ese Controlador<br>';
       $routeController = 'Controller/IndexController.php';
@@ -34,13 +33,13 @@ class Router {
     require_once $routeController;
     $objController = new $nameController();
     //
-    // Check exist Action
     if ( !method_exists( $objController, $actionController) ) {
       $actionController = 'index';
       $this->controller = '';
     }
     //
-    $objController->$actionController($this->controller);
+    showPretty($objController);
+    $objController->$actionController(/*$this->controller*/);
   }
 
 
