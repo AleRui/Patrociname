@@ -6,18 +6,17 @@ require_once 'core/BaseModel.php';
 class SearcherModel extends BaseModel
 {
 
-    private $table;
+    private $table = "searcher";
 
     public function __construct()
     {
-        $this->table = "searcher";
         parent::__construct($this->table);
     }
 
     //
     public function checkExitSearcher($mail, $pass)
     {
-        echo 'SearcherModel -> checkExistSearcher<br>';
+        echo 'SearcherModel: checkExistSearcher<br>';
         //
         $sql = "SELECT idSearcher, mailSearcher FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
         $params = array(
@@ -27,22 +26,7 @@ class SearcherModel extends BaseModel
         //
         $query = $this->doQuery($sql, $params);
         //
-        $res = $this->getObject($query);
-        showPretty($res);
-
-        //
-        /*$connection = self::getConnection()->connection_PDO();
-        if (self::check_queryPDO($sql)) {
-          $array_con_un_objeto = self::getObject($sql);
-          //
-          if (!empty($array_con_un_objeto[0]->idSearcher)) {
-            return array('exist' => true, 'objResult' => $array_con_un_objeto);
-          } else {
-            return array('exist' => false);
-          }
-        } else {
-          return false;
-        }*/
+        return ( is_object($query) ) ? $this->getObject($query, $this->table) : null ;
     }
 
     //

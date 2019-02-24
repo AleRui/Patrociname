@@ -9,6 +9,7 @@
  */
 
 require_once 'core/BaseController.php';
+require_once 'Model/Searcher.php';
 require_once  './Model/SearcherModel.php';
 
 echo 'SearcherController<br>';
@@ -30,7 +31,12 @@ class SearcherController extends BaseController
             //
             $searcherModel = new SearcherModel;
             $result = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass']);
-            echo $result;
+            //echo gettype($result);
+            if ( count($result)) {
+                echo 'Hay Searcher<br>';
+                showPretty($result);
+                // SI HYA RESULTDAO HAY QUE COMENZAR LA SESSIÓN
+            }
             die();
             if ($result['exist']) {
                 // START SESSION

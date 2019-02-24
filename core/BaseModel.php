@@ -46,7 +46,7 @@ class BaseModel
      */
     public function getObject($query)
     {
-        return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_OBJ) : null;
+        return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table.'Model') : null;
     }
 
 }
