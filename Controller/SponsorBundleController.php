@@ -16,7 +16,6 @@ class SponsorBundleController extends BaseController
     //MÉTODOS
     public function insertSponsorWay()
     {
-        showPretty($_POST);
         if ($_POST['sponsorWay'] && $_POST['sponsoringCost']) {
             //
             session_start();
