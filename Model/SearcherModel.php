@@ -14,6 +14,12 @@ class SearcherModel extends BaseModel
     }
 
     //
+
+    /**
+     * @param $mail
+     * @param $pass
+     * @return |null
+     */
     public function checkExitSearcher($mail, $pass)
     {
         echo 'SearcherModel: checkExistSearcher<br>';

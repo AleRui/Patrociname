@@ -44,6 +44,7 @@ class BaseModel
      */
     public function getObject($query)
     {
+        //echo $this->table.'<br>';
         return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table) : null;
     }
 

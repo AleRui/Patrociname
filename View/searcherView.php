@@ -1,7 +1,8 @@
 <?php
 include_once 'libs/headHTML.php';
 require_once './Model/Searcher.php';
-showPretty($_SESSION);
+require_once './Model/SponsorBundle.php';
+//showPretty($_SESSION);
 ?>
     <div class="ui container">
         <!-- -->
@@ -66,6 +67,7 @@ showPretty($_SESSION);
                 <?php
                 if (isset($_SESSION['sponsorBundle'])) {
                     $sponsorBundle = unserialize($_SESSION['sponsorBundle']);
+                    //showPretty($sponsorBundle);
                     for ($numRow = 0; $numRow < count($sponsorBundle); $numRow++) {
                         ?>
                         <!-- -->
@@ -78,13 +80,13 @@ showPretty($_SESSION);
                                     <!-- -->
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            name="idSponsorBundle"
-                                           value="<?= $sponsorBundle[$numRow]->idSponsorBundle ?>"
+                                           value="<?= $sponsorBundle[$numRow]->getIdSponsorBundle() ?>"
                                            type="hidden" ;
                                            readonly>
                                     <!-- -->
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            name="idSearcher"
-                                           value="<?= $sponsorBundle[$numRow]->idSearcher ?>"
+                                           value="<?= $sponsorBundle[$numRow]->getIdSearcher() ?>"
                                            type="hidden" ;
                                            readonly>
                                     <!-- -->
@@ -92,7 +94,7 @@ showPretty($_SESSION);
                                         <input form="sponsorWay-<?= $numRow ?>"
                                                type="text"
                                                name="sponsorWay"
-                                               value="<?= $sponsorBundle[$numRow]->sponsorWay ?>">
+                                               value="<?= $sponsorBundle[$numRow]->getSponsorWay() ?>">
                                     </div>
                                     <!-- -->
                                     <div class="field">
@@ -100,7 +102,7 @@ showPretty($_SESSION);
                                                name="sponsoringCost"
                                                type="number"
                                                step="0.01"
-                                               value="<?= $sponsorBundle[$numRow]->sponsoringCost ?>">
+                                               value="<?= $sponsorBundle[$numRow]->getSponsoringCost() ?>">
                                     </div>
                                     <!-- -->
                                     <button type=""

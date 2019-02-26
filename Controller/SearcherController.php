@@ -49,30 +49,28 @@ class SearcherController extends BaseController
 
     public function index()
     {
-        echo 'Searcher:index()<br>';
-        showPretty($_SESSION);
-        Session::getSession($_SESSION['user'])->checkActiveSession();
-        /*if ($session->checkActiveSession() == false) {
+        echo 'SearcherController -> index <br>';
+
+        if ( Session::getSession($_SESSION['user'])->checkActiveSession() ) {
             //
-            header('Location:?controller=index&action=index');
+            $idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();
+            //
+            // Siempre que carga el index comprueba SponsorBundle de la id
+            require_once 'Model/SponsorBundleModel.php';
+            $sponsorBundleObj = new SponsorBundleModel();
+            $sponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($idSearcher);
+
+            if (!empty($sponsorBundle) /*&& count($sponsorBundle) > 0*/) {
+                $_SESSION['sponsorBundle'] = serialize($sponsorBundle);
+            }
+            //
+            $this->view('searcher');
             //
         } else {
             //
-            require_once 'Model/SponsorBundleModel.php';
-            $sponsorBundleObj = new SponsorBundleModel();
+            header('Location:?controller=index&action=index');
             //
-            require_once 'Model/Searcher.php';
-            $searcher = new Searcher();
-            $searcher = unserialize($_SESSION['searcher']);
-            $idSearcher = $searcher->getIdSearcher();
-            //
-            //echo 'idSearcher: '.$idSearcher.'<br>';
-            $sponsorBundle = $sponsorBundleObj->getAllById('idSearcher', $idSearcher);
-            if (!empty($sponsorBundle) && count($sponsorBundle) > 0) {
-                $_SESSION['sponsorBundle'] = serialize($sponsorBundle);
-            }
-            $this->view('searcher');
-        }*/
+        }
     }
 
     /*public function registerSearcher()
@@ -124,16 +122,15 @@ class SearcherController extends BaseController
             echo $response ? 'Si existe email' : 'No existe email';
             return $response;
         }
-    }
+    }*/
 
     public function logout()
     {
-        require_once 'config/Session.php';
-        $session = Session::getSession();
-        $session->close();
-        if ($session->checkActiveSession() === false) {
-            header('Location:?controller=index&action=index');
-        }
-    }*/
+        //echo 'Estoy en Searcher Logout<br>';
+        session_start();
+        Session::getSession(unserialize($_SESSION['user']))->__destroy();
+        //
+        header('Location:?controller=index&action=index');
+    }
 
 }

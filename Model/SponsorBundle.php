@@ -6,38 +6,82 @@
  * Time: 11:14
  */
 
-class SponsorBundle {
+class SponsorBundle
+{
 
-  private $idSponsorBundle;
-  private $idSearcher;
-  private $sponsorWay;
+    private $idSponsorBundle;
+    private $idSearcher;
+    private $sponsorWay;
+    private $sponsoringCost;
 
-  public function __construct() {
-  }
+    public function __construct()
+    {
+    }
 
-  public function getIdSponsorBundle() {
-    return $this->idSponsorBundle;
-  }
+    /**
+     * @return mixed
+     */
+    public function getIdSponsorBundle()
+    {
+        return $this->idSponsorBundle;
+    }
 
-  public function setIdSponsorBundle($idSponsorBundle): void {
-    $this->idSponsorBundle = $idSponsorBundle;
-  }
+    /**
+     * @param mixed $idSponsorBundle
+     */
+    public function setIdSponsorBundle($idSponsorBundle)
+    {
+        $this->idSponsorBundle = $idSponsorBundle;
+    }
 
-  public function getIdSearcher() {
-    return $this->idSearcher;
-  }
+    /**
+     * @return mixed
+     */
+    public function getIdSearcher()
+    {
+        return $this->idSearcher;
+    }
 
-  public function setIdSearcher($idSearcher): void {
-    $this->idSearcher = $idSearcher;
-  }
+    /**
+     * @param mixed $idSearcher
+     */
+    public function setIdSearcher($idSearcher)
+    {
+        $this->idSearcher = $idSearcher;
+    }
 
-  public function getSponsorWay() {
-    return $this->sponsorWay;
-  }
+    /**
+     * @return mixed
+     */
+    public function getSponsorWay()
+    {
+        return $this->sponsorWay;
+    }
 
-  public function setSponsorWay($sponsorWay): void {
-    $this->sponsorWay = $sponsorWay;
-  }
+    /**
+     * @param mixed $sponsorWay
+     */
+    public function setSponsorWay($sponsorWay)
+    {
+        $this->sponsorWay = $sponsorWay;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSponsoringCost()
+    {
+        return $this->sponsoringCost;
+    }
+
+    /**
+     * @param mixed $sponsoringCost
+     */
+    public function setSponsoringCost($sponsoringCost)
+    {
+        $this->sponsoringCost = $sponsoringCost;
+    }
+
 
 
 

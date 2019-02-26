@@ -61,22 +61,20 @@ class Session
     //
     private function isLogged()
     {
-        return !empty($_SESSION);
+        return !empty($_SESSION); // Sesión no esta vacia = true
     }
 
     //
     public function checkActiveSession()
     {
-        if ($this->isLogged()):
-            if ($this->checkExpired()):
+        if ($this->isLogged()) {
+            if ($this->checkExpired()) {
                 $this->__destroy();
                 return false; // no hay sesión activa
-            else:
+            } else {
                 return true;  // hay sesión activa
-            endif;
-        else:
-            return false;     // no hay sesión activa
-        endif;
+            }
+        }
     }
 
     //
