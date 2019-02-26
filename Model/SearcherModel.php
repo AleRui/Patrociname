@@ -22,8 +22,6 @@ class SearcherModel extends BaseModel
      */
     public function checkExitSearcher($mail, $pass)
     {
-        echo 'SearcherModel: checkExistSearcher<br>';
-        //
         $sql = "SELECT idSearcher, mailSearcher FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
         $params = array(
             ':mail' => $mail,

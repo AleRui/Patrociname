@@ -48,9 +48,25 @@ class BaseModel
         return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table) : null;
     }
 
-    public function mostrarTabla()
+    /**
+     * @return mixed
+     */
+    public function minIdAvailable()
     {
-        return $this->table;
+        echo $this->table.'<br>';
+        $id = 'id'.$this->table;
+        //
+        $sql = "
+          SELECT MIN(t1.) + 1 AS minId
+          FROM $this->table t1
+          LEFT JOIN $this->table t2
+          ON t1.$id + 1 = t2.$id
+          WHERE t2.$id IS NULL
+                ";
+        $query = $this->doQuery($sql);
+        //
+        return $this->getObject($query)[0];
+
     }
 
 

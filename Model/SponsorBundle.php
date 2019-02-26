@@ -82,6 +82,11 @@ class SponsorBundle
         $this->sponsoringCost = $sponsoringCost;
     }
 
+    public function getMinId()
+    {
+        return $this->minId;
+    }
+
 
 
 

@@ -17,23 +17,16 @@ class SponsorBundleModel extends BaseModel
     //
     public function getAllSponsorBundleById($idSearcher)
     {
-        echo 'idSearcher: '.$idSearcher.'<br>';
         $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
         $params = array(':id' => $idSearcher);
         //
-        //
         $query = $this->doQuery($sql, $params);
-        //showPretty($query);
-        //
-        //$array = $this->getObject($query);
-        //showPretty($array);
-        //die();
         //
         return ( is_object($query) ) ? $this->getObject($query) : null ;
     }
 
     //
-    public function checkExistSponsorWay($idSearcher, $sponsorWay, $sponsoringCost)
+    /*public function checkExistSponsorWay($idSearcher, $sponsorWay, $sponsoringCost)
     {
         //
         $sql = "
@@ -136,6 +129,6 @@ AND sponsoringCost = '$sponsoringCost'
         $query = $connection->prepare($sql);
         $query->execute();
         return true;
-    }
+    }*/
 
 }

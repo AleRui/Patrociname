@@ -13,8 +13,6 @@ require_once 'Model/Searcher.php';
 require_once './Model/SearcherModel.php';
 require_once 'core/Session.php';
 
-echo 'SearcherController<br>';
-
 class SearcherController extends BaseController
 {
     private $table = 'searcher';
@@ -25,37 +23,33 @@ class SearcherController extends BaseController
     }
 
     //METODOS
+
+    /**
+     * Login | StartSession
+     */
     public function sessionStart()
     {
-        echo 'sessionStart<br>';
-        showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
             $searcher = new SearcherModel($this->table);
             $result = $searcher->checkExitSearcher($_POST['mail'], $_POST['pass']);
             //
             if (count($result)) {
-                // COMENZAR LA SESSIÓN
                 Session::getSession(serialize($result[0]));
-                //showPretty($_SESSION);
-                $this->index();
-            } else {
-                //header('Location:?controller=index&action=index');
             }
-        } else {
-            //header('Location:?controller=index&action=index');
         }
+        $this->index();
     }
 
+    /**
+     * Send Index Searcher
+     */
     public function index()
     {
-        echo 'SearcherController -> index <br>';
-
-        if ( Session::getSession($_SESSION['user'])->checkActiveSession() ) {
+        if ($_SESSION && Session::getSession($_SESSION['user'])->checkActiveSession()) {
             //
             $idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();
             //
-            // Siempre que carga el index comprueba SponsorBundle de la id
             require_once 'Model/SponsorBundleModel.php';
             $sponsorBundleObj = new SponsorBundleModel();
             $sponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($idSearcher);
