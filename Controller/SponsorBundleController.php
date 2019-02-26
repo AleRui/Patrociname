@@ -3,6 +3,7 @@
 require_once 'core/BaseController.php';
 require_once 'core/Session.php';
 require_once 'Model/SponsorBundleModel.php';
+require_once 'SearcherController.php';
 
 class SponsorBundleController extends BaseController
 {
@@ -18,41 +19,23 @@ class SponsorBundleController extends BaseController
         showPretty($_POST);
         if ($_POST['sponsorWay'] && $_POST['sponsoringCost']) {
             //
-            $sponsorWay = $_POST['sponsorWay'];
-            $sponsoringCost = $_POST['sponsoringCost'];
-            //
-            //require_once 'config/Session.php';
-            //$session = Session::getSession();
-            //require_once 'Model/Searcher.php';
-            //$searcher = new Searcher();
             session_start();
-            showPretty($_SESSION);
-            //$idSearcher = unserialize($_SESSION['searcher'])->getIdSearcher();
-            // COMPROBAR SI EXÇISTE ESA FORMA DE PATROCINIO ???
             $sponsorBundle = new SponsorBundleModel();
             //
-            //$exitSponsorWay = $sponsorBundle->checkExistSponsorWay(
-            //	$idSearcher,
-            //	$sponsorWay,
-            //	$sponsoringCost);
+            require_once './Model/Searcher.php';
             //
-            //if (!$exitSponsorWay) {
+            $res = $sponsorBundle->insertSponsorBundle(
+                $sponsorBundle->minIdAvailable()->getMinId(),
+                (unserialize($_SESSION['user']))->getIdSearcher(),
+                $_POST['sponsorWay'],
+                $_POST['sponsoringCost']
+            );
+            //if ($res) {
+            //  ENVIAR algún FLAG ???
+            //}
             //
-            $minIdAvailable = $sponsorBundle->minIdAvailable();
-            echo gettype($minIdAvailable);
-            showPretty($minIdAvailable);
-            echo $minIdAvailable->getMinId().'<br>';
-            die();
-            // INSERTAR sponsorWay en DB sponsorBundle
-            /*$sponsorBundle->insertSponsorWay($minIdAvailable,
-                $idSearcher,
-                $sponsorWay,
-                $sponsoringCost);
-            if ($sponsorBundle) {
-                header('Location:?controller=searcher&action=index');
-            }*/
-        } else {
-            header('Location:?controller=searcher&action=index');
+            $searcher = new SearcherController();
+            $searcher->index();
         }
     }
 

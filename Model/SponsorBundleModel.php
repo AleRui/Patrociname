@@ -15,6 +15,11 @@ class SponsorBundleModel extends BaseModel
     }
 
     //
+
+    /**
+     * @param $idSearcher
+     * @return |null
+     */
     public function getAllSponsorBundleById($idSearcher)
     {
         $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
@@ -22,7 +27,7 @@ class SponsorBundleModel extends BaseModel
         //
         $query = $this->doQuery($sql, $params);
         //
-        return ( is_object($query) ) ? $this->getObject($query) : null ;
+        return (is_object($query)) ? $this->getObject($query) : null;
     }
 
     //
@@ -62,27 +67,33 @@ AND sponsoringCost = '$sponsoringCost'
         } else {
             return false;
         }
-    }
-
-    public function insertSponsorWay($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
+    }*/
+    /**
+     * @param $idSponsorBundle
+     * @param $idSearcher
+     * @param $sponsorWay
+     * @param $sponsoringCost
+     * @return bool|PDOStatement
+     */
+    public function insertSponsorBundle($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
     {
-        $sql = "
-      INSERT INTO $this->table
-      (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost)
-      VALUES ( ?, ?, ?, ?)
-    ";
-        $connection = self::getConnection()->connection_PDO();
-        $insert = $connection->prepare($sql);
-        $checkInsert = $insert->execute([
-            $idSponsorBundle,
-            $idSearcher,
-            $sponsorWay,
-            $sponsoringCost,
-        ]);
-        return $checkInsert;
+        $sql = "INSERT INTO $this->table
+                (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost)
+                VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost)";
+        //
+        $params = array(
+            ':idSponsorBundle' => $idSponsorBundle,
+            ':idSearcher' => $idSearcher,
+            ':sponsorWay' => $sponsorWay,
+            ':sponsoringCost' => $sponsoringCost
+        );
+        //
+        $query = $this->doQuery($sql, $params);
+        //
+        return $query;
     }
 
-    public function updateSponsorWay($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
+    /*public function updateSponsorWay($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
     {
         $sql = "
     UPDATE $this->table
