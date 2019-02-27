@@ -45,7 +45,10 @@ class SearcherController extends BaseController
      * Send Index Searcher
      */
     public function index()
+
     {
+        echo ($_SESSION) ? 'Existe $_SESSION<br>' : 'NO Existe $_SESSION<br>';
+        //
         if ($_SESSION && Session::getSession($_SESSION['user'])->checkActiveSession()) {
             //
             $idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();

@@ -6,7 +6,7 @@ function setActionDelete($numRow) {
     //console.log('Funcionando setActionDelete()');
     $('#sponsorWay-' + $numRow).attr(
         'action',
-        '?controller=SponsorBundle&action=deleteSponsorWay'
+        '?controller=SponsorBundle&action=deleteSponsorBundle'
     );
     $('#sponsorWay-' + $numRow).submit();
 }
@@ -15,7 +15,7 @@ function setActionUpdate($numRow) {
     //console.log('Funcionando setActioUpdate()');
     $('#sponsorWay-' + $numRow).attr(
         'action',
-        '?controller=SponsorBundle&action=updateSponsorWay'
+        '?controller=SponsorBundle&action=updateSponsorBundle'
     );
     $('#sponsorWay-' + $numRow).submit();
 }

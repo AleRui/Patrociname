@@ -127,19 +127,16 @@ AND sponsoringCost = '$sponsoringCost'
         $params = array($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost);
         //
         return self::doQuery($sql, $params);
-    }
-
-    public function deleteSponsorWay($idSponsorBundle, $idSearcher)
-    {
-        $sql = "
-    DELETE FROM $this->table
-    WHERE idSponsorBundle = $idSponsorBundle
-    AND idSearcher = $idSearcher
-  ";
-        $connection = self::getConnection()->connection_PDO();
-        $query = $connection->prepare($sql);
-        $query->execute();
-        return true;
     }*/
+
+    public function deleteBundle($idSponsorBundle/*, $idSearcher*/)
+    {
+        //
+        $sql = "DELETE FROM $this->table WHERE idSponsorBundle = :id";
+        //
+        $params = array( ':id' => $idSponsorBundle );
+        //
+        return $this->doQuery($sql, $params);
+    }
 
 }

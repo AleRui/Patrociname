@@ -52,17 +52,19 @@ class SponsorBundleController extends BaseController
         } else {
             header('Location:?controller=searcher&action=index');
         }
-    }
+    }*/
 
-    public function deleteSponsorWay() {
-        require_once 'Model/SponsorBundleModel.php';
+    public function deleteSponsorBundle() {
+        echo 'deleteSponsorBundle<br>';
         $sponsorBundle = new SponsorBundleModel();
-        $repsonse = $sponsorBundle->deleteSponsorWay($_POST['idSponsorBundle'], $_POST['idSearcher']);
+        $res = $sponsorBundle->deleteBundle($_POST['idSponsorBundle']/*, $_POST['idSearcher']*/);
+
+        die();
         if ($repsonse) {
             header('Location:?controller=searcher&action=index');
         } else {
             header('Location:?controller=searcher&action=index');
         }
-    }*/
+    }
 
 }
