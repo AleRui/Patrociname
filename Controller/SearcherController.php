@@ -47,9 +47,12 @@ class SearcherController extends BaseController
     public function index()
 
     {
+        // COMPROBAR SI LA SESIÓN EXISTE Y ES VALIDA ???
+        // AHORA MISMO SOLO COMPRUEBA QUE EXISTA
+        //
         echo ($_SESSION) ? 'Existe $_SESSION<br>' : 'NO Existe $_SESSION<br>';
         //
-        if ($_SESSION && Session::getSession($_SESSION['user'])->checkActiveSession()) {
+        if ($_SESSION /*&& Session::getSession($_SESSION['user'])->checkActiveSession()*/) {
             //
             $idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();
             //

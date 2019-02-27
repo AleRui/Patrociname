@@ -55,16 +55,17 @@ class SponsorBundleController extends BaseController
     }*/
 
     public function deleteSponsorBundle() {
-        echo 'deleteSponsorBundle<br>';
+        //
         $sponsorBundle = new SponsorBundleModel();
         $res = $sponsorBundle->deleteBundle($_POST['idSponsorBundle']/*, $_POST['idSearcher']*/);
-
-        die();
-        if ($repsonse) {
-            header('Location:?controller=searcher&action=index');
-        } else {
-            header('Location:?controller=searcher&action=index');
-        }
+        //
+        //if ($res) {
+        //  ENVIAR algún FLAG ???
+        //}//
+        //
+        session_start();
+        $searcher = new SearcherController();
+        $searcher->index();
     }
 
 }

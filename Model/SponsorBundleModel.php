@@ -129,12 +129,16 @@ AND sponsoringCost = '$sponsoringCost'
         return self::doQuery($sql, $params);
     }*/
 
+    /***
+     * @param $idSponsorBundle
+     * @return bool|PDOStatement
+     */
     public function deleteBundle($idSponsorBundle/*, $idSearcher*/)
     {
         //
         $sql = "DELETE FROM $this->table WHERE idSponsorBundle = :id";
         //
-        $params = array( ':id' => $idSponsorBundle );
+        $params = array(':id' => $idSponsorBundle);
         //
         return $this->doQuery($sql, $params);
     }
