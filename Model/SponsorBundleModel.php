@@ -112,22 +112,26 @@ AND sponsoringCost = '$sponsoringCost'
             $idSearcher,
         ]);
         return $checkUpdate;
-    }
-
-    public function updateSponsorWay_two($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
-    {
-        $sql = "
-    UPDATE $this->table
-    SET sponsorWay = ?,
-        sponsoringCost = ?
-    WHERE idSponsorBundle = ?
-    AND idSearcher = ?
-    ";
-        //
-        $params = array($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost);
-        //
-        return self::doQuery($sql, $params);
     }*/
+
+    public function updateSponsorBundle($idSponsorBundle, /*$idSearcher,*/ $sponsorWay, $sponsoringCost)
+    {
+        //
+        echo $idSponsorBundle.'<br>';
+        echo $sponsorWay.'<br>';
+        echo $sponsoringCost.'<br>';
+        //
+        $sql = "UPDATE $this->table SET sponsorWay = :way, sponsoringCost = :cost WHERE idSponsorBundle = :id";
+        //
+        $params = array(
+            ':way' => $sponsorWay,
+            ':cost' => $sponsoringCost,
+            ':id' => $idSponsorBundle
+            );
+        //
+        return $this->doQuery($sql, $params);
+        die();
+    }
 
     /***
      * @param $idSponsorBundle

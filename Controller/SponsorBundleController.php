@@ -14,6 +14,10 @@ class SponsorBundleController extends BaseController
     }
 
     //MÉTODOS
+
+    /**
+     *
+     */
     public function insertSponsorWay()
     {
         if ($_POST['sponsorWay'] && $_POST['sponsoringCost']) {
@@ -29,39 +33,43 @@ class SponsorBundleController extends BaseController
                 $_POST['sponsorWay'],
                 $_POST['sponsoringCost']
             );
-            //if ($res) {
-            //  ENVIAR algún FLAG ???
-            //}
+            //
+            //if ($res) { ENVIAR algún FLAG ??? }//
             //
             $searcher = new SearcherController();
             $searcher->index();
         }
     }
 
-    /*public function updateSponsorWay() {
-        echo 'Estoy en SponsorBundle<br>';
-        showPretty($_POST);
-        require_once 'Model/SponsorBundleModel.php';
+    /**
+     *
+     */
+    public function updateSponsorBundle()
+    {
+        //
         $sponsorBundle = new SponsorBundleModel();
-        $repsonse = $sponsorBundle->updateSponsorWay_two($_POST['idSponsorBundle'],
-            $_POST['idSearcher'],
+        $repsonse = $sponsorBundle->updateSponsorBundle(
+            $_POST['idSponsorBundle'],
             $_POST['sponsorWay'],
             $_POST['sponsoringCost']);
-        if ($repsonse) {
-            header('Location:?controller=searcher&action=index');
-        } else {
-            header('Location:?controller=searcher&action=index');
-        }
-    }*/
+        //
+        //if ($res) { ENVIAR algún FLAG ??? }//
+        //
+        session_start();
+        $searcher = new SearcherController();
+        $searcher->index();
+    }
 
-    public function deleteSponsorBundle() {
+    /**
+     *
+     */
+    public function deleteSponsorBundle()
+    {
         //
         $sponsorBundle = new SponsorBundleModel();
         $res = $sponsorBundle->deleteBundle($_POST['idSponsorBundle']/*, $_POST['idSearcher']*/);
         //
-        //if ($res) {
-        //  ENVIAR algún FLAG ???
-        //}//
+        //if ($res) { ENVIAR algún FLAG ??? }//
         //
         session_start();
         $searcher = new SearcherController();

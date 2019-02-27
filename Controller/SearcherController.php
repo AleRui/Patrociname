@@ -45,7 +45,6 @@ class SearcherController extends BaseController
      * Send Index Searcher
      */
     public function index()
-
     {
         // COMPROBAR SI LA SESIÓN EXISTE Y ES VALIDA ???
         // AHORA MISMO SOLO COMPRUEBA QUE EXISTA
