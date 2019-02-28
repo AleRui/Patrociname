@@ -35,7 +35,7 @@ class Connection // Singleton
     /**
      * @return PDO | Error
      */
-    public function connection_PDO() // Singleton public static
+    /*public function connection_PDO() // Singleton public static
     {
         //$dataBaseConfig = require 'config/dB_hp.php';
         //$dataBaseConfig = require 'config/db_ws.php';
@@ -60,7 +60,7 @@ class Connection // Singleton
             );
         }
 
-    }
+    }*/
 
     /**
      * @throws null
@@ -86,22 +86,25 @@ class Connection // Singleton
         throw new Exception('Feature disabled.');
     }
 
-    /*public function static connection_PDO() { //Heroku
-      //
-      $hostname = 'gmgcjwawatv599gq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
-      $username = 'jcpiprxx0fxmus3e';
-      $password = 's1a8dbc3tix3utqy';
-      $database = ltrim('rxp1xzjdsgra374w', '/');
-      //
-      try {
-        self::$connectionDB = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
-        // set the PDO error mode to exception
-        self::$connectionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return self::$connectionDB;
-      } catch (PDOException $e) {
-        die("**Error en la conexión: " . $e->getMessage());
-      }
+    public function connection_PDO() // Heroku - JawsDB
+    {
+        //
+        $host = 'u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
+        $user = 'ba6ioarno5fp2ax4';
+        $pass = 'xl34w0m8l05ikuib';
+        $port = '3306';
+        $dbname = ltrim('nxn0xaecucxucceu', '/');
+        //
+        try {
+            self::$connectionDB = new PDO("mysql:host=$host;dbname=$dbname",
+                $user, $pass
+            );
+            self::$connectionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return self::$connectionDB;
+        } catch (PDOException $e) {
+            die("**Error en la conexión: " . $e->getMessage());
+        }
 
-    }*/
+    }
 
 }
