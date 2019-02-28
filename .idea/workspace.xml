@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/core/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +13,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/db_jawsdb.php">
+        <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="490">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/BaseModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -24,8 +33,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/Connection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+            <state relative-caret-position="540">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/db_jawsdb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -46,7 +64,6 @@
         <option value="$PROJECT_DIR$/config/database_laptop.php" />
         <option value="$PROJECT_DIR$/config/database_workstation.php" />
         <option value="$PROJECT_DIR$/config/db_ws.php" />
-        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/libs/funct.php" />
         <option value="$PROJECT_DIR$/config/db_hp.php" />
         <option value="$PROJECT_DIR$/core/Router.php" />
@@ -63,6 +80,7 @@
         <option value="$PROJECT_DIR$/Controller/SponsorBundleController.php" />
         <option value="$PROJECT_DIR$/Model/SponsorBundleModel.php" />
         <option value="$PROJECT_DIR$/config/db_jawsdb.php" />
+        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/core/Connection.php" />
       </list>
     </option>
@@ -99,6 +117,11 @@
               <item name="Patrociname_V2_pro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2_pro" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Patrociname_V2_pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Patrociname_V2_pro" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -158,12 +181,12 @@
       <workItem from="1551033528573" duration="14442000" />
       <workItem from="1551187510795" duration="14310000" />
       <workItem from="1551271912338" duration="3253000" />
-      <workItem from="1551375631621" duration="376000" />
+      <workItem from="1551375631621" duration="1317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57302000" />
+    <option name="totallyTimeSpent" value="58243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1044" extended-state="6" />
@@ -208,13 +231,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/db_hk.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/funct.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -281,13 +297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -349,15 +358,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/db_jawsdb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="75">
+          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+        <state relative-caret-position="540">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
         </state>
       </provider>
     </entry>

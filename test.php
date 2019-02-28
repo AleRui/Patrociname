@@ -26,25 +26,26 @@ echo '<hr/>';
 
 // -----------------------------------------
 
-echo 'Prueba Query normal<br>';
+echo 'Test Query normal<br>';
+
+$sql = 'SELECT * FROM searcher';
+$params = array();
 
 require_once "core/BaseModel.php";
 
-$sql = 'SELECT * FROM searcher';
-
-$query = BaseModel::doQuery($sql);
+$model = new BaseModel('searcher');
+$query = $model->doQuery($sql);
 
 echo gettype($query);
 showPretty($query);
 
-$obj = BaseModel::getObject($query);
+$obj = $query->fetchAll();
 showPretty($obj);
-
 echo '<hr/>';
 
 // ---------------------------------------
 
-echo 'Prueba Query Mal<br>';
+/*echo 'Prueba Query Mal<br>';
 
 require_once "core/BaseModel.php";
 
@@ -58,40 +59,6 @@ showPretty($query);
 $obj = BaseModel::getObject($query);
 showPretty($obj);
 
-echo '<hr/>';
+echo '<hr/>';*/
 
 // ---------------------------------------
-
-
-
-/*require_once "Model/SearcherModel.php";
-
-$modelSearcher = new SearcherModel('searcher');
-//
-$statement = 'SELECT * FROM searcher';
-$result = $modelSearcher->check_queryPDO($statement);
-echo $result;
-
-$result2 = $modelSearcher->getObject($statement);
-mostrar($result2);
-
-$all = $modelSearcher->getAll();
-mostrar($all);
-
-$element_with_id_1 = $modelSearcher->getAllById("idSearcher", 1);
-mostrar($element_with_id_1);
-
-// ----------------------------------------
-echo 'AJAX Query<br>';
-require_once 'Model/SearcherModel.php';
-$searcherModel = new SearcherModel();
-//
-$response = $searcherModel->checkExistEmail('prueba');
-echo 'Existe el email "prueba": '.$response.'<br>';
-//
-$response = $searcherModel->checkExistEmail('asdf');
-echo 'Existe el email "asdf": '.$response.'<br>';
-
-// ----------------------------------------
-
-*/
