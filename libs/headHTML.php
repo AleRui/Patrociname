@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8"/>
-  <title>Patrociname V1.0 | Busca encuentra Sponsor</title>
+  <title>Patrociname V2.0 | Busca encuentra Sponsor</title>
   <!-- -->
   <!-- JQuery-->
   <script src="web/js/jquery-3.3.1.js"></script>
