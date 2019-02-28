@@ -89,11 +89,18 @@ class Connection // Singleton
     public function connection_PDO() // Heroku - JawsDB
     {
         //
+        /*
         $host = 'u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
         $user = 'ba6ioarno5fp2ax4';
         $pass = 'xl34w0m8l05ikuib';
         $port = '3306';
         $dbname = ltrim('nxn0xaecucxucceu', '/');
+        */
+        $host = 'eu-cdbr-west-02.cleardb.net';
+        $user = 'ba8c9ee6447c32';
+        $pass = '9a0bc3d5';
+        $port = '3306';
+        $dbname = ltrim('heroku_85fd84de8efcc68', '/');
         //
         try {
             self::$connectionDB = new PDO("mysql:host=$host;dbname=$dbname",
