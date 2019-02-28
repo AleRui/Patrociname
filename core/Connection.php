@@ -101,11 +101,9 @@ class Connection // Singleton
         $pass = '9a0bc3d5';
         $port = '3306';
         $dbname = ltrim('heroku_85fd84de8efcc68', '/');
-        
+
         try {
-            self::$connectionDB = new PDO("mysql:host=$host;dbname=$dbname",
-                $user, $pass
-            );
+            self::$connectionDB = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass );
             self::$connectionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return self::$connectionDB;
         } catch (PDOException $e) {
