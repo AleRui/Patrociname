@@ -6,7 +6,6 @@
  * Time: 12:12
  */
 
-//define("JAWSDB_MARIA_URL", "mysql://ba6ioarno5fp2ax4:xl34w0m8l05ikuib@u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/nxn0xaecucxucceu");
 
 class Connection // Singleton
 {
@@ -18,7 +17,7 @@ class Connection // Singleton
      */
     private function __construct() // Singleton private | protected
     {
-        $this->connection_PDO();
+        return self::connection_PDO();
     }
 
     /**
@@ -35,7 +34,7 @@ class Connection // Singleton
     /**
      * @return PDO | Error
      */
-    public function connection_PDO() // Singleton public static
+    private function connection_PDO() // Singleton public static
     {
         //$dataBaseConfig = require 'config/dB_hp.php';
         //$dataBaseConfig = require 'config/db_ws.php';
@@ -86,30 +85,20 @@ class Connection // Singleton
         throw new Exception('Feature disabled.');
     }
 
-    /*public function connection_PDO() // Heroku - JawsDB
+
+    /**
+     * @param $sql
+     * @param array $params
+     * @return bool|PDOStatement
+     */
+    public function doQuery($sql, $params = array())
     {
         //
-
-        //$host = 'u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
-        //$user = 'ba6ioarno5fp2ax4';
-        //$pass = 'xl34w0m8l05ikuib';
-        //$port = '3306';
-        //$dbname = ltrim('nxn0xaecucxucceu', '/');
-
-        $host = 'eu-cdbr-west-02.cleardb.net';
-        $user = 'ba8c9ee6447c32';
-        $pass = '9a0bc3d5';
-        $port = '3306';
-        $dbname = ltrim('heroku_85fd84de8efcc68', '/');
-
-        try {
-            self::$connectionDB = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass );
-            self::$connectionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return self::$connectionDB;
-        } catch (PDOException $e) {
-            die("**Error en la conexión: " . $e->getMessage());
-        }
-
-    }*/
+        $prp = self::$connectionDB->prepare($sql);
+        //
+        $prp->execute($params);
+        //
+        return $prp;
+    }
 
 }

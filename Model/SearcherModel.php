@@ -28,7 +28,7 @@ class SearcherModel extends BaseModel
             ':pass' => $pass
         );
         //
-        $query = $this->doQuery($sql, $params);
+        $query = $this::getConnection()->doQuery($sql, $params);
         //
         return ( is_object($query) ) ? $this->getObject($query, $this->table) : null ;
     }

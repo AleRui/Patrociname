@@ -14,8 +14,6 @@ class SponsorBundleModel extends BaseModel
         parent::__construct($this->table);
     }
 
-    //
-
     /**
      * @param $idSearcher
      * @return |null
@@ -25,49 +23,12 @@ class SponsorBundleModel extends BaseModel
         $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
         $params = array(':id' => $idSearcher);
         //
-        $query = $this->doQuery($sql, $params);
+        $query = $this::getConnection()->doQuery($sql, $params);
         //
         return (is_object($query)) ? $this->getObject($query) : null;
     }
 
-    //
-    /*public function checkExistSponsorWay($idSearcher, $sponsorWay, $sponsoringCost)
-    {
-        //
-        $sql = "
-SELECT *
-FROM $this->table
-WHERE idSearcher = $idSearcher
-AND sponsorWay = '$sponsorWay'
-AND sponsoringCost = '$sponsoringCost'
-    ";
-        //
-        return self::check_queryPDO($sql);
-    }
 
-    public function checkAvailableIDSponsorBundle()
-    {
-        // SQL que obtiene el mínimo id disponible
-        $sql = "
-      SELECT MIN(t1.idSponsorBundle) + 1 AS minIdSponsorBundle
-      FROM $this->table t1
-      LEFT JOIN $this->table t2
-      ON t1.idSponsorBundle + 1 = t2.idSponsorBundle
-      WHERE t2.idSponsorBundle IS NULL
-            ";
-        if (self::check_queryPDO($sql)) {
-            $array_con_un_objeto = self::getObject($sql);
-            //
-            if (!empty($array_con_un_objeto[0]->minIdSponsorBundle)) {
-                $minIdAvailable = $array_con_un_objeto[0]->minIdSponsorBundle;
-                return $minIdAvailable;
-            } else {
-                return array('exist' => false);
-            }
-        } else {
-            return false;
-        }
-    }*/
     /**
      * @param $idSponsorBundle
      * @param $idSearcher
@@ -75,8 +36,9 @@ AND sponsoringCost = '$sponsoringCost'
      * @param $sponsoringCost
      * @return bool|PDOStatement
      */
-    public function insertSponsorBundle($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
+    public function insertBundle($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
     {
+        echo 'Model inserBundle<br>';
         $sql = "INSERT INTO $this->table
                 (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost)
                 VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost)";
@@ -88,38 +50,18 @@ AND sponsoringCost = '$sponsoringCost'
             ':sponsoringCost' => $sponsoringCost
         );
         //
-        $query = $this->doQuery($sql, $params);
+        $query = $this::getConnection()->doQuery($sql, $params);
         //
         return $query;
     }
 
-    /*public function updateSponsorWay($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
-    {
-        $sql = "
-    UPDATE $this->table
-    SET sponsorWay = ?,
-        sponsoringCost = ?
-    WHERE idSponsorBundle = ?
-    AND idSearcher = ?
-    ";
-        //echo $sql . '<br>';
-        $connection = self::getConnection()->connection_PDO();
-        $update = $connection->prepare($sql);
-        $checkUpdate = $update->execute([
-            $sponsorWay,
-            $sponsoringCost,
-            $idSponsorBundle,
-            $idSearcher,
-        ]);
-        return $checkUpdate;
-    }*/
-
-    public function updateSponsorBundle($idSponsorBundle, /*$idSearcher,*/ $sponsorWay, $sponsoringCost)
+    public function updateSponsorBundle($idSponsorBundle, /*$idSearcher,*/
+                                        $sponsorWay, $sponsoringCost)
     {
         //
-        echo $idSponsorBundle.'<br>';
-        echo $sponsorWay.'<br>';
-        echo $sponsoringCost.'<br>';
+        echo $idSponsorBundle . '<br>';
+        echo $sponsorWay . '<br>';
+        echo $sponsoringCost . '<br>';
         //
         $sql = "UPDATE $this->table SET sponsorWay = :way, sponsoringCost = :cost WHERE idSponsorBundle = :id";
         //
@@ -127,9 +69,9 @@ AND sponsoringCost = '$sponsoringCost'
             ':way' => $sponsorWay,
             ':cost' => $sponsoringCost,
             ':id' => $idSponsorBundle
-            );
+        );
         //
-        return $this->doQuery($sql, $params);
+        return $this::getConnection()->doQuery($sql, $params);
         die();
     }
 
@@ -144,7 +86,7 @@ AND sponsoringCost = '$sponsoringCost'
         //
         $params = array(':id' => $idSponsorBundle);
         //
-        return $this->doQuery($sql, $params);
+        return $this::getConnection()->doQuery($sql, $params);
     }
 
 }

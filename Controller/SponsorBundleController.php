@@ -18,7 +18,7 @@ class SponsorBundleController extends BaseController
     /**
      *
      */
-    public function insertSponsorWay()
+    public function insertSponsorBundle()
     {
         if ($_POST['sponsorWay'] && $_POST['sponsoringCost']) {
             //
@@ -27,7 +27,7 @@ class SponsorBundleController extends BaseController
             //
             require_once './Model/Searcher.php';
             //
-            $res = $sponsorBundle->insertSponsorBundle(
+            $res = $sponsorBundle->insertBundle(
                 $sponsorBundle->minIdAvailable()->getMinId(),
                 (unserialize($_SESSION['user']))->getIdSearcher(),
                 $_POST['sponsorWay'],
@@ -48,7 +48,7 @@ class SponsorBundleController extends BaseController
     {
         //
         $sponsorBundle = new SponsorBundleModel();
-        $repsonse = $sponsorBundle->updateSponsorBundle(
+        $res= $sponsorBundle->updateSponsorBundle(
             $_POST['idSponsorBundle'],
             $_POST['sponsorWay'],
             $_POST['sponsoringCost']);

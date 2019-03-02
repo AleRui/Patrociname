@@ -28,7 +28,7 @@ require_once './Model/SponsorBundle.php';
             <div class="one column row">
                 <form id="addSponsor"
                       class="ui form"
-                      action="?controller=sponsorBundle&action=insertSponsorWay"
+                      action="?controller=sponsorBundle&action=insertSponsorBundle"
                       method="POST"
                       accept-charset="UTF-8">
                     <!-- -->

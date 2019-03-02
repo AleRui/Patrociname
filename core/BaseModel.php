@@ -23,20 +23,9 @@ class BaseModel
      */
     public static function getConnection()
     {
-        return Connection::getInstance()->connection_PDO();
+        return Connection::getInstance();
     }
 
-    /**
-     * @param $sql
-     * @param array $params
-     * @return bool|PDOStatement
-     */
-    public function doQuery($sql, $params = array())
-    {
-        $prp = self::getConnection()->prepare($sql);
-        $prp->execute($params);
-        return $prp;
-    }
 
     /**
      * @param $query
@@ -44,7 +33,7 @@ class BaseModel
      */
     public function getObject($query)
     {
-        //echo $this->table.'<br>';
+        echo $this->table.'<br>';
         return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table) : null;
     }
 
@@ -62,7 +51,7 @@ class BaseModel
           WHERE t2.$id IS NULL
                 ";
         //
-        $query = $this->doQuery($sql);
+        $query = $this::getConnection()->doQuery($sql);
         //
         return $this->getObject($query)[0];
     }

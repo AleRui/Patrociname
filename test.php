@@ -34,12 +34,15 @@ $params = array();
 require_once "core/BaseModel.php";
 
 $model = new BaseModel('searcher');
-$query = $model->doQuery($sql);
+showPretty($model);
+$query = $model::getConnection()->doQuery($sql);
 
 echo gettype($query);
 showPretty($query);
 
-$obj = $query->fetchAll();
+//
+require_once './Model/Searcher.php';
+$obj = $model->getObject($query, 'searcher');
 showPretty($obj);
 echo '<hr/>';
 
