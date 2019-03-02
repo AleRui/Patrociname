@@ -42,6 +42,7 @@ $(document).ready(function () {
         })
     });
     //
+    //
     $('#showRegSer').click(function () {
         $('#registerSearcher').transition('scale');
     });

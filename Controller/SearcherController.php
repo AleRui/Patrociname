@@ -29,6 +29,7 @@ class SearcherController extends BaseController
      */
     public function sessionStart()
     {
+        //showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
             $searcher = new SearcherModel($this->table);
@@ -57,11 +58,8 @@ class SearcherController extends BaseController
             //
             require_once 'Model/SponsorBundleModel.php';
             $sponsorBundleObj = new SponsorBundleModel();
-            $sponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($idSearcher);
-
-            if (!empty($sponsorBundle) /*&& count($sponsorBundle) > 0*/) {
-                $_SESSION['sponsorBundle'] = serialize($sponsorBundle);
-            }
+            //
+            $_SESSION['sponsorBundle'] = serialize($sponsorBundleObj->getAllSponsorBundleById($idSearcher));
             //
             $this->view('searcher');
             //
@@ -72,56 +70,48 @@ class SearcherController extends BaseController
         }
     }
 
-    /*public function registerSearcher()
+    public function registerSearcher()
     {
         //
-        require_once 'Model/SearcherModel.php';
         $searcherModel = new SearcherModel;
-        $response = $searcherModel->checkExistEmail($_POST['registerSearcherMail']);
+        $checkMail = $searcherModel->checkExistEmail($_POST['registerSearcherMail']);
         //
-        if ($response) {
+        if ($checkMail) {
+            //
+            // flag anunciando que exite mail?
+            //
             header('Location:?controller=index&action=index');
         } else {
             //
-            require_once 'Model/SearcherModel.php';
-            $searcher = new SearcherModel();
-            $response = $searcher->insertSearcher(
+            $insert = $searcherModel->insertSearcher(
                 $_POST['registerSearcherMail'],
                 $_POST['registerSearcherPass']
             );
             //
-            if ($response['checkInsert']) {
-                // START SESSION
-                require_once 'Model/Searcher.php';
-                $searcher = new Searcher();
-                $searcher->setIdSearcher($response['idSearcher']);
-                $searcher->setMailSearcher($_POST['registerSearcherMail']);
-                $searcherSerialized = serialize($searcher);
-                //
-                require_once 'config/Session.php';
-                $session = Session::getSession();
-                $session->setSessionValue("searcher", $searcherSerialized);
-                //
-                $this->index();
-            } else {
-                //header('Location:?controller=index&action=index');
-            }
+            $_POST['mail'] = $_POST['registerSearcherMail'];
+            $_POST['pass'] = $_POST['registerSearcherPass'];
+            //
+            unset($_POST['registerSearcherMail']);
+            unset($_POST['registerSearcherPass']);
+            //
+            $this->sessionStart();
         }
     }
 
-
+    /**
+     * @return |null
+     */
     public function checkExistEmail()
     {
-        //echo $_POST['mailInserted'];
         if (!empty($_POST['mailInserted'])) {
-            $mail = $_POST['mailInserted'];
-            require_once 'Model/SearcherModel.php';
+            //
             $searcherModel = new SearcherModel;
-            $response = $searcherModel->checkExistEmail($mail);
+            $response = $searcherModel->checkExistEmail($_POST['mailInserted']);
+            //
             echo $response ? 'Si existe email' : 'No existe email';
             return $response;
         }
-    }*/
+    }
 
     public function logout()
     {

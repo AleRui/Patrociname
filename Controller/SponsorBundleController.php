@@ -65,7 +65,6 @@ class SponsorBundleController extends BaseController
      */
     public function deleteSponsorBundle()
     {
-        //
         $sponsorBundle = new SponsorBundleModel();
         $res = $sponsorBundle->deleteBundle($_POST['idSponsorBundle']/*, $_POST['idSearcher']*/);
         //
