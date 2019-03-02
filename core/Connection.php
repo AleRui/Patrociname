@@ -35,7 +35,7 @@ class Connection // Singleton
     /**
      * @return PDO | Error
      */
-    /*public function connection_PDO() // Singleton public static
+    public function connection_PDO() // Singleton public static
     {
         //$dataBaseConfig = require 'config/dB_hp.php';
         //$dataBaseConfig = require 'config/db_ws.php';
@@ -60,7 +60,7 @@ class Connection // Singleton
             );
         }
 
-    }*/
+    }
 
     /**
      * @throws null
@@ -86,16 +86,16 @@ class Connection // Singleton
         throw new Exception('Feature disabled.');
     }
 
-    public function connection_PDO() // Heroku - JawsDB
+    /*public function connection_PDO() // Heroku - JawsDB
     {
         //
-        /*
-        $host = 'u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
-        $user = 'ba6ioarno5fp2ax4';
-        $pass = 'xl34w0m8l05ikuib';
-        $port = '3306';
-        $dbname = ltrim('nxn0xaecucxucceu', '/');
-        */
+
+        //$host = 'u615qyjzybll9lrm.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
+        //$user = 'ba6ioarno5fp2ax4';
+        //$pass = 'xl34w0m8l05ikuib';
+        //$port = '3306';
+        //$dbname = ltrim('nxn0xaecucxucceu', '/');
+
         $host = 'eu-cdbr-west-02.cleardb.net';
         $user = 'ba8c9ee6447c32';
         $pass = '9a0bc3d5';
@@ -110,6 +110,6 @@ class Connection // Singleton
             die("**Error en la conexión: " . $e->getMessage());
         }
 
-    }
+    }*/
 
 }
