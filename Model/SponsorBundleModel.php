@@ -38,7 +38,6 @@ class SponsorBundleModel extends BaseModel
      */
     public function insertBundle($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
     {
-        echo 'Model inserBundle<br>';
         $sql = "INSERT INTO $this->table
                 (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost)
                 VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost)";

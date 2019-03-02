@@ -49,7 +49,7 @@ class SearcherController extends BaseController
         // COMPROBAR SI LA SESIÓN EXISTE Y ES VALIDA ???
         // AHORA MISMO SOLO COMPRUEBA QUE EXISTA
         //
-        echo ($_SESSION) ? 'Existe $_SESSION<br>' : 'NO Existe $_SESSION<br>';
+        //echo ($_SESSION) ? 'Existe $_SESSION<br>' : 'NO Existe $_SESSION<br>';
         //
         if ($_SESSION /*&& Session::getSession($_SESSION['user'])->checkActiveSession()*/) {
             //
@@ -125,7 +125,6 @@ class SearcherController extends BaseController
 
     public function logout()
     {
-        //echo 'Estoy en Searcher Logout<br>';
         session_start();
         Session::getSession(unserialize($_SESSION['user']))->__destroy();
         //

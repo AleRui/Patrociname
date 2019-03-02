@@ -29,7 +29,6 @@ class Router
         $actionController = $this->action;
         //
         if (!is_file($routeController)) {
-            //echo 'No existe la ruta de ese Controlador<br>';
             $routeController = 'Controller/IndexController.php';
         }
         //
@@ -41,9 +40,6 @@ class Router
             $this->controller = '';
         }
         //
-        //showPretty($objController);
-        //echo '$this->controller: '.$this->controller.'<br>';
-        //echo '$actionController: '.$actionController.'<br>';
         $objController->$actionController();
     }
 
