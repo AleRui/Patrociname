@@ -18,7 +18,7 @@ class userController extends BaseController
     //METODOS
     public function login()
     {
-        echo 'UserController -> login<br>';
+        $response = null;
         //
         //$_POST['usr'] = 'prueba';
         //$_POST['psw'] = '123';
@@ -29,15 +29,16 @@ class userController extends BaseController
             $user = $userModel->checkExitUser($_POST['usr'], $_POST['psw']);
             //
             if ( $user && is_array($user)) {
-                echo 'Tengo un usuario.<br>';
-                showPretty($user);
-                echo 'Hay que crear una Token';
+                $response = $user;
             } else {
-                echo 'El array viene vacion';
+                $response = array('msg' => 'No existe el usuario.<br>');
+
             }
         } else {
-            echo $this->checkValidPost($_POST)['msg'];
+            $response = array('msg' => $this->checkValidPost($_POST)['msg']);
         }
+        //
+        echo json_encode($response);
     }
 
     public function checkValidPost($postEntry)
