@@ -9,9 +9,9 @@
 return array(
   "driver"    =>"mysql",
   "host"      =>"localhost",
-  "port"      =>"3308",
-  "user"      =>"root",
-  "pass"      =>"",
-  "database"  =>"patrociname_v2",
+  "port"      =>"3306",
+  "user"      =>"admin",
+  "pass"      =>"root",
+  "database"  =>"patrociname",
   "charset"   =>"utf8"
 );

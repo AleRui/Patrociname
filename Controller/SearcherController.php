@@ -9,9 +9,9 @@
  */
 
 require_once 'core/BaseController.php';
+require_once 'core/Session.php';
 require_once 'Model/Searcher.php';
 require_once './Model/SearcherModel.php';
-require_once 'core/Session.php';
 
 class SearcherController extends BaseController
 {

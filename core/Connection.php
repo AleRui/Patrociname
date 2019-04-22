@@ -36,9 +36,9 @@ class Connection // Singleton
      */
     private function connection_PDO() // Singleton public static
     {
-        //$dataBaseConfig = require 'config/dB_hp.php';
+        $dataBaseConfig = require 'config/db_hp.php';
         //$dataBaseConfig = require 'config/db_ws.php';
-        $dataBaseConfig = require 'config/db_jawsdb.php';
+        //$dataBaseConfig = require 'config/db_jawsdb.php';
 
         $driver = $dataBaseConfig["driver"];
         $host = $dataBaseConfig["host"];
