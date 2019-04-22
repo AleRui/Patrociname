@@ -2,7 +2,7 @@
 
 require_once 'core/BaseModel.php';
 
-class UserModel
+class UserModel extends BaseModel
 {
     private $table = "user";
 
@@ -17,7 +17,8 @@ class UserModel
         echo $mail.'<br>';
         echo $pass.'<br>';
         //
-        /*$sql = "SELECT idUsr, emaUsr, rolUsr FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
+        //$sql = "SELECT idUsr, emaUsr, rolUsr FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
+        $sql = "SELECT idUsr, emaUsr, rolUsr FROM $this->table WHERE emaUsr = :mail AND pswUsr = MD5(:pass)";
         $params = array(
             ':mail' => $mail,
             ':pass' => $pass
@@ -25,6 +26,6 @@ class UserModel
         //
         $query = $this::getConnection()->doQuery($sql, $params);
         //
-        return (is_object($query)) ? $this->getObject($query, $this->table) : null;*/
+        return (is_object($query)) ? $this->getObject($query, $this->table) : null;
     }
 }

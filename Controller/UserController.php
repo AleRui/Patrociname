@@ -2,25 +2,39 @@
 
 require_once 'core/BaseController.php';
 require_once 'core/Session.php';
-require_once 'Model/Searcher.php';
-//require_once './Model/SearcherModel.php';
+require_once 'Model/User.php';
 require_once './Model/UserModel.php';
 
 
-class userController
+class userController extends BaseController
 {
+    private $table = 'user';
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    //METODOS
     public function login()
     {
         echo 'UserController -> login<br>';
         //
-        $_POST['usr'] = 'prueba';
-        $_POST['psw'] = '123';
+        //$_POST['usr'] = 'prueba';
+        //$_POST['psw'] = '123';
         //
         if ($_POST && $this->checkValidPost($_POST)['valid']) {
-            showPretty($_POST);
-            $userModel = new UserModel();
-            $existUser = $userModel->checkExitUser($_POST['usr'], $_POST['psw']);
-            //echo gettype($existUser);
+            //
+            $userModel = new UserModel($this->table);
+            $user = $userModel->checkExitUser($_POST['usr'], $_POST['psw']);
+            //
+            if ( $user && is_array($user)) {
+                echo 'Tengo un usuario.<br>';
+                showPretty($user);
+                echo 'Hay que crear una Token';
+            } else {
+                echo 'El array viene vacion';
+            }
         } else {
             echo $this->checkValidPost($_POST)['msg'];
         }
