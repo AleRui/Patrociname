@@ -1,6 +1,11 @@
 <?php include_once 'libs/headHTML.php'; ?>
 
-<?php //mostrar($_SESSION); ?>
+<?php
+    if ( !empty($_SESSION) ) {
+        echo 'Existe Session';
+        showPretty($_SESSION);
+    }
+    ?>
   <!-- -->
   <div class="ui grid container">
     <!-- -->
@@ -44,7 +49,7 @@
         <!-- -->
         <form id="formSearcher"
               class="ui form"
-              action="?controller=searcher&action=sessionStart"
+              action="?controller=searcher&action=login"
               method="POST">
           <!-- -->
           <h4 class="ui header">Entrar Buscador</h4>

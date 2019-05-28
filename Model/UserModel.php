@@ -14,8 +14,8 @@ class UserModel extends BaseModel
     public function checkExitUser($mail, $pass)
     {
         //
-        echo $mail.'<br>';
-        echo $pass.'<br>';
+        //echo $mail.'<br>';
+        //echo $pass.'<br>';
         //
         //$sql = "SELECT idUsr, emaUsr, rolUsr FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
         //$sql = "SELECT idUsr, emaUsr, rolUsr FROM $this->table WHERE emaUsr = :mail AND pswUsr = MD5(:pass)";

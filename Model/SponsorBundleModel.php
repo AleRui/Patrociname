@@ -36,18 +36,23 @@ class SponsorBundleModel extends BaseModel
      * @param $sponsoringCost
      * @return bool|PDOStatement
      */
-    public function insertBundle($idSponsorBundle, $idSearcher, $sponsorWay, $sponsoringCost)
+    public function insertSponsorBundle($sponsorBundle)
     {
+        echo 'Estoy en SponsorBundleModel -> insertSponsorBundle';
+        //showPretty($sponsorBundle);
+        //
         $sql = "INSERT INTO $this->table
-                (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost)
-                VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost)";
+                (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost, sponsorIma)
+                VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost, :sponsorIma)";
         //
         $params = array(
-            ':idSponsorBundle' => $idSponsorBundle,
-            ':idSearcher' => $idSearcher,
-            ':sponsorWay' => $sponsorWay,
-            ':sponsoringCost' => $sponsoringCost
+            ':idSponsorBundle' => $sponsorBundle->getIdSponsorBundle(),
+            ':idSearcher' => $sponsorBundle->getIdSearcher(),
+            ':sponsorWay' => $sponsorBundle->getSponsorWay(),
+            ':sponsoringCost' => $sponsorBundle->getSponsoringCost(),
+            ':sponsorIma' => $sponsorBundle->getSponsorIma()
         );
+        showPretty($params);
         //
         $query = $this::getConnection()->doQuery($sql, $params);
         //

@@ -16,8 +16,8 @@ class SponsorController extends BaseController {
 
   //METODOS
   public function index() {
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     if ($session->checkActiveSession() == false) {
       //
       header('Location:?controller=index&action=index');
@@ -67,8 +67,8 @@ class SponsorController extends BaseController {
         $sponsor->setMailSponsor($_POST['registerSponsorMail']);
         $sponsorSerialized = serialize($sponsor);
         //
-        require_once 'config/Session.php';
-        $session = Session::getSession();
+        require_once 'config/UserSession.php.php';
+        $session = userSession::getSession();
         $session->setSessionValue("sponsor", $sponsorSerialized);
         //
         $this->index();
@@ -92,8 +92,8 @@ class SponsorController extends BaseController {
         $sponsor->setMailSponsor($result['objResult'][0]->mailSponsor);
         $sponsorSerialized = serialize($sponsor);
         //
-        require_once 'config/Session.php';
-        $session = Session::getSession();
+        require_once 'config/UserSession.php.php';
+        $session = userSession::getSession();
         $session->setSessionValue("sponsor", $sponsorSerialized);
         //
         $this->index();
@@ -108,8 +108,8 @@ class SponsorController extends BaseController {
   public function checkCIF() {
     showPretty($_POST);
 
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     //
     require_once 'libs/API.php';
     $true_data = runAPI($_POST['cif']);
@@ -144,8 +144,8 @@ class SponsorController extends BaseController {
   }
 
   public function findSearcher() {
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     require_once 'Model/Sponsor.php';
     $idSponsor = (unserialize($_SESSION['sponsor']))->getIdSponsor();
     //
@@ -161,16 +161,16 @@ class SponsorController extends BaseController {
   }
 
   public function hidefindSearcher() {
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     unset($_SESSION['listSponsorBundle']);
     header('Location:?controller=sponsor&action=index');
   }
 
   public function buySponsoring() {
     //
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     require_once 'Model/Sponsor.php';
     $sponsor = unserialize($_SESSION['sponsor']);
     $idSponsor = $sponsor->getIdSponsor();
@@ -188,8 +188,8 @@ class SponsorController extends BaseController {
   }
 
   public function logout() {
-    require_once 'config/Session.php';
-    $session = Session::getSession();
+    require_once 'config/UserSession.php.php';
+    $session = userSession::getSession();
     $session->close();
     if ($session->checkActiveSession() === false) {
       header('Location:?controller=index&action=index');

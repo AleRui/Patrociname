@@ -13,6 +13,7 @@ class SponsorBundle
     private $idSearcher;
     private $sponsorWay;
     private $sponsoringCost;
+    private $sponsorIma;
 
     public function __construct()
     {
@@ -81,6 +82,24 @@ class SponsorBundle
     {
         $this->sponsoringCost = $sponsoringCost;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSponsorIma()
+    {
+        return $this->sponsorIma;
+    }
+
+    /**
+     * @param mixed $sponsorIma
+     */
+    public function setSponsorIma($sponsorIma)
+    {
+        $this->sponsorIma = $sponsorIma;
+    }
+
+
 
     /**
      * @return mixed

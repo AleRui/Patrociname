@@ -1,7 +1,7 @@
 <?php
 
 require_once 'core/BaseController.php';
-require_once 'core/Session.php';
+require_once 'core/UserSession.php';
 require_once 'Model/User.php';
 require_once './Model/UserModel.php';
 
@@ -18,38 +18,52 @@ class userController extends BaseController
     //METODOS
     public function login()
     {
-        $response = null;
+        //header("Access-Control-Allow-Origin: http://localhost:4200");
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header("Access-Control-Allow-Credentials: true");
+        header("Access-Control-Allow-Methods: POST, GET, DELETE, PATCH, PUT, OPTIONS");
+        //header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
+        header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, X-Auth-Token");
+        //header('Access-Control-Max-Age: 86400');
         //
-        //$_POST['usr'] = 'prueba';
-        //$_POST['psw'] = '123';
+        //showPretty($_POST);
         //
-        if ($_POST && $this->checkValidPost($_POST)['valid']) {
+        $post_from_angular = file_get_contents('php://input');
+        //
+        $data = json_decode($post_from_angular, true);
+        //
+        if ($data && $this->checkValidData($data)['valid']) {
             //
             $userModel = new UserModel($this->table);
-            $user = $userModel->checkExitUser($_POST['usr'], $_POST['psw']);
+            $user = $userModel->checkExitUser($data['usr'], $data['psw']);
             //
             if ( $user && is_array($user)) {
-                $response = $user;
+                //
+                $response = (object)$user;
+                //
             } else {
-                $response = array('msg' => 'No existe el usuario.<br>');
-
+                $response = (object)array('msg' => 'Not exist user.<br>');
+                //
             }
         } else {
-            $response = array('msg' => $this->checkValidPost($_POST)['msg']);
+            //
+            $response = (object)array('msg' => 'Not exist data');
+            //
         }
         //
         echo json_encode($response);
     }
 
-    public function checkValidPost($postEntry)
+    public function checkValidData($data)
     {
         $valid = true;
         $msg = '';
-        if (!$postEntry['usr']) {
+        if (!$data['usr']) {
             $msg .= 'No existe usurio.<br>';
             $valid = false;
         }
-        if (!$postEntry['psw']) {
+        if (!$data['psw']) {
             $msg .= 'No existe pass.<br>';
             $valid = false;
         }
@@ -58,4 +72,5 @@ class userController extends BaseController
             'msg' => $msg
         );
     }
+
 }

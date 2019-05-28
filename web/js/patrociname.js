@@ -20,6 +20,18 @@ function setActionUpdate($numRow) {
     $('#sponsorWay-' + $numRow).submit();
 }
 
+function showImageBeforeUpload(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (value) {
+            $('#imaBeforeUpload').attr('src', value.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 $(document).ready(function () {
     //
     $('#registerSearcherMail').blur(function () {
@@ -60,3 +72,4 @@ $(document).ready(function () {
     });
     //
 });
+

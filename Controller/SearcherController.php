@@ -9,17 +9,17 @@
  */
 
 require_once 'core/BaseController.php';
-require_once 'core/Session.php';
+require_once 'core/UserSession.php';
 require_once 'Model/Searcher.php';
 require_once './Model/SearcherModel.php';
 
 class SearcherController extends BaseController
 {
-    private $table = 'searcher';
+    private $controller = 'searcher';
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct($this->controller);
     }
 
     //METODOS
@@ -27,19 +27,42 @@ class SearcherController extends BaseController
     /**
      * Login | StartSession
      */
-    public function sessionStart()
+
+    public function login()
     {
         //showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
-            $searcher = new SearcherModel($this->table);
-            $result = $searcher->checkExitSearcher($_POST['mail'], $_POST['pass']);
+            $searcherModel = new SearcherModel($this->controller);
+            $userSearcher = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
             //
-            if (count($result)) {
-                Session::getSession(serialize($result[0]));
+            //echo gettype($userSearcher);
+            //showPretty($userSearcher);
+            //
+            if ( !empty($userSearcher) && $userSearcher->getIdSearcher() ) {
+                // Crear session de usuario
+                userSession::getSession(/*$result[0]*/);
+                userSession::getSession()->setUserSession($userSearcher);
+                //
+                //showPretty($_SESSION);
+                //die();
+                header('Location:?controller=searcher&action=index');
+                //$this->index();
+                //showPretty($_SESSION);
+                //header('Location:?controller=searcher&action=index');
+            } else {
+                //Habría que añadir un flag de usuario no valido
+                header('Location:?controller=index&action=index');
             }
+            //SI el usuario esta bien crear sessión
+            //
+            /*if (count($result)) {
+                userSession::getSession(serialize($result[0]));
+            }*/
+        } else {
+            //Habría que añadir un flag de usuario no valido
+            header('Location:?controller=index&action=index');
         }
-        $this->index();
     }
 
     /**
@@ -47,21 +70,27 @@ class SearcherController extends BaseController
      */
     public function index()
     {
-        // COMPROBAR SI LA SESIÓN EXISTE Y ES VALIDA ???
-        // AHORA MISMO SOLO COMPRUEBA QUE EXISTA
+        //echo 'Estoy en SearcherController ->  index<br>';
+        userSession::getSession();
         //
-        //echo ($_SESSION) ? 'Existe $_SESSION<br>' : 'NO Existe $_SESSION<br>';
-        //
-        if ($_SESSION /*&& Session::getSession($_SESSION['user'])->checkActiveSession()*/) {
+        //echo 'Sesión Activa: '.userSession::getSession()->checkActiveSession();
+        //showPretty($_SESSION);
+        //die();
+        if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
             //
-            $idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();
+            showPretty($_SESSION);
+            //$idSearcher = (unserialize($_SESSION['user']))->getIdSearcher();
             //
             require_once 'Model/SponsorBundleModel.php';
             $sponsorBundleObj = new SponsorBundleModel();
             //
-            $_SESSION['sponsorBundle'] = serialize($sponsorBundleObj->getAllSponsorBundleById($idSearcher));
-            //
-            $this->view('searcher');
+            //showPretty($sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher()));
+            $allSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
+            //showPretty($allSponsorBundle);
+            $_SESSION['allSponsorBundle'] = serialize($allSponsorBundle);
+            //die();
+            $this->view($this->controller);
+            //header('Location:?controller=searcher&action=view');
             //
         } else {
             //
@@ -94,7 +123,7 @@ class SearcherController extends BaseController
             unset($_POST['registerSearcherMail']);
             unset($_POST['registerSearcherPass']);
             //
-            $this->sessionStart();
+            $this->login();
         }
     }
 
@@ -116,7 +145,7 @@ class SearcherController extends BaseController
     public function logout()
     {
         session_start();
-        Session::getSession(unserialize($_SESSION['user']))->__destroy();
+        userSession::getSession(unserialize($_SESSION['user']))->__destroy();
         //
         header('Location:?controller=index&action=index');
     }
