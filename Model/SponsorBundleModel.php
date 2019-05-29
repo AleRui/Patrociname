@@ -14,10 +14,7 @@ class SponsorBundleModel extends BaseModel
         parent::__construct($this->table);
     }
 
-    /**
-     * @param $idSearcher
-     * @return |null
-     */
+
     public function getAllSponsorBundleById($idSearcher)
     {
         $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
@@ -29,18 +26,8 @@ class SponsorBundleModel extends BaseModel
     }
 
 
-    /**
-     * @param $idSponsorBundle
-     * @param $idSearcher
-     * @param $sponsorWay
-     * @param $sponsoringCost
-     * @return bool|PDOStatement
-     */
     public function insertSponsorBundle($sponsorBundle)
     {
-        echo 'Estoy en SponsorBundleModel -> insertSponsorBundle';
-        //showPretty($sponsorBundle);
-        //
         $sql = "INSERT INTO $this->table
                 (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost, sponsorIma)
                 VALUES ( :idSponsorBundle, :idSearcher, :sponsorWay, :sponsoringCost, :sponsorIma)";
@@ -52,37 +39,35 @@ class SponsorBundleModel extends BaseModel
             ':sponsoringCost' => $sponsorBundle->getSponsoringCost(),
             ':sponsorIma' => $sponsorBundle->getSponsorIma()
         );
-        showPretty($params);
+        //
+        //showPretty($params);
         //
         $query = $this::getConnection()->doQuery($sql, $params);
         //
         return $query;
     }
 
-    public function updateSponsorBundle($idSponsorBundle, /*$idSearcher,*/
-                                        $sponsorWay, $sponsoringCost)
+
+    public function updateSponsorBundle($sponsorBundle)
     {
         //
-        echo $idSponsorBundle . '<br>';
-        echo $sponsorWay . '<br>';
-        echo $sponsoringCost . '<br>';
-        //
-        $sql = "UPDATE $this->table SET sponsorWay = :way, sponsoringCost = :cost WHERE idSponsorBundle = :id";
+        $sql = "UPDATE $this->table
+                SET sponsorWay = :sponsorWay, sponsoringCost = :sponsoringCost, sponsorIma = :sponsorIma
+                WHERE idSponsorBundle = :idSponsorBundle";
         //
         $params = array(
-            ':way' => $sponsorWay,
-            ':cost' => $sponsoringCost,
-            ':id' => $idSponsorBundle
+            ':idSponsorBundle' => $sponsorBundle->getIdSponsorBundle(),
+            ':sponsorWay' => $sponsorBundle->getSponsorWay(),
+            ':sponsoringCost' => $sponsorBundle->getSponsoringCost(),
+            ':sponsorIma' => $sponsorBundle->getSponsorIma()
         );
         //
-        return $this::getConnection()->doQuery($sql, $params);
-        die();
+        $query = $this::getConnection()->doQuery($sql, $params);
+        //
+        return $query;
     }
 
-    /***
-     * @param $idSponsorBundle
-     * @return bool|PDOStatement
-     */
+
     public function deleteBundle($idSponsorBundle/*, $idSearcher*/)
     {
         //

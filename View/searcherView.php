@@ -56,10 +56,11 @@ if ($_SESSION) {
                         </div>
                         <div class="field">
                             <input form="addSponsor"
+                                   id="imaBeforeInput"
                                    name="sponsorIma"
                                    type="file"
                                    onchange="showImageBeforeUpload(this);"/>
-                            <img style="width: 75px;" id="imaBeforeUpload" src="#" alt="your image" />
+                            <img id="imaBefore" src="#" alt="your image"/>
                         </div>
                     </div>
                     <!-- -->
@@ -86,28 +87,43 @@ if ($_SESSION) {
                         <div class="card">
                             <div class="content">
                                 <!-- -->
-                                <form class="ui form" id="sponsorWay-<?= $numRow ?>" method="POST" action="">
-                                    <!-- -->
-                                    <input form="sponsorWay-<?= $numRow ?>"
-                                           name="sponsorIma"
-                                           value="<?= $allSponsorBundle[$numRow]->getSponsorIma() ?>"
-                                           type="hidden" ;
-                                           readonly>
-                                    <!-- -->
-                                    <img class="right floated ui image" src="
-                                    <?php
-                                        if ( $allSponsorBundle[$numRow]->getSponsorIma() && !empty($allSponsorBundle[$numRow]->getSponsorIma())) {
-                                            echo $allSponsorBundle[$numRow]->getSponsorIma();
-                                        } else {
-                                            echo "./web/imas/image.png";
-                                        }
-                                    ?>">
+                                <form
+                                        class="ui form"
+                                        id="sponsorWay-<?= $numRow ?>"
+                                        method="POST"
+                                        action=""
+                                        enctype="multipart/form-data"
+                                        accept-charset="UTF-8">
                                     <!-- -->
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            name="idSponsorBundle"
                                            value="<?= $allSponsorBundle[$numRow]->getIdSponsorBundle() ?>"
                                            type="hidden" ;
                                            readonly>
+                                    <!-- -->
+                                    <img class="right floated ui image"
+                                         id="sponsorIma-<?= $numRow ?>"
+                                         src="
+                                    <?php
+                                    if ($allSponsorBundle[$numRow]->getSponsorIma() && !empty($allSponsorBundle[$numRow]->getSponsorIma())) {
+                                        echo $allSponsorBundle[$numRow]->getSponsorIma();
+                                    } else {
+                                        echo "./web/imas/image.png";
+                                    }
+                                    ?>">
+                                    <!-- -->
+                                    <input form="sponsorWay-<?= $numRow ?>"
+                                           name="sponsorIma"
+                                           value="<?= $allSponsorBundle[$numRow]->getSponsorIma() ?>"
+                                           type="hidden";
+                                           readonly"/>
+                                    <!-- -->
+                                    <input form="sponsorWay-<?= $numRow ?>"
+                                           id="sponsorImaInput-<?= $numRow ?>"
+                                           name="sponsorImaInput"
+                                           value="<?= $allSponsorBundle[$numRow]->getSponsorIma() ?>"
+                                           type="file";
+                                           onchange="showImageBeforeUpload(this);"/>
                                     <!-- -->
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            name="idSearcher"

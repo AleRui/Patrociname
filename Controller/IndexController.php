@@ -20,9 +20,6 @@ class IndexController extends BaseController
 
     public function index()
     {
-        //echo 'Estoy en index index<br>';
-        //showPretty($_GET);
-        //echo 'Controlador: '.$this->controller.'<br>';
         $this->view($this->controller);
     }
 

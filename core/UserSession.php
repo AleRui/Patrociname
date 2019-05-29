@@ -61,12 +61,10 @@ class userSession
     private
     function checkExpired()
     {
-        //echo 'Estoy en checkExpired()<br>';
         $timeBeginSession = $_SESSION["time"];
-        //echo 'Tiempo de inicio de Session:' . $timeBeginSession . '<br>';
+        //
         $timeActual = time();
-        //echo 'Tiempo actual:' . $timeActual . '<br>';
-        //echo 'Tiempo expiración de session: ' . $this->expire_time . '<br>';
+        //
         echo 'Tiempo de Session:' . ($timeActual - $timeBeginSession) . '<br>';
         return (($timeActual - $timeBeginSession) > $this->expire_time);
     }
@@ -82,24 +80,18 @@ class userSession
     public
     function checkActiveSession()
     {
-        //echo 'Estoy en checkActiveSession()<br>';
         if ($this->isLogged()) {
-            //echo 'Estoy logueado<br>';
+            //
             if ($this->checkExpired()) {
-                //echo 'La sesión ha expirado<br>';
+                //
                 $this->__destroy();
-                return false; // no hay sesión activa
+                return false;
             } else {
-                //echo 'La sesión no ha expirado<br>';
+                //
                 $_SESSION['time'] = time();
-                return true;  // hay sesión activa
+                return true;
             }
         }
     }
 
-//
-    /*public function setSessionValue($key, $value)
-    {
-        $_SESSION[$key] = $value;
-    }*/
 }

@@ -20,12 +20,6 @@ class BaseController
 
     public function view()
     {
-        //session_start();
-        echo 'Estoy en la view<br>';
-        echo 'Controloador: ' . $this->controller . '<br>';
-        //
-        //showPretty( $_SESSION );
-        //
         require_once './View/' . $this->controller . 'View.php';
     }
 }
