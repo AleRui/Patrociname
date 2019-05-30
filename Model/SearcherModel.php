@@ -13,13 +13,7 @@ class SearcherModel extends BaseModel
         parent::__construct($this->table);
     }
 
-    //
 
-    /**
-     * @param $mail
-     * @param $pass
-     * @return |null
-     */
     public function checkExitSearcher($mail, $pass)
     {
         $sql = "SELECT idSearcher, mailSearcher FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
@@ -28,16 +22,10 @@ class SearcherModel extends BaseModel
             ':pass' => $pass
         );
         //
-        $query = $this::getConnection()->doQuery($sql, $params);
-        //
-        return (is_object($query)) ? $this->getObject($query, $this->table) : null;
+        return $this->executeQuery($sql, $params);
     }
 
-    /**
-     * @param $mail
-     * @param $pass
-     * @return |null
-     */
+
     public function insertSearcher($mail, $pass)
     {
         $idAvailable = $this->minIdAvailable()->getMinId();
@@ -54,23 +42,16 @@ class SearcherModel extends BaseModel
             ':pass' => $pass
         );
         //
-        $query = $this::getConnection()->doQuery($sql, $params);
-        //
-        return (is_object($query)) ? $this->getObject($query, $this->table) : null;
+        return $this->executeQuery($sql, $params);
     }
 
-    /**
-     * @param $mail
-     * @return |null
-     */
+
     public function checkExistEmail($mail)
     {
         $sql = "SELECT mailSearcher FROM $this->table WHERE mailSearcher = :mail";
         $params = array(':mail' => $mail);
         //
-        $query = $this::getConnection()->doQuery($sql, $params);
-        //
-        return (is_object($query)) ? $this->getObject($query, $this->table) : null;
+        return $this->executeQuery($sql, $params);
     }
 
 

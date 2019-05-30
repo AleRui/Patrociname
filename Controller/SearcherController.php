@@ -46,6 +46,7 @@ class SearcherController extends BaseController
         }
     }
 
+
     public function index()
     {
         userSession::getSession();
@@ -66,6 +67,7 @@ class SearcherController extends BaseController
             header('Location:?controller=index&action=index');
         }
     }
+
 
     public function registerSearcher()
     {

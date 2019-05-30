@@ -27,19 +27,20 @@ class BaseModel
     }
 
 
-    /**
-     * @param $query
-     * @return null
-     */
+    public function executeQuery($sql, $params) {
+        //
+        $query = $this::getConnection()->doQuery($sql, $params);
+        //
+        return (is_object($query)) ? $this->getObject($query, $this->table) : null;
+    }
+
+
     public function getObject($query)
     {
-        //echo $this->table.'<br>';
         return is_object($query) ? $obj = $query->fetchAll(PDO::FETCH_CLASS, $this->table) : null;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function minIdAvailable()
     {
         $id = 'id' . $this->table;

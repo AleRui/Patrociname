@@ -20,6 +20,9 @@ class BaseController
 
     public function view()
     {
+        //echo './View/' . $this->controller . 'View.php';
+        //die();
+        //
         require_once './View/' . $this->controller . 'View.php';
     }
 }
