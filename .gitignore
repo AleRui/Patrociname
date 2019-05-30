@@ -1,3 +1,7 @@
+# --------------------- #
+#  J a v a S c r i p t  #
+# --------------------- #
+
 # Logs
 logs
 *.log
@@ -59,3 +63,13 @@ typings/
 
 # next.js build output
 .next
+
+# --------#
+#  P H P  #
+# --------#
+
+# Package-lock-json
+package-lock.json
+
+composer.phar
+/vendor/
