@@ -1,4 +1,4 @@
-<?php include_once 'libs/headHTML.php'; ?>
+<?php include_once 'templates/headHTML.php'; ?>
 
 <?php
     if ( !empty($_SESSION) ) {
@@ -169,4 +169,4 @@
   </div>
   <!-- -->
 
-<?php include_once 'libs/bodyHTML.php'; ?>
+<?php include_once 'templates/footerHTML.php'; ?>

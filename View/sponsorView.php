@@ -5,7 +5,7 @@
  * Date: 17/11/18
  * Time: 20:50
  */
-require_once 'libs/headHTML.php';
+require_once 'templates/headHTML.php';
 require_once 'Model/Sponsor.php';
 //if ( $_SESSION ) mostrar( $_SESSION['info_empresa'] );
 ?>
@@ -213,4 +213,4 @@ require_once 'Model/Sponsor.php';
     </div>
   </div>
   <!-- -->
-<?php include_once 'libs/bodyHTML.php'; ?>
+<?php include_once 'templates/footerHTML.php'; ?>
