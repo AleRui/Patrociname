@@ -14,7 +14,7 @@ require_once './Model/SponsorBundle.php';
                   method="POST"
                   enctype="multipart/form-data"
                   accept-charset="UTF-8">
-                <!-- -->
+                <!-- Sponsor Way Text-->
                 <div class="two fields">
                     <div class="field">
                         <label>Tipo de publicidad</label>
@@ -23,7 +23,7 @@ require_once './Model/SponsorBundle.php';
                                type="text"
                                required/>
                     </div>
-                    <!-- -->
+                    <!-- Sponsor Cost -->
                     <div class="field">
                         <label>Coste:</label>
                         <input form="addSponsor"
@@ -32,6 +32,15 @@ require_once './Model/SponsorBundle.php';
                                step="0.01"
                                required/>
                     </div>
+                    <!-- Sponsor Duration -->
+                    <div class="field">
+                        <label>Duración:</label>
+                        <input form="addSponsor"
+                               name="sponsorDuration"
+                               type="number"
+                               step="0"/>
+                    </div>
+                    <!-- Sponsor Ima -->
                     <div class="field">
                         <input form="addSponsor"
                                id="imaBeforeInput"

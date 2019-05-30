@@ -13,11 +13,7 @@ class SponsorBundle
     private $idSearcher;
     private $sponsorWay;
     private $sponsoringCost;
-    private $sponsorIma;
-
-    public function __construct()
-    {
-    }
+    private $sponsorDuration;
 
     /**
      * @return mixed
@@ -86,6 +82,29 @@ class SponsorBundle
     /**
      * @return mixed
      */
+    public function getSponsorDuration()
+    {
+        return $this->sponsorDuration;
+    }
+
+    /**
+     * @param mixed $sponsorDuration
+     */
+    public function setSponsorDuration($sponsorDuration)
+    {
+        $this->sponsorDuration = $sponsorDuration;
+    }
+    private $sponsorIma;
+    private $sponsorDateCreated;
+
+
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return mixed
+     */
     public function getSponsorIma()
     {
         return $this->sponsorIma;
@@ -99,7 +118,21 @@ class SponsorBundle
         $this->sponsorIma = $sponsorIma;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSponsorDateCreated()
+    {
+        return $this->sponsorDateCreated;
+    }
 
+    /**
+     * @param mixed $sponsorDateCreated
+     */
+    public function setSponsorDateCreated($sponsorDateCreated)
+    {
+        $this->sponsorDateCreated = $sponsorDateCreated;
+    }
 
     /**
      * @return mixed

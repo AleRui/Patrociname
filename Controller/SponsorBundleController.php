@@ -23,7 +23,6 @@ class SponsorBundleController extends BaseController
     {
         $canInsert = true;
         //
-        // Refactorizar
         if (!$_POST['sponsorWay'] || !$_POST['sponsoringCost']) {
             $canInsert = false;
         }
@@ -61,12 +60,19 @@ class SponsorBundleController extends BaseController
                     }
                 }
             }
+            // Date
+            $createdDate = date('Y-m-d H:i:s');
+            echo 'Fecha de creación: '.$createdDate.'<br>';
             //
             $sponsorBundle->setIdSponsorBundle($sponsorBundleModel->minIdAvailable()->getMinId());
             $sponsorBundle->setIdSearcher($_SESSION['user']->getIdSearcher());
             $sponsorBundle->setSponsorWay($_POST['sponsorWay']);
             $sponsorBundle->setSponsoringCost($_POST['sponsoringCost']);
+            $sponsorBundle->setSponsorDuration($_POST['sponsorDuration']);
             $sponsorBundle->setSponsorIma($imagePath);
+            $sponsorBundle->setSponsorDateCreated($createdDate);
+            //showPretty($sponsorBundle);
+            //die();
             //
             $insertSponsorBundle = $sponsorBundleModel->insertSponsorBundle($sponsorBundle);
             //
@@ -83,10 +89,8 @@ class SponsorBundleController extends BaseController
     {
         $canInsert = true;
         //
-        // Refactorizar
         if (
             !$_POST['idSponsorBundle'] ||
-            !$_POST['idSearcher'] ||
             !$_POST['sponsorWay'] ||
             !$_POST['sponsoringCost']
         ) {
@@ -96,7 +100,6 @@ class SponsorBundleController extends BaseController
         //
         if (!UserSession::getSession()->checkActiveSession()) {
             $canInsert = false;
-            //echo ' La session no está activa<br>';
         }
         //
         if ($canInsert) {
@@ -105,6 +108,7 @@ class SponsorBundleController extends BaseController
             $sponsorBundle = new SponsorBundle();
             $sponsorBundleModel = new SponsorBundleModel();
             //
+            // FILE Image Uploaded
             $imagePath = '';
             //
             $fileUploaded = $_FILES["sponsorImaInput"];
@@ -116,10 +120,8 @@ class SponsorBundleController extends BaseController
                 $imagePath = $dir_imas . basename($fileUploaded["name"]);
                 echo $imagePath . '<br>';
                 //
-                //echo 'Archivo valido: ' . checkFileUploadValid($fileUploaded, $imagePath) . '<br>';
-                //
                 if (!checkFileUploadValid($fileUploaded, $imagePath)) {
-                    echo "Sorry, your file was not uploaded.";
+                    echo "Sorry, your file was not uploaded."; // Lanzar en un flag
                 } else {
                     if (move_uploaded_file($fileUploaded["tmp_name"], $imagePath)) {
                         echo "The file " . basename($fileUploaded["name"]) . " has been uploaded.";
@@ -134,10 +136,10 @@ class SponsorBundleController extends BaseController
             }
             //
             $sponsorBundle->setIdSponsorBundle($_POST['idSponsorBundle']);
-            $sponsorBundle->setIdSearcher($_SESSION['user']->getIdSearcher());
             $sponsorBundle->setSponsorWay($_POST['sponsorWay']);
             $sponsorBundle->setSponsoringCost($_POST['sponsoringCost']);
             $sponsorBundle->setSponsorIma($imagePath);
+            $sponsorBundle->setSponsorDuration($_POST['sponsorDuration']);
             //
             $insertSponsorBundle = $sponsorBundleModel->updateSponsorBundle($sponsorBundle);
             //
