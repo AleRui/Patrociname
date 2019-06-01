@@ -9,7 +9,7 @@
 class ApiController {
 
   public function sendData () {
-    require_once 'libs/API.php';
+    require_once 'libs/ApiModel.php';
     $result = offerData();
     //
     header("Content-type: application/json") ;

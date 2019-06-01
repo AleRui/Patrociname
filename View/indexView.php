@@ -11,16 +11,16 @@ if (!empty($_SESSION)) {
         <!-- -->
         <div class="two column row">
             <!-- -->
-            <?php require_once './templates/registerSearcherTemplate.php'; ?>
+            <?php require_once './templates/searcherRegisterTemplate.php'; ?>
             <!-- -->
-            <?php require_once './templates/loginSearcherTemplate.php'; ?>
+            <?php require_once './templates/searcherLoginTemplate.php'; ?>
         </div>
         <!-- -->
         <div class="two column row">
             <!-- -->
-            <?php require_once './templates/registerSponsorTemplate.php'; ?>
+            <?php require_once './templates/sponsorRegisterTemplate.php'; ?>
             <!-- -->
-            <?php require_once './templates/loginSponsorTemplate.php'; ?>
+            <?php require_once './templates/sponsorLoginTemplate.php'; ?>
         </div>
     </div>
     <!-- -->

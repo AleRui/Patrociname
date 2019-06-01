@@ -8,7 +8,7 @@
 
 function runAPI($cif)
 {
-    echo 'Estoy en runAPI<br>';
+    //echo 'Estoy en runAPI<br>';
     //
     // Conseguir info JSON (Página de información de empresas)
     // einforma.com
@@ -20,7 +20,6 @@ function runAPI($cif)
     // prueba de CIF: B93358778
     // prueba de CIF: B93388668
 
-    $data = "";
     //Autentication OAuth 2.0
     // 1º GET TOKEN
     $curl = curl_init();
@@ -42,20 +41,20 @@ function runAPI($cif)
             'cache-control: no-cache'
         ),
     ));
-
-    $response = curl_exec($curl);
+    //
+    $responseOne = curl_exec($curl);
     $err = curl_error($curl);
-
+    //
     curl_close($curl);
-
+    // ----------------------//
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-        //
         // 2º GET DATA
-        //mostrar(json_decode($response));
-        $token = json_decode($response)->access_token;
-        $token = "Authorization: Bearer " . $token;
+        //
+        //$token = json_decode($responseOne)->access_token;
+        //$token = "Authorization: Bearer " . $token;
+        $token = "Authorization: Bearer " . json_decode($responseOne)->access_token;
         //
         $url = "https://developers.einforma.com/api/v1/companies/" . $cif . "/test";
         $curl = curl_init();
@@ -75,7 +74,7 @@ function runAPI($cif)
             ),
         ));
 
-        $response = curl_exec($curl);
+        $data = curl_exec($curl);
         $err = curl_error($curl);
 
         curl_close($curl);
@@ -83,12 +82,13 @@ function runAPI($cif)
         if ($err) {
             return "cURL Error #:" . $err;
         } else {
-            return $response;
+            return $data;
         } // END GET DATA
         //
     } // END GET TOKEN
 
 }
+
 
 function offerData()
 {

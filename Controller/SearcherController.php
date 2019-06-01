@@ -31,6 +31,9 @@ class SearcherController extends BaseController
             $searcherModel = new SearcherModel($this->controller);
             $userSearcher = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
             //
+            //showPretty($userSearcher);
+            //die();
+            //
             if ( !empty($userSearcher) && $userSearcher->getIdSearcher() ) {
                 //
                 userSession::getSession();
@@ -58,9 +61,9 @@ class SearcherController extends BaseController
             require_once 'Model/SponsorBundleModel.php';
             $sponsorBundleObj = new SponsorBundleModel();
             //
-            $allSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
+            $createdSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
             //
-            $_SESSION['allSponsorBundle'] = serialize($allSponsorBundle);
+            $_SESSION['createdSponsorBundle'] = serialize($createdSponsorBundle);
             //
             $this->view($this->controller);
         } else {

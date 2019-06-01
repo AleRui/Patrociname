@@ -18,16 +18,15 @@ class BaseModel
         $this->table = (string)$child_table;
     }
 
-    /**
-     * @return Error|PDO
-     */
+
     public static function getConnection()
     {
         return Connection::getInstance();
     }
 
 
-    public function executeQuery($sql, $params) {
+    public function executeQuery($sql, $params)
+    {
         //
         $query = $this::getConnection()->doQuery($sql, $params);
         //
@@ -44,18 +43,50 @@ class BaseModel
     public function minIdAvailable()
     {
         $id = 'id' . $this->table;
+        echo '$id = '.$id.'<br>';
         //
-        $sql = "SELECT MIN(t1.$id) + 1 AS minId
-          FROM $this->table t1
-          LEFT JOIN $this->table t2
-          ON t1.$id + 1 = t2.$id
-          WHERE t2.$id IS NULL
-                ";
+        //SELECT
+        //    CASE ( SELECT MIN(idsponsor) FROM sponsor )
+        //        WHEN 1 THEN
+        //        ( SELECT MIN(t1.idsponsor) + 1 AS minId
+        //                  FROM sponsor t1
+        //                  LEFT JOIN sponsor t2
+        //                  ON t1.idsponsor + 1 = t2.idsponsor
+        //                  WHERE t2.idsponsor IS NULL )
+        //        ELSE ( SELECT 1 AS minID)
+        //    END;
         //
-        $query = $this::getConnection()->doQuery($sql);
+        //$sql = "SELECT MIN(t1.$id) + 1 AS minId
+        //      FROM $this->table t1
+        //      LEFT JOIN $this->table t2
+        //      ON t1.$id + 1 = t2.$id
+        //      WHERE t2.$id IS NULL";
         //
-        return $this->getObject($query)[0];
+        $sql = "
+        SELECT
+        CASE ( SELECT MIN(:id) FROM $this->table )
+            WHEN 1 THEN
+                ( SELECT MIN(t1.:id) + 1 AS minId
+                      FROM $this->table t1
+                      LEFT JOIN $this->table t2
+                      ON t1.:id + 1 = t2.:id
+                      WHERE t2.:id IS NULL )
+            ELSE ( SELECT 1 AS minId )
+        END;
+        ";
+        echo 'sql: '.$sql.'<br>';
+        //
+        $params = array(':id' => $id);
+        //
+        return $this->executeQuery($sql, $params);
+        //
+        //$query = $this::getConnection()->doQuery($sql);
+        //
+        //return $this->getObject($query)[0];
     }
+
+
+
 
 
 }

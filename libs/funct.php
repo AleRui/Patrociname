@@ -13,10 +13,11 @@ function showPretty($obj)
     echo '</pre>';
 }
 
-function checkFileUploadValid($fileUploaded, $imagePath) {
+function checkFileUploadValid($fileUploaded, $imagePath)
+{
     $validFile = 0;
     //
-    echo '$imagePath: '.$imagePath.'<br>';
+    echo '$imagePath: ' . $imagePath . '<br>';
     //showPretty($fileUploaded);
     //
     $imageFileType = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
@@ -44,4 +45,21 @@ function checkFileUploadValid($fileUploaded, $imagePath) {
     }
     //
     return $validFile;
+}
+
+function falseDataForApi()
+{
+    //
+    return "{\"denominacion\":\"PANADERIA Y CONFITERIA ARTEPAN MALAGA SL.\"," .
+        "\"nombreComercial\":[\"SOLO CLIENTES\"],\"domicilioSocial\":\"CA" .
+        "LLE ALEJANDRO DUMAS, 17 - BL 1 PISO 2 E\",\"localidad\":\"29004 " .
+        "MALAGA (Málaga)\",\"formaJuridica\":\"SOCIEDAD LIMITADA\",\"cnae" .
+        "\":\"1071 - Fabricación de pan y de productos frescos de panader" .
+        "ía y pastelería\",\"fechaUltimoBalance\":\"2017-12-31\",\"identi" .
+        "ficativo\":\"X9999999X\",\"situacion\":\"SOLO CLIENTES\",\"telef" .
+        "ono\":[999999999],\"fax\":[999999999],\"web\":[\"http://www.exam" .
+        "ple.com\"],\"email\":\"example@example.com\",\"cargoPrincipal\":" .
+        "\"SOLO CLIENTES\",\"capitalSocial\":1.7976931348623157E308,\"ven" .
+        "tas\":1.7976931348623157E308,\"anioVentas\":1970,\"empleados\":9" .
+        "223372036854775807,\"fechaConstitucion\":\"YYYY-MM-DD\"}";
 }

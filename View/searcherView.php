@@ -13,11 +13,11 @@ include_once 'templates/headHTML.php';
 
         <!-- -->
 
-        <?php require_once './templates/addSponsorWayTemplate.php'; ?>
+        <?php require_once './templates/searcherAddSponsorWayTemplate.php'; ?>
 
         <!-- -->
 
-        <?php require_once './templates/sponsorBundleTemplate.php'; ?>
+        <?php require_once './templates/searcherCreatedBundleTemplate.php'; ?>
 
         <!-- -->
 

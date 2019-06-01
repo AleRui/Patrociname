@@ -14,18 +14,6 @@ class SponsorBundleModel extends BaseModel
         parent::__construct($this->table);
     }
 
-
-    public function getAllSponsorBundleById($idSearcher)
-    {
-        $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
-        $params = array(':id' => $idSearcher);
-        //
-        $query = $this::getConnection()->doQuery($sql, $params);
-        //
-        return (is_object($query)) ? $this->getObject($query) : null;
-    }
-
-
     public function insertSponsorBundle($sponsorBundle)
     {
         $sql = "INSERT INTO $this->table
@@ -51,6 +39,7 @@ class SponsorBundleModel extends BaseModel
         //
         return $query;
     }
+
 
 
     public function updateSponsorBundle($sponsorBundle)
@@ -91,5 +80,54 @@ class SponsorBundleModel extends BaseModel
         //
         return $this::getConnection()->doQuery($sql, $params);
     }
+
+    // --------------------------------------------------------
+
+    public function getAllSponsorBundleById($idSearcher) // -- Searcher
+    {
+        $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
+        $params = array(':id' => $idSearcher);
+        //
+        $query = $this::getConnection()->doQuery($sql, $params);
+        //
+        return (is_object($query)) ? $this->getObject($query) : null;
+    }
+
+
+    public function getAllAvailableBundle($idSponsor) // -- Sponsor
+    {
+        //
+        $sql = "SELECT * FROM $this->table
+            WHERE idSponsorBundle !=
+                ALL(SELECT idSponsorBundle
+                    FROM sponsorbuysponsoring
+                    WHERE idSponsor = :idSponsor
+                ); ";
+        //
+        $params = array(':idSponsor' => $idSponsor);
+        //
+        return $this->executeQuery($sql, $params);
+    }
+
+
+    public function getAllBoughtBundle($idSponsor) // -- Sponsor
+    {
+        echo '$idSponsor: '.$idSponsor.'<br>';
+        //
+        $sql = "
+            SELECT *
+            FROM $this->table t1
+            LEFT JOIN sponsorbuysponsoring t2
+            ON t1.idSponsorBundle = t2.idSponsorBundle
+            WHERE t2.idSponsor = :idSponsor;
+            ";
+        //
+        $params = array(':idSponsor' => $idSponsor);
+        //
+        $query = $this::getConnection()->doQuery($sql, $params);
+        //
+        return (is_object($query)) ? $this->getObject($query) : null;
+    }
+
 
 }

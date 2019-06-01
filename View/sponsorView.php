@@ -13,10 +13,10 @@ require_once 'Model/Sponsor.php';
   <!-- -->
 <?php require_once './templates/sponsorHeaderTemplate.php'; ?>
   <!-- -->
-<?php require_once './templates/apiCheckSponsorTemplate.php'; ?>
+<?php require_once './templates/sponsorApiCheckNifTemplate.php'; ?>
   <!-- -->
-<?php require_once './templates/listBundlesTemplate.php'; ?>
+<?php require_once './templates/sponsorAvailableBundlesTemplate.php'; ?>
   <!-- -->
-<?php require_once './templates/bundlesPurchasesTemplate.php'; ?>
+<?php require_once './templates/sponsorBoughtBundlesTemplates.php'; ?>
   <!-- -->
 <?php include_once 'templates/footerHTML.php'; ?>

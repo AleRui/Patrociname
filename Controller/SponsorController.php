@@ -9,7 +9,11 @@
 require_once 'core/BaseController.php';
 require_once 'core/UserSession.php';
 require_once 'Model/Sponsor.php';
-require_once './Model/SponsorModel.php';
+require_once 'Model/SponsorModel.php';
+require_once 'Model/SponsorBundleModel.php';
+require_once 'Model/SponsorBuySponsoring.php';
+require_once 'Model/SponsorBuySponsoringModel.php';
+require_once 'Model/ApiModel.php';
 
 class SponsorController extends BaseController
 {
@@ -46,18 +50,16 @@ class SponsorController extends BaseController
 
     public function index()
     {
-        userSession::getSession();
         //
-        if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
+        if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
             //
-            //showPretty($_SESSION);
+            $idSponsor=  $_SESSION['user']->getIdSponsor();
             //
-            require_once 'Model/SponsorBundleModel.php';
-            //$sponsorBundleObj = new SponsorBundleModel();
+            $sponsorBundleModel = new SponsorBundleModel();
             //
-            //$allSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
+            $allSponsorBought = $sponsorBundleModel->getAllBoughtBundle($idSponsor);
             //
-            //$_SESSION['allSponsorBundle'] = serialize($allSponsorBundle);
+            $_SESSION['allSponsorBought'] = $allSponsorBought;
             //
             $this->view($this->controller);
         } else {
@@ -70,6 +72,9 @@ class SponsorController extends BaseController
     {
         $sponsorModel = new SponsorModel;
         $checkMail = $sponsorModel->checkExistEmail($_POST['registerSponsorMail']);
+        //echo '$checkMail: '.$checkMail.'<br>';
+        //die();
+        //
         //
         if ($checkMail) {
             header('Location:?controller=index&action=index');
@@ -90,146 +95,99 @@ class SponsorController extends BaseController
         }
     }
 
+    public function logout()
+    {
+        if (userSession::getSession()->checkActiveSession()) {
+            userSession::getSession(unserialize($_SESSION['user']))->__destroy();
+            header('Location:?controller=index&action=index');
+        }
+    }
+
+
     public function checkExistEmail()
     {
         if (!empty($_POST['mailInserted'])) {
             //
-            $searcherModel = new SearcherModel;
-            $response = $searcherModel->checkExistEmail($_POST['mailInserted']);
+            $sponsorModel = new SponsorModel;
+            $response = $sponsorModel->checkExistEmail($_POST['mailInserted']);
             //
             echo $response ? 'Si existe email' : 'No existe email';
             return $response;
         }
     }
 
-    public function logout()
-    {
-        if ( userSession::getSession()->checkActiveSession() ) {
-            userSession::getSession(unserialize($_SESSION['user']))->__destroy();
-            header('Location:?controller=index&action=index');
-        }
-    }
 
-    /*public function sessionStart()
+    public function checkCIF()
     {
-        if ($_POST['mail'] && $_POST['pass']) {
+        //
+        if (userSession::getSession()->checkActiveSession()) {
             //
-            require_once 'Model/SponsorModel.php';
-            $sponsorModel = new SponsorModel;
-            $result = $sponsorModel->checkExitSponsor($_POST['mail'], $_POST['pass']);
-            if ($result['exist']) {
-                // START SESSION
-                require_once 'Model/Sponsor.php';
-                $sponsor = new Sponsor();
-                $sponsor->setIdSponsor($result['objResult'][0]->idSponsor);
-                $sponsor->setMailSponsor($result['objResult'][0]->mailSponsor);
-                $sponsorSerialized = serialize($sponsor);
-                //
-                require_once 'config/UserSession.php.php';
-                $session = userSession::getSession();
-                $session->setSessionValue("sponsor", $sponsorSerialized);
-                //
-                $this->index();
+            $trueData = runAPI($_POST['cif']);
+            //
+            $data = json_decode($trueData);
+            //
+            if ($data->denominacion) {
+                echo $data->denominacion . '<br>';
+                $_SESSION['info_empresa'] = $data;
+                header('Location:?controller=sponsor&action=index');
             } else {
-                header('Location:?controller=index&action=index');
+                $_SESSION['checkNIF'] = false;
+                header('Location:?controller=sponsor&action=index');
             }
         } else {
             header('Location:?controller=index&action=index');
         }
-    }*/
+    }
 
-    public function checkCIF()
+    public function findAllAvailableBundle()
     {
-        showPretty($_POST);
-
-        require_once 'config/UserSession.php.php';
-        $session = userSession::getSession();
-        //
-        require_once 'libs/API.php';
-        $true_data = runAPI($_POST['cif']);
-        //
-        /*$false_data = "{\"denominacion\":\"PANADERIA Y CONFITERIA ARTEPAN MALAGA SL.\"," .
-            "\"nombreComercial\":[\"SOLO CLIENTES\"],\"domicilioSocial\":\"CA" .
-            "LLE ALEJANDRO DUMAS, 17 - BL 1 PISO 2 E\",\"localidad\":\"29004 " .
-            "MALAGA (Málaga)\",\"formaJuridica\":\"SOCIEDAD LIMITADA\",\"cnae" .
-            "\":\"1071 - Fabricación de pan y de productos frescos de panader" .
-            "ía y pastelería\",\"fechaUltimoBalance\":\"2017-12-31\",\"identi" .
-            "ficativo\":\"X9999999X\",\"situacion\":\"SOLO CLIENTES\",\"telef" .
-            "ono\":[999999999],\"fax\":[999999999],\"web\":[\"http://www.exam" .
-            "ple.com\"],\"email\":\"example@example.com\",\"cargoPrincipal\":" .
-            "\"SOLO CLIENTES\",\"capitalSocial\":1.7976931348623157E308,\"ven" .
-            "tas\":1.7976931348623157E308,\"anioVentas\":1970,\"empleados\":9" .
-            "223372036854775807,\"fechaConstitucion\":\"YYYY-MM-DD\"}";
-        */
-        //
-        $data = json_decode($true_data);
-        //
-        showPretty($data);
-        //
-        if ($data->denominacion) {
-            echo $data->denominacion . '<br>';
-            $_SESSION['info_empresa'] = $data;
+        if (userSession::getSession()->checkActiveSession()) {
+            //
+            $idSponsor = $_SESSION['user']->getIdSponsor();
+            //
+            $sponsorBundleModel = new SponsorBundleModel();
+            $allAvailableBundle = $sponsorBundleModel->getAllAvailableBundle($idSponsor);
+            //
+            $_SESSION['allAvailableBundle'] = array('show' => true, 'list' => $allAvailableBundle);
+            //
             header('Location:?controller=sponsor&action=index');
         } else {
-            $_SESSION['checkNIF'] = false;
-            header('Location:?controller=sponsor&action=index');
+            header('Location:?controller=index&action=index');
         }
     }
 
-    public function findSearcher()
+    public function hideAllAvailableBundle()
     {
-        require_once 'config/UserSession.php.php';
-        $session = userSession::getSession();
-        require_once 'Model/Sponsor.php';
-        $idSponsor = (unserialize($_SESSION['sponsor']))->getIdSponsor();
         //
-        require_once 'Model/SponsorModel.php';
-        $sponsorModel = new SponsorModel();
-        $listSponsorBundle = $sponsorModel->getAllPosible($idSponsor);
-        //
-        //COMPROBAR QUE EL PATROCINIO NO HA SIDO COMPRADO YA
-        //
-        $_SESSION['listSponsorBundle'] = array('show' => true, 'list' => $listSponsorBundle);
-        //
-        header('Location:?controller=sponsor&action=index');
-    }
-
-    public function hidefindSearcher()
-    {
-        require_once 'config/UserSession.php.php';
-        $session = userSession::getSession();
-        unset($_SESSION['listSponsorBundle']);
-        header('Location:?controller=sponsor&action=index');
+        if (userSession::getSession()->checkActiveSession()) {
+            //
+            unset($_SESSION['allAvailableBundle']);
+            header('Location:?controller=sponsor&action=index');
+        } else {
+            header('Location:?controller=index&action=index');
+        }
     }
 
     public function buySponsoring()
     {
         //
-        require_once 'config/UserSession.php.php';
-        $session = userSession::getSession();
-        require_once 'Model/Sponsor.php';
-        $sponsor = unserialize($_SESSION['sponsor']);
-        $idSponsor = $sponsor->getIdSponsor();
-        //
-        showPretty($_POST);
-        //
-        $idSponsorBundle = $_POST['idSponsorBundle'];
-        //
-        require_once 'Model/sponsorBuySponsoringModel.php';
-        $purchase = new sponsorBuySponsoringModel();
-        $checkInsert = $purchase->buySponsoring($idSponsorBundle, $idSponsor);
-        if ($checkInsert) {
+        if (userSession::getSession()->checkActiveSession()) {
+            //
+            $idSponsor = $_SESSION['user']->getIdSponsor();
+            //
+            $idSponsorBundle = $_POST['idSponsorBundle'];
+            //
+            $sponsorBuySponsoringModel = new sponsorBuySponsoringModel();
+            //
+            $sponsorBuySponsoringModel->buySponsoring($idSponsorBundle, $idSponsor);
+            //
+            $this->hideAllAvailableBundle();
+            //
             header('Location:?controller=sponsor&action=findSearcher');
+        } else {
+            header('Location:?controller=index&action=index');
         }
     }
 
-    /*public function logout()
-    {
-        require_once 'config/UserSession.php.php';
-        $session = userSession::getSession();
-        $session->close();
-        if ($session->checkActiveSession() === false) {
-            header('Location:?controller=index&action=index');
-        }
-    }*/
+
 }

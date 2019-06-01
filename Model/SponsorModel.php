@@ -19,27 +19,11 @@ class SponsorModel extends BaseModel
         parent::__construct($this->table);
     }
 
+
     public function checkExitSponsor($mail, $pass)
     {
         $sql = "SELECT idSponsor, mailSponsor FROM $this->table WHERE mailSponsor = :mail AND passSponsor = MD5(:pass)";
         $params = array(
-            ':mail' => $mail,
-            ':pass' => $pass
-        );
-        //
-        return $this->executeQuery($sql, $params);
-    }
-
-
-    public function insertSponsor($mail, $pass)
-    {
-        $idAvailable = $this->minIdAvailable()->getMinId();
-        //
-        $sql = "INSERT INTO $this->table (idSponsor, mailSponsor, passSponsor)
-        VALUES ( :id, :mail, MD5(:pass) )";
-        //
-        $params = array(
-            ':id' => $idAvailable,
             ':mail' => $mail,
             ':pass' => $pass
         );
@@ -55,6 +39,37 @@ class SponsorModel extends BaseModel
         //
         return $this->executeQuery($sql, $params);
     }
+
+
+    public function insertSponsor($mail, $pass)
+    {
+        showPretty( $this->minIdAvailable() );
+        die();
+        $idAvailable = $this->minIdAvailable()->getMinId();
+        //
+        echo '$idAvailable: '.$idAvailable.'<br>';
+        die();
+        //
+        $sql = "INSERT INTO $this->table (idSponsor, mailSponsor, passSponsor)
+        VALUES ( :id, :mail, MD5(:pass) )";
+        //
+        $params = array(
+            ':id' => $idAvailable,
+            ':mail' => $mail,
+            ':pass' => $pass
+        );
+        //
+        return $this->executeQuery($sql, $params);
+    }
+
+
+    /*public function checkExistEmail($mail)
+    {
+        $sql = "SELECT mailSponsor FROM $this->table WHERE mailSponsor = :mail";
+        $params = array(':mail' => $mail);
+        //
+        return $this->executeQuery($sql, $params);
+    }*/
 
 
     /*public function checkAvailableIDSponsor()
@@ -95,24 +110,21 @@ class SponsorModel extends BaseModel
         }
     }*/
 
-    public function getAllPosible($idSponsor)
+    /*public function getAllBundleLessBought($idSponsor)
     {
         //
-        $sql = "
-      SELECT *
-      FROM sponsorbundle
-      WHERE idSponsorBundle != ALL(	SELECT idSponsorBundle
-							                      FROM sponsorbuysponsoring
-						                        WHERE idSponsor = $idSponsor
-                                  )
-    ";
+        $sql = "SELECT * FROM sponsorbundle
+                WHERE idSponsorBundle !=
+                    ALL(SELECT idSponsorBundle
+						FROM sponsorbuysponsoring
+						WHERE idSponsor = :idSponsor
+                    );
+        ";
+        $params = array(':idSponsor' => $idSponsor);
         //
-        $connection = self::getConnection()->connection_PDO();
-        $query = $connection->prepare($sql);
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_OBJ);
-        return $result;
-    }
+        //
+        return $this->executeQuery($sql, $params);
+    }*/
 
     /*public function checkExistEmail($mail)
     {

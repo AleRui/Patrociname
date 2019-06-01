@@ -1,17 +1,18 @@
 <?php
+//showPretty( unserialize($_SESSION['createdSponsorBundle']) );
 ?>
 
 <div class="ui container">
     <div class="ui grid">
         <div class="ui row">
-            <h2 class="ui header">Paquete de patrocinio:</h2>
+            <h2 class="ui header">Paquetes de patrocinio Disponibles:</h2>
         </div>
         <div class="ui cards">
             <?php
-            if (isset($_SESSION['allSponsorBundle'])) {
-                $allSponsorBundle = unserialize($_SESSION['allSponsorBundle']);
-                //showPretty($allSponsorBundle);
-                for ($numRow = 0; $numRow < count($allSponsorBundle); $numRow++) {
+            if (isset($_SESSION['createdSponsorBundle'])) {
+                $createdSponsorBundle = unserialize($_SESSION['createdSponsorBundle']);
+                //showPretty($createdSponsorBundle);
+                for ($numRow = 0; $numRow < count($createdSponsorBundle); $numRow++) {
                     ?>
                     <!-- -->
                     <div class="card">
@@ -27,7 +28,7 @@
                                 <!-- ID Sponsor Way-->
                                 <input form="sponsorWay-<?= $numRow ?>"
                                        name="idSponsorBundle"
-                                       value="<?= $allSponsorBundle[$numRow]->getIdSponsorBundle() ?>"
+                                       value="<?= $createdSponsorBundle[$numRow]->getIdSponsorBundle() ?>"
                                        type="hidden" ;
                                        readonly>
                                 <!-- Image Sponsor Way-->
@@ -35,8 +36,8 @@
                                      id="sponsorIma-<?= $numRow ?>"
                                      src="
                                     <?php
-                                     if ($allSponsorBundle[$numRow]->getSponsorIma() && !empty($allSponsorBundle[$numRow]->getSponsorIma())) {
-                                         echo $allSponsorBundle[$numRow]->getSponsorIma();
+                                     if ($createdSponsorBundle[$numRow]->getSponsorIma() && !empty($createdSponsorBundle[$numRow]->getSponsorIma())) {
+                                         echo $createdSponsorBundle[$numRow]->getSponsorIma();
                                      } else {
                                          echo "./web/imas/image.png";
                                      }
@@ -44,18 +45,18 @@
                                 <input form="sponsorWay-<?= $numRow ?>"
                                        id="sponsorImaInput-<?= $numRow ?>"
                                        name="sponsorImaInput"
-                                       value="<?= $allSponsorBundle[$numRow]->getSponsorIma() ?>"
+                                       value="<?= $createdSponsorBundle[$numRow]->getSponsorIma() ?>"
                                        type="file" ;
                                        onchange="showImageBeforeUpload(this);"/>
                                 <input form="sponsorWay-<?= $numRow ?>"
                                        name="sponsorIma"
-                                       value="<?= $allSponsorBundle[$numRow]->getSponsorIma() ?>"
+                                       value="<?= $createdSponsorBundle[$numRow]->getSponsorIma() ?>"
                                        type="hidden" ;
                                        readonly"/>
                                 <!-- Id Searcher -->
                                 <!--<input form="sponsorWay-<?= $numRow ?>"
                                        name="idSearcher"
-                                       value="<?= $allSponsorBundle[$numRow]->getIdSearcher() ?>"
+                                       value="<?= $createdSponsorBundle[$numRow]->getIdSearcher() ?>"
                                        type="hidden" ;
                                        readonly>-->
                                 <!-- Text Sponsor Way  -->
@@ -63,7 +64,7 @@
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            type="text"
                                            name="sponsorWay"
-                                           value="<?= $allSponsorBundle[$numRow]->getSponsorWay() ?>">
+                                           value="<?= $createdSponsorBundle[$numRow]->getSponsorWay() ?>">
                                 </div>
                                 <!-- Cost Sponsor Way -->
                                 <div class="field">
@@ -71,7 +72,7 @@
                                            name="sponsoringCost"
                                            type="number"
                                            step="0.01"
-                                           value="<?= $allSponsorBundle[$numRow]->getSponsoringCost() ?>">
+                                           value="<?= $createdSponsorBundle[$numRow]->getSponsoringCost() ?>">
                                 </div>
                                 <!-- Cost Sponsor Way -->
                                 <div class="field">
@@ -79,13 +80,13 @@
                                            name="sponsorDuration"
                                            type="number"
                                            step="0"
-                                           value="<?= $allSponsorBundle[$numRow]->getSponsorDuration() ?>">
+                                           value="<?= $createdSponsorBundle[$numRow]->getSponsorDuration() ?>">
                                 </div>
                                 <!-- Date Created Sponsor Way -->
                                 <div class="field">
                                     <input form="sponsorWay-<?= $numRow ?>"
                                            type="datetime-local"
-                                           value="<?= $allSponsorBundle[$numRow]->getSponsorDateCreated() ?>"
+                                           value="<?= $createdSponsorBundle[$numRow]->getSponsorDateCreated() ?>"
                                            readonly>
                                 </div>
                                 <!-- -->
