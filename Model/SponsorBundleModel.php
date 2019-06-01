@@ -16,6 +16,10 @@ class SponsorBundleModel extends BaseModel
 
     public function insertSponsorBundle($sponsorBundle)
     {
+        //
+        //$idAvailable = ($this->minIdAvailable()[0])->getMinid();
+        //
+        //
         $sql = "INSERT INTO $this->table
                 (idSponsorBundle, idSearcher, sponsorWay, sponsoringCost,
                 sponsorIma, sponsorDateCreated, sponsorDuration)
@@ -23,7 +27,7 @@ class SponsorBundleModel extends BaseModel
                 :sponsorIma, :sponsorDateCreated, :sponsorDuration)";
         //
         $params = array(
-            ':idSponsorBundle' => $sponsorBundle->getIdSponsorBundle(),
+            ':idSponsorBundle' => ($this->minIdAvailable()[0])->getMinid(),
             ':idSearcher' => $sponsorBundle->getIdSearcher(),
             ':sponsorWay' => $sponsorBundle->getSponsorWay(),
             ':sponsoringCost' => $sponsorBundle->getSponsoringCost(),

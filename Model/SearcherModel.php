@@ -28,7 +28,10 @@ class SearcherModel extends BaseModel
 
     public function insertSearcher($mail, $pass)
     {
-        $idAvailable = $this->minIdAvailable()->getMinId();
+        //$idAvailable = $this->minIdAvailable()->getMinId();
+        $idAvailable = ($this->minIdAvailable()[0])->getMinid();
+        //showPretty($idAvailable);
+        //die();
         //
         $sql = "
         INSERT INTO $this->table

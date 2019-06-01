@@ -64,7 +64,7 @@ class SponsorBundleController extends BaseController
             $createdDate = date('Y-m-d H:i:s');
             echo 'Fecha de creación: '.$createdDate.'<br>';
             //
-            $sponsorBundle->setIdSponsorBundle($sponsorBundleModel->minIdAvailable()->getMinId());
+            //$sponsorBundle->setIdSponsorBundle($sponsorBundleModel->minIdAvailable()->getMinId());
             $sponsorBundle->setIdSearcher($_SESSION['user']->getIdSearcher());
             $sponsorBundle->setSponsorWay($_POST['sponsorWay']);
             $sponsorBundle->setSponsoringCost($_POST['sponsoringCost']);

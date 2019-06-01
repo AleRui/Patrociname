@@ -72,8 +72,6 @@ class SponsorController extends BaseController
     {
         $sponsorModel = new SponsorModel;
         $checkMail = $sponsorModel->checkExistEmail($_POST['registerSponsorMail']);
-        //echo '$checkMail: '.$checkMail.'<br>';
-        //die();
         //
         //
         if ($checkMail) {

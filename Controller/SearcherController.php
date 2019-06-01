@@ -31,9 +31,6 @@ class SearcherController extends BaseController
             $searcherModel = new SearcherModel($this->controller);
             $userSearcher = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
             //
-            //showPretty($userSearcher);
-            //die();
-            //
             if ( !empty($userSearcher) && $userSearcher->getIdSearcher() ) {
                 //
                 userSession::getSession();
