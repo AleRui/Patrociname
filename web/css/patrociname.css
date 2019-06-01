@@ -2,64 +2,40 @@
  * CSS Patrociname
  */
 
-body {
-    background-color: #CCC;
-    /*background-image: url('../imas/background.jpg');*/
-    background-size: 1920px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous|Varela+Round&display=swap');
+
+body {  padding: 0px;  margin: 0px;  border: 0px; }
+
+header {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
-/* Header */
-header div {
-    background-color: #CCC;
+header > div:first-child > svg {
+  width: 70px;
 }
 
-/* main */
-main {
-    margin: 25px auto;
-    border: 1px solid blue;
+header > div:nth-child(2) > h1 {
+  border: 1px solid red; background-color: yellow;
+  padding: 0px;
+  margin: 0px;
+  /*font-family: 'Righteous', cursive;*/
+  font-family: 'Varela Round', sans-serif;
 }
 
-.row, .cards {
-    bordr: 1px solid green;
-    background-color: rgba(255,255,255,0.65);
+header > div:nth-child(3) > h5 {
+  padding: 0px;
+  margin: 0px;
+  /* font-family: 'Righteous', cursive; */
+  font-family: 'Varela Round', sans-serif;
 }
 
-.api {
-    margin-top: 45px;
-}
-
-/* Index */
-form h4 {
-    margin-top: 25px;
-}
-
-#registerSearcher {
-    display: none;
-    visibility: hidden;
-}
-
-#formSearcher {
-    display: none;
-    visibility: hidden;
-}
-
-#registerSponsor {
-    display: none;
-    visibility: hidden;
-}
-
-#formSponsor {
-    display: none;
-    visibility: hidden;
-}
-
-/* Footer */
-
-footer {
-    border: 1px solid red;
-    width: 100%;
-    /*position: relative;
-    bottom: 0px;*/
+header > div:last-child {
+  justify-self: flex-end;
 }
