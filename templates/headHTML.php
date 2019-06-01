@@ -13,10 +13,7 @@
     <script src="web/js/patrociname.js"></script>
     <!-- -->
     <!-- Font Awasone -->
-    <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-          crossorigin="anonymous">
+    <link href="web/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
 
     <!-- Propio CSS -->
     <link rel="stylesheet" type="text/css" href="web/css/patrociname.css">
@@ -29,6 +26,9 @@
     <div><?php include_once './web/imas/logoPatrociname.php'; ?></div>
     <div><h1>Patrociname</h1></div>
     <div><h5>V 3.0</h5></div>
-    <div>Redes Sociales</div>
+    <ul>
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-linkedin"></i></li>
+    </ul>
     </div>
 </header>

@@ -4,6 +4,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Righteous|Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:500i|Righteous|Varela+Round&display=swap');
+
+/*
+ * font-family: 'Righteous', cursive;
+ * font-family: 'Varela Round', sans-serif;
+ * font-family: 'Kanit', sans-serif;
+ */
 
 body {  padding: 0px;  margin: 0px;  border: 0px; }
 
@@ -22,20 +29,104 @@ header > div:first-child > svg {
 }
 
 header > div:nth-child(2) > h1 {
-  border: 1px solid red; background-color: yellow;
+  /*border: 1px solid red; background-color: yellow;*/
   padding: 0px;
   margin: 0px;
-  /*font-family: 'Righteous', cursive;*/
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Kanit', sans-serif;
+}
+
+header > div:nth-child(2) {
+  margin-left: 15px;
+}
+
+header > div:nth-child(3) {
+  margin: 13px 0px 0px 5px;;
 }
 
 header > div:nth-child(3) > h5 {
   padding: 0px;
   margin: 0px;
-  /* font-family: 'Righteous', cursive; */
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Kanit', sans-serif;
+  font-weight: lighter;
 }
 
-header > div:last-child {
-  justify-self: flex-end;
+header > ul {
+  margin-left: auto;
+  /* -- */
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
 }
+
+header > ul > li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+header > ul > li:last-of-type {
+  margin-right: 0px;
+}
+
+header > ul > li > i {
+  font-size: 1.8em;
+}
+
+/* -- Form Searcher Register -- */
+#cont-form-searcher-register {
+  display: none; /* Important, function with JS */
+  background-color: yellow;
+  width: 350px;
+  height: 350px;
+  border-radius: 350px;
+}
+
+.form-searcher-register {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80vh;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+
+.form-searcher-register > h4 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 1;
+  grid-row-end: 2
+}
+
+.form-searcher-register > div:nth-child(2) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2;
+  grid-row-end: 3;
+}
+
+.form-searcher-register > div:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 3;
+  grid-row-end: 4;
+}
+
+.form-searcher-register > button {
+  border: 1px solid red;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 4;
+  grid-row-end: 5;
+}
+
+
+
+
+
+
+
+
+
+

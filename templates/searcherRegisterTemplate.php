@@ -1,34 +1,36 @@
 <?php
 ?>
 
-<div class="column">
-    <!-- -->
-    <a class="ui button" id="showRegSer">Registrar Buscador</a>
-    <!-- -->
-    <form id="registerSearcher"
-          class="ui form registerSearcher"
-          action="?controller=searcher&action=registerSearcher"
-          method="POST">
-        <div class="field">
-            <!-- -->
+<div class="cont-searcher-register">
+    
+    <div id="cont-form-searcher-register">
+        <form id="registerSearcher"
+              class="form-searcher-register"
+              action="?controller=searcher&action=registerSearcher"
+              method="POST">
+            
             <h4 class="ui header">Buscador</h4>
-            <!-- -->
-            <label>email</label>
-            <input form="registerSearcher"
-                   id="registerSearcherMail"
-                   type="email"
-                   name="registerSearcherMail"
-                   required>
-            <span id="alertaRegisterMailSearcher"></span>
-        </div>
-        <!-- -->
-        <div class="field">
-            <label>password</label>
-            <input form="registerSearcher"
-                   name="registerSearcherPass"
-                   required>
-        </div>
-        <!-- -->
-        <button form="registerSearcher" class="ui button" type="submit">Registrar</button>
-    </form>
+            
+            <div class="field-searcher-register">
+                
+                <label>email</label>
+                <input form="registerSearcher"
+                       id="registerSearcherMail"
+                       type="email"
+                       name="registerSearcherMail"
+                       required>
+                <span id="alertaRegisterMailSearcher"></span>
+            </div>
+            
+            <div class="field-searcher-register">
+                <label>password</label>
+                <input form="registerSearcher"
+                       name="registerSearcherPass"
+                       required>
+            </div>
+            
+            <button form="registerSearcher" class="form-button-register" type="submit">Registrar</button>
+        </form>
+    </div>
+    
 </div>

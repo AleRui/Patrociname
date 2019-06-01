@@ -7,8 +7,6 @@ include_once 'templates/headHTML.php';
 
     <main class="container">
 
-        <!-- -->
-
         <?php require_once './templates/searcherHeaderTemplate.php'; ?>
 
         <!-- -->

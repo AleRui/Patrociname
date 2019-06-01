@@ -7,31 +7,21 @@ if (!empty($_SESSION)) {
 }
 ?>
     <!-- -->
-    <div class="ui grid container">
-        <!-- -->
-        <div class="two column row">
-            <!-- -->
-            <?php require_once './templates/searcherRegisterTemplate.php'; ?>
-            <!-- -->
-            <?php require_once './templates/searcherLoginTemplate.php'; ?>
-        </div>
-        <!-- -->
-        <div class="two column row">
-            <!-- -->
-            <?php require_once './templates/sponsorRegisterTemplate.php'; ?>
-            <!-- -->
-            <?php require_once './templates/sponsorLoginTemplate.php'; ?>
-        </div>
-    </div>
+    <button class="btn-showRegSearcher" onclick="showRegSearcher()">Registrar Searcher</button>
+    <button class="btn-showLogSearcher" onclick="showLogSearcher()">Login Searcher</button>
+    <button class="btn-showRegSponsor" onclick="showRegSponsor()">Registrar Sponsor</button>
+    <button class="btn-showLogSponsor" onclick="showLogSponsor()">Login Sponsor</button>
     <!-- -->
-    <div class="ui grid container api">
-        <div class="ui row">
-            <div class="ui stackable two column">
-                <!-- -->
-                <?php require_once './templates/searcherApiIndexTemplate.php'; ?>
-            </div>
-        </div>
-    </div>
+<?php require_once './templates/searcherRegisterTemplate.php'; ?>
+    <!-- -->
+<?php require_once './templates/searcherLoginTemplate.php'; ?>
+    <!-- -->
+    <!-- -->
+<?php require_once './templates/sponsorRegisterTemplate.php'; ?>
+    <!-- -->
+<?php require_once './templates/sponsorLoginTemplate.php'; ?>
+    <!-- -->
+<?php require_once './templates/searcherApiIndexTemplate.php'; ?>
     <!-- -->
 
 <?php include_once 'templates/footerHTML.php'; ?>
