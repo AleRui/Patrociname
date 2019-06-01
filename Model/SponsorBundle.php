@@ -74,6 +74,7 @@ class SponsorBundle
     {
         $this->sponsorDuration = $sponsorDuration;
     }
+
     private $sponsorIma;
     private $sponsorDateCreated;
 
@@ -112,7 +113,21 @@ class SponsorBundle
         return $this->minId;
     }
 
+    public function getMailSponsor()
+    {
+        return $this->mailSponsor;
+    }
 
+
+    public function getBuyDateSponsorBundle()
+    {
+        return $this->buyDateSponsorBundle;
+    }
+
+    public function getMailSearcher()
+    {
+        return $this->mailSearcher;
+    }
 
 
 }

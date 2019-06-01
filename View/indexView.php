@@ -28,7 +28,7 @@ if (!empty($_SESSION)) {
         <div class="ui row">
             <div class="ui stackable two column">
                 <!-- -->
-                <?php require_once './templates/apiIndexTemplate.php'; ?>
+                <?php require_once './templates/searcherApiIndexTemplate.php'; ?>
             </div>
         </div>
     </div>

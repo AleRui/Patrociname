@@ -36,6 +36,12 @@ require_once './Model/Sponsor.php';
                         es <?= $_SESSION['info_empresa']->fechaUltimoBalance ?></div>
                 </div>
             </div>
+            <div class="ui row">
+                <a class="ui button"
+                   href="?controller=sponsor&action=hideDataCIF">
+                    Ocultar Datos Empresa
+                </a>
+            </div>
             <?php
         }
         ?>

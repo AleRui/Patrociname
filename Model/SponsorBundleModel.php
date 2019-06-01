@@ -14,10 +14,14 @@ class SponsorBundleModel extends BaseModel
         parent::__construct($this->table);
     }
 
-    public function insertSponsorBundle($sponsorBundle)
+    public function insertSponsorBundle($sponsorBundle) // -- Create Searcher
     {
         //
         //$idAvailable = ($this->minIdAvailable()[0])->getMinid();
+        //
+        // Date
+        $createdDate = date('Y-m-d H:i:s');
+        //echo 'Fecha de creación: '.$createdDate.'<br>';
         //
         //
         $sql = "INSERT INTO $this->table
@@ -33,7 +37,7 @@ class SponsorBundleModel extends BaseModel
             ':sponsoringCost' => $sponsorBundle->getSponsoringCost(),
             ':sponsorDuration' => $sponsorBundle->getSponsorDuration(),
             ':sponsorIma' => $sponsorBundle->getSponsorIma(),
-            ':sponsorDateCreated' => $sponsorBundle->getSponsorDateCreated(),
+            ':sponsorDateCreated' => $createdDate,
         );
         //
         //showPretty($params);
@@ -45,8 +49,7 @@ class SponsorBundleModel extends BaseModel
     }
 
 
-
-    public function updateSponsorBundle($sponsorBundle)
+    public function updateSponsorBundle($sponsorBundle) // -- Modify Searcher
     {
         //
         $sql = "UPDATE $this->table
@@ -75,7 +78,7 @@ class SponsorBundleModel extends BaseModel
     }
 
 
-    public function deleteBundle($idSponsorBundle/*, $idSearcher*/)
+    public function deleteBundle($idSponsorBundle/*, $idSearcher*/) // -- Delete Searcher
     {
         //
         $sql = "DELETE FROM $this->table WHERE idSponsorBundle = :id";
@@ -89,7 +92,20 @@ class SponsorBundleModel extends BaseModel
 
     public function getAllSponsorBundleById($idSearcher) // -- Searcher
     {
-        $sql = "SELECT * FROM $this->table WHERE idSearcher = :id";
+        //
+        $sql = "
+        SELECT	t1.idSponsorBundle, t1.idSearcher, t1.sponsorWay, t1.sponsoringCost,
+                t1.sponsorIma, t1.sponsorDateCreated, t1.sponsorDuration,
+                t2.buyDateSponsorBundle,
+                t3.mailSponsor
+        FROM sponsorbundle t1
+        LEFT JOIN sponsorbuysponsoring t2
+        ON t1.idSponsorBundle = t2.idSponsorBundle
+        LEFT JOIN sponsor t3
+        ON t2.idSponsor = t3.idSponsor
+        WHERE t1.idSearcher = :id
+        ";
+        //
         $params = array(':id' => $idSearcher);
         //
         $query = $this::getConnection()->doQuery($sql, $params);
@@ -116,7 +132,7 @@ class SponsorBundleModel extends BaseModel
 
     public function getAllBoughtBundle($idSponsor) // -- Sponsor
     {
-        echo '$idSponsor: '.$idSponsor.'<br>';
+        echo '$idSponsor: ' . $idSponsor . '<br>';
         //
         $sql = "
             SELECT *
@@ -127,6 +143,48 @@ class SponsorBundleModel extends BaseModel
             ";
         //
         $params = array(':idSponsor' => $idSponsor);
+        //
+        $query = $this::getConnection()->doQuery($sql, $params);
+        //
+        return (is_object($query)) ? $this->getObject($query) : null;
+    }
+
+    // -------------------------------
+
+    function offerDataApi() // -- API
+    {
+        //
+        $sql = "
+        SELECT	t1.sponsorWay, t1.sponsoringCost, t1.sponsorIma, t1.sponsorDateCreated, t1.sponsorDuration,
+                t2.buyDateSponsorBundle,
+                t3.mailSponsor
+        FROM sponsorbundle t1
+        LEFT JOIN sponsorbuysponsoring t2
+        ON t1.idSponsorBundle = t2.idSponsorBundle
+        LEFT JOIN sponsor t3
+        ON t2.idSponsor = t3.idSponsor
+        ";
+        //
+        $sql = "
+        SELECT	t1.sponsorWay, t1.sponsoringCost, t1.sponsorIma, t1.sponsorDateCreated, t1.sponsorDuration,
+		t2.mailSearcher,
+        t3.buyDateSponsorBundle,
+        t4.mailSponsor
+        FROM sponsorbundle t1
+        LEFT JOIN searcher t2
+        ON t1.idSearcher = t2.idSearcher
+        LEFT JOIN sponsorbuysponsoring t3
+        ON t1.idSponsorBundle = t3.idSponsorBundle
+        LEFT JOIN sponsor t4
+        ON t3.idSponsor = t4.idSponsor
+        ";
+        //
+        //$query = SponsorBundle::getConnection()->doQuery($sql);
+        //
+        //$result = $query->fetchAll();
+        //
+        //return $result;
+        $params = array();
         //
         $query = $this::getConnection()->doQuery($sql, $params);
         //

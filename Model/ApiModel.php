@@ -88,19 +88,3 @@ function runAPI($cif)
     } // END GET TOKEN
 
 }
-
-
-function offerData()
-{
-    //
-    $sql = "SELECT mailSearcher, sponsorWay, sponsoringCost FROM sponsorbundle b
-    LEFT JOIN searcher s ON b.idSearcher = s.idSearcher";
-    //
-    require_once 'core/BaseModel.php';
-    $baseModel = new BaseModel('SponsorBundle');
-    $query = $baseModel::getConnection()->doQuery($sql);
-    //
-    $result = $query->fetchAll();
-    //
-    return $result;
-}

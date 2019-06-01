@@ -6,6 +6,6 @@
 </div>
 <!-- -->
 <div class="column">
-    <a class="ui button" href="?controller=Api&action=sendData">API-REST</a>
+    <a class="ui button" href="?controller=Api&action=sendDataApi">API-REST</a>
 </div>
 <div class="ui vertical divider"></div>

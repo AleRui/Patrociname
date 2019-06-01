@@ -10,8 +10,10 @@
         <div class="ui cards">
             <?php
             if (isset($_SESSION['createdSponsorBundle'])) {
+                //
                 $createdSponsorBundle = unserialize($_SESSION['createdSponsorBundle']);
                 //showPretty($createdSponsorBundle);
+                //
                 for ($numRow = 0; $numRow < count($createdSponsorBundle); $numRow++) {
                     ?>
                     <!-- -->
@@ -92,17 +94,32 @@
                                 <!-- -->
 
                                 <!-- Buttons -->
-                                <button type=""
-                                        class="ui button"
-                                        form="sponsorWay-<?= $numRow ?>"
-                                        onclick="setActionUpdate(<?= $numRow ?>)">Actualizar
-                                </button>
-                                <!-- -->
-                                <button type=""
-                                        class="ui button"
-                                        form="sponsorWay-<?= $numRow ?>"
-                                        onclick="setActionDelete(<?= $numRow ?>)">Borrar
-                                </button>
+                                <?php
+                                if ($createdSponsorBundle[$numRow]->getMailSponsor()) {
+                                    echo '<div>Producto comprado por: ';
+                                    echo $createdSponsorBundle[$numRow]->getMailSponsor();
+                                    echo '</div>';
+                                    echo '<div>La fecha de compra fue: ';
+                                    echo $createdSponsorBundle[$numRow]->getBuyDateSponsorBundle();
+                                    echo '</div>';
+                                } else {
+                                    echo '<div>Actualmente este Sponsor Way no ha sido comprado.</div><br>';
+                                    ?>
+                                    <button type=""
+                                            class="ui button"
+                                            form="sponsorWay-<?= $numRow ?>"
+                                            onclick="setActionUpdate(<?= $numRow ?>)">Actualizar
+                                    </button>
+                                    <!-- -->
+                                    <button type=""
+                                            class="ui button"
+                                            form="sponsorWay-<?= $numRow ?>"
+                                            onclick="setActionDelete(<?= $numRow ?>)">Borrar
+                                    </button>
+                                    <?php
+                                }
+                                ?>
+
                             </form>
                             <!-- -->
 

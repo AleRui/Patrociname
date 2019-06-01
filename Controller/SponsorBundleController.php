@@ -70,7 +70,7 @@ class SponsorBundleController extends BaseController
             $sponsorBundle->setSponsoringCost($_POST['sponsoringCost']);
             $sponsorBundle->setSponsorDuration($_POST['sponsorDuration']);
             $sponsorBundle->setSponsorIma($imagePath);
-            $sponsorBundle->setSponsorDateCreated($createdDate);
+            //$sponsorBundle->setSponsorDateCreated($createdDate);
             //showPretty($sponsorBundle);
             //die();
             //

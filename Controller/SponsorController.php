@@ -137,6 +137,19 @@ class SponsorController extends BaseController
         }
     }
 
+
+    public function hideDataCIF() {
+        //
+        if (userSession::getSession()->checkActiveSession()) {
+            //
+            unset($_SESSION['info_empresa']);
+            header('Location:?controller=sponsor&action=index');
+        } else {
+            header('Location:?controller=index&action=index');
+        }
+    }
+
+
     public function findAllAvailableBundle()
     {
         if (userSession::getSession()->checkActiveSession()) {

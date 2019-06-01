@@ -23,12 +23,17 @@ class sponsorBuySponsoringModel extends BaseModel
         echo 'idSponsorBundle: ' . $idSponsorBundle . '<br>';
         echo 'Sponsor: ' . $idSponsor . '<br>';
         //
-        $sql = "INSERT INTO $this->table (idSponsorBundle, idSponsor) 
-                VALUES ( :idSponsorBundle, :idSponsor)";
+        // Date
+        $buyDateSponsorBundle = date('Y-m-d H:i:s');
+        //echo 'Fecha de creación: '.$buyDateSponsorBundle.'<br>';
+        //
+        $sql = "INSERT INTO $this->table (idSponsorBundle, idSponsor, buyDateSponsorBundle) 
+                VALUES ( :idSponsorBundle, :idSponsor, :dateBuySponsorBundle)";
         //
         $params = array(
             ':idSponsorBundle' => $idSponsorBundle,
-            ':idSponsor' => $idSponsor
+            ':idSponsor' => $idSponsor,
+            ':dateBuySponsorBundle' => $buyDateSponsorBundle
         );
         //die();
         //
