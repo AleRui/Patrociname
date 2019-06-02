@@ -12,17 +12,12 @@ class Connection // Singleton
     private static $instance = null;
     private static $connectionDB;
 
-    /**
-     * Connection constructor.
-     */
     private function __construct() // Singleton private | protected
     {
         return self::connection_PDO();
     }
 
-    /**
-     * @return Connection|null
-     */
+
     public static function getInstance() //Singleton Instancia public static
     {
         if (is_null(self::$instance)) {
@@ -31,9 +26,7 @@ class Connection // Singleton
         return self::$instance;
     }
 
-    /**
-     * @return PDO | Error
-     */
+
     private function connection_PDO() // Singleton public static
     {
         $dataBaseConfig = require 'config/db_hp.php';
@@ -61,44 +54,34 @@ class Connection // Singleton
 
     }
 
-    /**
-     * @throws null
-     */
+
     public function __destruct() // Singleton private
     {
         Connection::$connectionDB = null;
     }
 
-    /**
-     * @throws Exception
-     */
+
     public function __clone() // Singleton
     {
         throw new Exception('Feature disabled.');
     }
 
-    /**
-     * @throws Exception
-     */
+
+
     public function __wakeup() //Singleton
     {
         throw new Exception('Feature disabled.');
     }
 
 
-    /**
-     * @param $sql
-     * @param array $params
-     * @return bool|PDOStatement
-     */
     public function doQuery($sql, $params = array())
     {
         //
-        $prp = self::$connectionDB->prepare($sql);
+        $prepared = self::$connectionDB->prepare($sql);
         //
-        $prp->execute($params);
+        $prepared->execute($params);
         //
-        return $prp;
+        return $prepared;
     }
 
 }

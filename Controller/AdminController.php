@@ -4,18 +4,31 @@
 require_once 'core/BaseController.php';
 require_once 'core/UserSession.php';
 require_once 'Model/Admin.php';
+require_once 'Model/AdminModel.php';
 /* -- */
 
 
-class AdminController
+class AdminController extends BaseController
 {
+
+    private $controller = 'admin';
+
+    public function __construct()
+    {
+        parent::__construct($this->controller);
+    }
+
     public function login()
     {
-        die();
+        showPretty($_POST);
         if ($_POST['mail'] && $_POST['pass']) {
             //
             $adminModel = new AdminModel($this->controller);
-            $userAdmin = $adminModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
+            //showPretty($adminModel);
+            //die();
+            $userAdmin = $adminModel->checkExitAdmin($_POST['mail'], $_POST['pass']);
+            //showPretty($userAdmin);
+            die();
             //
             if ( !empty($userAdmin) && $userAdmin->getIdAdmin() ) {
                 //

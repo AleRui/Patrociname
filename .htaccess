@@ -27,5 +27,6 @@
     #
     RewriteEngine On
     RewriteRule ^admin$ ?controller=admin&action=index [NC]
+    RewriteRule ^adminLogin$ ?controller=admin&action=login [NC]
     #
 </IfModule>

@@ -2,7 +2,7 @@
 
 require_once 'core/BaseModel.php';
 
-class AdminModel
+class AdminModel extends BaseModel
 {
     private $table = "admin";
 
@@ -14,6 +14,9 @@ class AdminModel
 
     public function checkExitAdmin($mail, $pass)
     {
+        //echo $mail.'<br>';
+        //echo $pass.'<br>';
+        //
         $sql = "SELECT idAdmin, mailAdmin FROM $this->table WHERE mailAdmin = :mail AND passAdmin = MD5(:pass)";
         $params = array(
             ':mail' => $mail,

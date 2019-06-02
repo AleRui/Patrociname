@@ -15,7 +15,7 @@ if (!empty($_SESSION)) {
     <!-- -->
     <h1>Administrador:</h1>
     <!-- -->
-    <?php require_once './templates/searcherLoginTemplate.php'; ?>
+    <?php require_once './templates/adminLoginTemplate.php'; ?>
     <!-- -->
 <?php
 }

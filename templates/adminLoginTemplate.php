@@ -4,7 +4,7 @@
 <div>
     <!-- -->
     <form id="formLoginAdmin"
-          action="?controller=admin&action=login"
+          action="adminLogin"
           method="POST">
         <!-- -->
         <h4>Entrar Admin</h4>
