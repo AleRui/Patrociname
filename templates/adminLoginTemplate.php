@@ -1,36 +1,32 @@
 <?php
 ?>
 
-<div class="column">
+<div>
     <!-- -->
-    <a class="ui button" id="showSer">Entrar Buscador</a>
-    <!-- -->
-    <form id="formSearcher"
-          class="ui form"
-          action="?controller=searcher&action=login"
+    <form id="formLoginAdmin"
+          action="?controller=admin&action=login"
           method="POST">
         <!-- -->
-        <h4 class="ui header">Entrar Buscador</h4>
+        <h4>Entrar Admin</h4>
         <!-- -->
-        <div class="field">
+        <div>
             <label>email</label>
-            <input form="formSearcher"
-                   id="registerSearcherMail"
+            <input form="formLoginAdmin"
+                   id="registerAdminMail"
                    type="email"
                    name="mail"
                    required>
             <span id="alertaMailSearcher"></span>
         </div>
         <!-- -->
-        <div class="field">
+        <div>
             <label>password</label>
-            <input form="formSearcher"
+            <input form="formLoginAdmin"
                    name="pass"
                    required>
         </div>
         <!-- -->
-        <button form="formSearcher"
-                class="ui button"
+        <button form="formLoginAdmin"
                 type="submit">
             Login
         </button>

@@ -1,0 +1,31 @@
+
+#-----------#
+# .htaccess #
+#-----------#
+
+# @uthor: Ale Ruiz
+
+# So this .htaccess function need:
+# 1- In a clean instalation apache activate module rewrite and restart apache:
+# $ sudo a2enmod rewrite
+# $ sudo systemctl restart apache2
+#
+# 2- Add this rule to virtual host:
+#<VirtualHost *:80>
+#   <Directory /var/www/html>
+#       ...
+#       Options Indexes FollowSymLinks MultiViews
+#       AllowOverride All
+#       Require all granted
+#       ...
+#   </Directory>
+#</VirtualHost>
+
+
+# Redirects
+<IfModule mod_rewrite.c>
+    #
+    RewriteEngine On
+    RewriteRule ^admin$ ?controller=admin&action=index [NC]
+    #
+</IfModule>

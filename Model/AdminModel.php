@@ -2,11 +2,9 @@
 
 require_once 'core/BaseModel.php';
 
-
-class SearcherModel extends BaseModel
+class AdminModel
 {
-
-    private $table = "searcher";
+    private $table = "admin";
 
     public function __construct()
     {
@@ -14,9 +12,9 @@ class SearcherModel extends BaseModel
     }
 
 
-    public function checkExitSearcher($mail, $pass)
+    public function checkExitAdmin($mail, $pass)
     {
-        $sql = "SELECT idSearcher, mailSearcher FROM $this->table WHERE mailSearcher = :mail AND passSearcher = MD5(:pass)";
+        $sql = "SELECT idAdmin, mailAdmin FROM $this->table WHERE mailAdmin = :mail AND passAdmin = MD5(:pass)";
         $params = array(
             ':mail' => $mail,
             ':pass' => $pass
@@ -26,14 +24,14 @@ class SearcherModel extends BaseModel
     }
 
 
-    public function insertSearcher($mail, $pass)
+    public function insertAdmin($mail, $pass)
     {
         //
         $idAvailable = ($this->minIdAvailable()[0])->getMinid();
         //
         $sql = "
         INSERT INTO $this->table
-        (idSearcher, mailSearcher, passSearcher)
+        (idAdmin, mailAdmin, passAdmin)
         VALUES ( :id, :mail, MD5(:pass) )
         ";
         //
@@ -49,11 +47,10 @@ class SearcherModel extends BaseModel
 
     public function checkExistEmail($mail)
     {
-        $sql = "SELECT mailSearcher FROM $this->table WHERE mailSearcher = :mail";
+        $sql = "SELECT mailAdmin FROM $this->table WHERE mailAdmin = :mail";
         $params = array(':mail' => $mail);
         //
         return $this->executeQuery($sql, $params);
     }
-
 
 }

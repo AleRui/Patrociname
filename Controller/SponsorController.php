@@ -93,14 +93,6 @@ class SponsorController extends BaseController
         }
     }
 
-    public function logout()
-    {
-        if (userSession::getSession()->checkActiveSession()) {
-            userSession::getSession(unserialize($_SESSION['user']))->__destroy();
-            header('Location:?controller=index&action=index');
-        }
-    }
-
 
     public function checkExistEmail()
     {

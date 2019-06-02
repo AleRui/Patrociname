@@ -20,9 +20,22 @@ class BaseController
 
     public function view()
     {
-        //echo './View/' . $this->controller . 'View.php';
-        //die();
-        //
-        require_once './View/' . $this->controller . 'View.php';
+        if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
+
+            require_once './View/' . $this->controller . 'View.php';
+
+        } else {
+
+            require_once './View/indexView.php';
+
+        }
+    }
+
+    public function logout() // -- Cualquier usuario
+    {
+        if ( userSession::getSession()->checkActiveSession() ) {
+            userSession::getSession(unserialize($_SESSION['user']))->__destroy();
+            header('Location:?controller=index&action=index');
+        }
     }
 }

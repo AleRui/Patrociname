@@ -8,10 +8,11 @@
  * Time: 20:31
  */
 
-require_once 'core/BaseController.php';
-require_once 'core/UserSession.php';
-require_once 'Model/Searcher.php';
+require_once './core/BaseController.php';
+require_once './core/UserSession.php';
+require_once './Model/Searcher.php';
 require_once './Model/SearcherModel.php';
+require_once './Model/SponsorBundleModel.php';
 
 class SearcherController extends BaseController
 {
@@ -22,7 +23,6 @@ class SearcherController extends BaseController
         parent::__construct($this->controller);
     }
 
-    //METODOS
 
     public function login()
     {
@@ -31,7 +31,7 @@ class SearcherController extends BaseController
             $searcherModel = new SearcherModel($this->controller);
             $userSearcher = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
             //
-            if ( !empty($userSearcher) && $userSearcher->getIdSearcher() ) {
+            if (!empty($userSearcher) && $userSearcher->getIdSearcher()) {
                 //
                 userSession::getSession();
                 userSession::getSession()->setUserSession($userSearcher);
@@ -51,11 +51,8 @@ class SearcherController extends BaseController
     {
         userSession::getSession();
         //
-        if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
+        if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
             //
-            //showPretty($_SESSION);
-            //
-            require_once 'Model/SponsorBundleModel.php';
             $sponsorBundleObj = new SponsorBundleModel();
             //
             $createdSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
@@ -101,17 +98,10 @@ class SearcherController extends BaseController
             $searcherModel = new SearcherModel;
             $response = $searcherModel->checkExistEmail($_POST['mailInserted']);
             //
-            echo $response ? 'Si existe email' : 'No existe email';
+            echo $response ? 'Si existe email' : '';
             return $response;
         }
     }
 
-    public function logout()
-    {
-        if ( userSession::getSession()->checkActiveSession() ) {
-        userSession::getSession(unserialize($_SESSION['user']))->__destroy();
-        header('Location:?controller=index&action=index');
-        }
-    }
 
 }
