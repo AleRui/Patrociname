@@ -26,16 +26,17 @@ class AdminController extends BaseController
             $adminModel = new AdminModel($this->controller);
             //showPretty($adminModel);
             //die();
-            $userAdmin = $adminModel->checkExitAdmin($_POST['mail'], $_POST['pass']);
+            $userAdmin = $adminModel->checkExitAdmin($_POST['mail'], $_POST['pass'])[0];
             //showPretty($userAdmin);
-            die();
             //
             if ( !empty($userAdmin) && $userAdmin->getIdAdmin() ) {
                 //
                 userSession::getSession();
                 userSession::getSession()->setUserSession($userAdmin);
+                showPretty($_SESSION);
                 //
-                header('Location:?controller=admin&action=index');
+                die();
+                header('Location:'.$_SERVER['DOCUMENT_ROOT'].'?controller=admin&action=index');
             } else {
                 //
                 header('Location:?controller=admin&action=index');

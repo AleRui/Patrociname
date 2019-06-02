@@ -8,18 +8,14 @@ if ($_SESSION) {
 }
 
 ?>
-<div class="ui container">
+<div>
     <!-- -->
-    <div class="ui grid">
-        <div class="four column row">
-            <div class="left floated column">
-                <h2 class="ui header">Buscador</h2>
-                <div>idSearcher:<?= $_SESSION['user']->getIdSearcher() ?></div>
-                <div>mailSearcher:<?= $_SESSION['user']->getMailSearcher() ?></div>
-            </div>
-            <div class="right floated column">
-                <a class="ui black basic button" href="?controller=searcher&action=logout">Logout</a>
-            </div>
-        </div>
+    <div>
+        <h2>Buscador</h2>
+        <div>idSearcher:<?= $_SESSION['user']->getIdSearcher() ?></div>
+        <div>mailSearcher:<?= $_SESSION['user']->getMailSearcher() ?></div>
+    </div>
+    <div>
+        <a href="?controller=searcher&action=logout">Logout</a>
     </div>
 </div>

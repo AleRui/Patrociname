@@ -14,25 +14,22 @@ class Router
 
     public function __construct()
     {
-        //$this->controller = $controller;
-        //$this->action = $action;
     }
 
-    public function basicRoute() {
+    public function basicRoute()
+    {
         //showPretty($_GET);
         //die();
         //
         if (isset($_GET['controller']) && !empty($_GET['controller']) &&
-            isset($_GET['action']) && !empty($_GET['action']) ) {
+            isset($_GET['action']) && !empty($_GET['action'])) {
             //
             $this->controller = $_GET['controller'];
             $this->action = $_GET['action'];
             //
-            //$route = new Router($_GET['controller'], $_GET['action']);
-            //$this->charge_Controller();
-        } else if ($_GET) {
-            showPretty($_GET);
-            die();
+            //} else if ($_GET) {
+            //    showPretty($_GET);
+            //    die();
         } else {
             $this->controller = 'Index';
             $this->action = 'index';

@@ -24,9 +24,12 @@
 
 # Redirects
 <IfModule mod_rewrite.c>
+    # Impedir lista de directorios
+    #Options -Indexes
     #
-    RewriteEngine On
-    RewriteRule ^admin$ ?controller=admin&action=index [NC]
-    RewriteRule ^adminLogin$ ?controller=admin&action=login [NC]
+    #Options +FollowSymLinks
+    #RewriteEngine on
+    # Cuando escribe admin en la ruta va a el siguiente controladpor
+    #RewriteRule ^admin$ admin.php
     #
 </IfModule>
