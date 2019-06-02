@@ -154,7 +154,7 @@ class SponsorBundleModel extends BaseModel
     function offerDataApi() // -- API
     {
         //
-        $sql = "
+        /*$sql = "
         SELECT	t1.sponsorWay, t1.sponsoringCost, t1.sponsorIma, t1.sponsorDateCreated, t1.sponsorDuration,
                 t2.buyDateSponsorBundle,
                 t3.mailSponsor
@@ -163,7 +163,7 @@ class SponsorBundleModel extends BaseModel
         ON t1.idSponsorBundle = t2.idSponsorBundle
         LEFT JOIN sponsor t3
         ON t2.idSponsor = t3.idSponsor
-        ";
+        ";*/
         //
         $sql = "
         SELECT	t1.sponsorWay, t1.sponsoringCost, t1.sponsorIma, t1.sponsorDateCreated, t1.sponsorDuration,
@@ -179,11 +179,6 @@ class SponsorBundleModel extends BaseModel
         ON t3.idSponsor = t4.idSponsor
         ";
         //
-        //$query = SponsorBundle::getConnection()->doQuery($sql);
-        //
-        //$result = $query->fetchAll();
-        //
-        //return $result;
         $params = array();
         //
         $query = $this::getConnection()->doQuery($sql, $params);

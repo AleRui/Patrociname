@@ -14,6 +14,9 @@
     <!-- -->
     <!-- Font Awasone -->
     <link href="web/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+    <!-- ChartJS -->
+    <script src="web/node_modules/chart.js/dist/Chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="web/node_modules/chart.js/dist/Chart.min.css">
 
     <!-- Propio CSS -->
     <link rel="stylesheet" type="text/css" href="web/css/patrociname.css">

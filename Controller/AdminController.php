@@ -5,6 +5,7 @@ require_once 'core/BaseController.php';
 require_once 'core/UserSession.php';
 require_once 'Model/Admin.php';
 require_once 'Model/AdminModel.php';
+require_once 'Model/AdminChart01.php';
 /* -- */
 
 
@@ -64,7 +65,13 @@ class AdminController extends BaseController
         $data_chart_01 = '';
         if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
             //
-            $data_chart_01 = 'Info Chart';
+            $adminChart01 = new AdminChart01();
+            $data = $adminChart01->getChart01info();
+            //showPretty($data);
+            //$data = $this->mapInfoToJson($data);
+            //showPretty($data);
+            //
+            //$data_chart_01 = 'Info Chart';
         }
         echo $data_chart_01;
     }

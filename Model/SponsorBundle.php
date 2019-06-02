@@ -130,4 +130,10 @@ class SponsorBundle
     }
 
 
+    public function getNumTotalSponsorCreated()
+    {
+        return $this->numTotalSponsorCreated;
+    }
+
+
 }
