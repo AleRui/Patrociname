@@ -2,10 +2,10 @@
 
 require_once './Model/Admin.php';
 
-if ($_SESSION) {
+//if ($_SESSION) {
     //showPretty($_SESSION);
     //showPretty()$_SESSION['user'];
-}
+//}
 
 ?>
 <div>

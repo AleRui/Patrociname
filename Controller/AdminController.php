@@ -33,16 +33,15 @@ class AdminController extends BaseController
                 //
                 userSession::getSession();
                 userSession::getSession()->setUserSession($userAdmin);
-                showPretty($_SESSION);
+                //showPretty($_SESSION);
                 //
-                die();
-                header('Location:'.$_SERVER['DOCUMENT_ROOT'].'?controller=admin&action=index');
+                header('Location: ./?controller=admin&action=index');
             } else {
                 //
-                header('Location:?controller=admin&action=index');
+                header('Location:./?controller=admin&action=index');
             }
         } else {
-            header('Location:?controller=admin&action=index');
+            header('./Location:?controller=admin&action=index');
         }
     }
 
@@ -60,16 +59,14 @@ class AdminController extends BaseController
     }
 
 
-    public function checkExistEmail()
+    public function getInfoChart_01() // -- Ajax
     {
-        if (!empty($_POST['mailInserted'])) {
+        $data_chart_01 = '';
+        if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
             //
-            $adminModel = new AdminModel;
-            $response = $adminModel->checkExistEmail($_POST['mailInserted']);
-            //
-            echo $response ? 'Existe email' : '';
-            return $response;
+            $data_chart_01 = 'Info Chart';
         }
+        echo $data_chart_01;
     }
 
 }

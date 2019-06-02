@@ -3,6 +3,37 @@
  * Patrociname Functions
  */
 
+$(document).ready(function () {
+    //
+    console.log('document ready');
+    //
+    $('#registerSearcherMail').blur(function () {
+        //
+        var searcherMailInsert = $('#registerSearcherMail').val();
+        //
+        $.ajax({
+            // Envío
+            url: '?controller=searcher&action=checkExistEmail',
+            method: 'POST',
+            data: {
+                'mailInserted': searcherMailInsert,
+            },
+            dataType: 'text',
+            //
+            // Respuesta
+            success: function (data) {
+                $('#alertaRegisterMailSearcher').html(data);
+            }
+        })
+    });
+    //
+    // Charts
+    if ( $("#cont-chart-01").length ) {
+        console.log('Funcionando Charts');
+    }
+});
+
+
 function setActionDelete($numRow) {
     //console.log('Funcionando setActionDelete()');
     $('#sponsorWay-' + $numRow).attr(
@@ -22,6 +53,8 @@ function setActionUpdate($numRow) {
 }
 
 
+
+/* -- Style -- */
 
 function showImageBeforeUpload(input) {
     if (input.files && input.files[0]) {
@@ -44,30 +77,6 @@ function showImageBeforeUpload(input) {
 
 
 
-$(document).ready(function () {
-    //
-    $('#registerSearcherMail').blur(function () {
-        //
-        var searcherMailInsert = $('#registerSearcherMail').val();
-        //
-        $.ajax({
-            // Envío
-            url: '?controller=searcher&action=checkExistEmail',
-            method: 'POST',
-            data: {
-                'mailInserted': searcherMailInsert,
-            },
-            dataType: 'text',
-            //
-            // Respuesta
-            success: function (data) {
-                $('#alertaRegisterMailSearcher').html(data);
-            }
-        })
-    });
-});
-
-/* -- Style -- */
 function showRegSearcher() {
     if ( $('#cont-form-searcher-register').css('display') === 'block') {
         $('#cont-form-searcher-register').fadeOut(1000);
@@ -77,7 +86,7 @@ function showRegSearcher() {
     //
 }
 
-function showLogSearcher() {}
-function showRegSponsor() {}
-function showLogSponsor() {}
+//function showLogSearcher() {}
+//function showRegSponsor() {}
+//function showLogSponsor() {}
 

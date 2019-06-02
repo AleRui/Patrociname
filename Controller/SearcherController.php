@@ -91,7 +91,7 @@ class SearcherController extends BaseController
     }
 
 
-    public function checkExistEmail()
+    public function checkExistEmail() // -- Ajax
     {
         if (!empty($_POST['mailInserted'])) {
             //

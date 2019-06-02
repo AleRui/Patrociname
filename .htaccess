@@ -25,7 +25,7 @@
 # Redirects
 <IfModule mod_rewrite.c>
     # Impedir lista de directorios
-    #Options -Indexes
+    Options -Indexes
     #
     #Options +FollowSymLinks
     #RewriteEngine on

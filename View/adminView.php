@@ -1,12 +1,19 @@
 <?php
+?>
+<!-- -->
+<?php include_once 'templates/adminHeadHTML.php'; ?>
+<!-- -->
+<?php
 if (!empty($_SESSION['user'])) {
     //
-    showPretty($_SESSION);
+    //showPretty($_SESSION);
     ?>
     <!-- -->
     <h1>Administrador:</h1>
     <!-- -->
     <?php require_once './templates/adminHeaderTemplate.php'; ?>
+    <!-- -->
+    <?php require_once './templates/adminChartsTemplate.php'; ?>
     <!-- -->
     <?php
 } else {
@@ -19,5 +26,7 @@ if (!empty($_SESSION['user'])) {
     <?php
 }
 ?>
-
+<!-- -->
+<?php include_once 'templates/footerHTML.php'; ?>
+<!-- -->
 

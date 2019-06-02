@@ -1,11 +1,11 @@
-<?php include_once 'templates/headHTML.php'; ?>
-
 <?php
 if (!empty($_SESSION)) {
     echo 'Existe Session';
     showPretty($_SESSION);
 }
 ?>
+
+<?php include_once 'templates/headHTML.php'; ?>
     <!-- -->
     <button class="btn-showRegSearcher" onclick="showRegSearcher()">Registrar Searcher</button>
     <button class="btn-showLogSearcher" onclick="showLogSearcher()">Login Searcher</button>
