@@ -41,9 +41,9 @@ class adminChart01
     {
         //
         $sql = "
-        SELECT t1.sponsorDateCreated, COUNT(t1.sponsorDateCreated) AS 'numTotalSponsorCreated'
+        SELECT DATE_FORMAT(t1.sponsorDateCreated, '%Y-%m-%d') AS `sponsorDateCreated`, COUNT(t1.sponsorDateCreated) AS 'numTotalSponsorCreated'
         FROM sponsorbundle t1
-        GROUP BY DATE_FORMAT(t1.sponsorDateCreated, '%Y%m%d')
+        GROUP BY DATE_FORMAT(t1.sponsorDateCreated, '%Y-%m-%d')
         ";
         $params = array();
         //
@@ -52,11 +52,9 @@ class adminChart01
         $baseModel = new BaseModel('sponsorBundle');
         //
         $data = $baseModel->executeQuery($sql, $params);
-        //showPretty($data);
         $data = $this->mapInfoToJson($data);
-        showPretty($data);
         //
-        return true;
+        return $data;
     }
 
 
@@ -64,22 +62,26 @@ class adminChart01
     {
         //
         $conjuntoItems = Array();
-        //
         $label = Array();
+        $values = Array();
         //
         foreach ($data as $item) {
-            $mapedItem = Array();
+            //$mapedItem = Array();
             //
-            if ($item->getSponsorDateCreated() && !empty($item->getSponsorDateCreated())) {
-                $mapedItem['sponsorDateCreated'] = $item->getSponsorDateCreated();
+            if (
+                $item->getSponsorDateCreated() && !empty($item->getSponsorDateCreated())
+                && $item->getNumTotalSponsorCreated() && !empty($item->getNumTotalSponsorCreated())
+
+            ) {
+                array_push($label, $item->getSponsorDateCreated());
+                array_push($values, $item->getNumTotalSponsorCreated());
             }
-            //
-            if ($item->getNumTotalSponsorCreated() && !empty($item->getNumTotalSponsorCreated())) {
-                $mapedItem['numTotalSponsorCreated'] = $item->getNumTotalSponsorCreated();
-            }
-            //
-            array_push($conjuntoItems, $mapedItem);
         }
+        //
+        $conjuntoItems = [
+            'label' => $label,
+            'values' => $values,
+        ];
         //
         return $conjuntoItems;
     }

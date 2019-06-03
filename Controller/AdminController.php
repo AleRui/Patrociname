@@ -66,14 +66,20 @@ class AdminController extends BaseController
         if ( userSession::getSession()->checkActiveSession() && $_SESSION['user'] ) {
             //
             $adminChart01 = new AdminChart01();
-            $data = $adminChart01->getChart01info();
+            $data_chart_01 = $adminChart01->getChart01info();
             //showPretty($data);
-            //$data = $this->mapInfoToJson($data);
+            //$data = $adminChart01->mapInfoToJson($data);
             //showPretty($data);
             //
             //$data_chart_01 = 'Info Chart';
         }
-        echo $data_chart_01;
+        //
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header("Access-Control-Allow-Credentials: true");
+        header("Access-Control-Allow-Methods: POST, GET, DELETE, PATCH, PUT, OPTIONS");
+        header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, X-Auth-Token");
+        echo json_encode($data_chart_01);
     }
 
 }
