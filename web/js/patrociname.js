@@ -76,12 +76,14 @@ function showImageBeforeUpload(input) {
 }
 
 
-
-function showRegSearcher() {
-    if ( $('#cont-form-searcher-register').css('display') === 'block') {
-        $('#cont-form-searcher-register').fadeOut(1000);
+function showContainer(element) {
+    console.log(element);
+    let container = '#'+element.id.replace("btnShow-", "");
+    console.log(container);
+    if ( $(container).css('display') === 'block') {
+        $(container).fadeOut(1000);
     } else {
-        $('#cont-form-searcher-register').fadeIn(1000);
+        $(container).fadeIn(1000);
     }
     //
 }

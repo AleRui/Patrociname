@@ -1,9 +1,9 @@
 <?php
 ?>
 
-<div class="column">
+<div  id="cont-sponsor-register" class="cont-sponsor-register">
     <!-- -->
-    <a class="ui button" id="showRegSpo">Registrar Sponsor</a>
+    <!-- <a class="ui button" id="showRegSpo">Registrar Sponsor</a> -->
     <!-- -->
     <form id="registerSponsor"
           class="ui form"

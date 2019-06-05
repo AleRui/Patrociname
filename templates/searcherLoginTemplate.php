@@ -1,9 +1,9 @@
 <?php
 ?>
 
-<div class="column">
+<div  id="cont-searcher-login" class="cont-searcher-login">
     <!-- -->
-    <a class="ui button" id="showSer">Entrar Buscador</a>
+    <!-- <a class="ui button" id="showSer">Entrar Buscador</a> -->
     <!-- -->
     <form id="formSearcher"
           class="ui form"

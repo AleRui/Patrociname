@@ -72,8 +72,13 @@ header > ul > li > i {
 }
 
 /* -- Form Searcher Register -- */
+#cont-searcher-register, #cont-searcher-login,
+#cont-sponsor-register, #cont-sponsor-login {
+  display: none;
+}
+
 #cont-form-searcher-register {
-  display: none; /* Important, function with JS */
+  display: block; /* Important, function with JS */
   background-color: yellow;
   width: 350px;
   height: 350px;

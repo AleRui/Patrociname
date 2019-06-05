@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div class="cont-searcher-register">
+<div id="cont-searcher-register" class="cont-searcher-register">
     
     <div id="cont-form-searcher-register">
         <form id="registerSearcher"
