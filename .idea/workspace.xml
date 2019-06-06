@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/View/indexView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/indexView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherLoginTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherLoginTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/patrociname.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/patrociname.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/patrociname.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/patrociname.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +9,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -31,7 +30,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -95,12 +107,12 @@
         <option value="$PROJECT_DIR$/Model/AdminChart01.php" />
         <option value="$PROJECT_DIR$/web/js/patrociname-charts.js" />
         <option value="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" />
-        <option value="$PROJECT_DIR$/web/js/patrociname.js" />
         <option value="$PROJECT_DIR$/View/indexView.php" />
         <option value="$PROJECT_DIR$/templates/searcherLoginTemplate.php" />
         <option value="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" />
         <option value="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" />
         <option value="$PROJECT_DIR$/web/css/patrociname.css" />
+        <option value="$PROJECT_DIR$/web/js/patrociname.js" />
       </list>
     </option>
   </component>
@@ -249,16 +261,18 @@
       <workItem from="1559488864877" duration="8134000" />
       <workItem from="1559579521193" duration="4960000" />
       <workItem from="1559722640989" duration="1529000" />
+      <workItem from="1559864439113" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250676000" />
+    <option name="totallyTimeSpent" value="250687000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <frame x="49" y="-2" width="1871" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27773345" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2810959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -593,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/indexView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -642,6 +646,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

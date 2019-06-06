@@ -77,7 +77,7 @@ function showImageBeforeUpload(input) {
 
 
 function showContainer(element) {
-    console.log(element);
+    //console.log(element);
     let container = '#'+element.id.replace("btnShow-", "");
     console.log(container);
     if ( $(container).css('display') === 'block') {
