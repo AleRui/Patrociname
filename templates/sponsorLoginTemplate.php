@@ -3,8 +3,6 @@
 
 <div  id="cont-sponsor-login" class="cont-sponsor-login">
     <!-- -->
-    <!-- <a class="ui button" id="showSpo">Entrar Sponsor/Patrocinador</a> -->
-    <!-- -->
     <form id="formSponsor"
           class="ui form"
           action="?controller=sponsor&action=login"

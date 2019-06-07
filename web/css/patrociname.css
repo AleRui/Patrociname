@@ -14,7 +14,7 @@
 
 body {  padding: 0px;  margin: 0px;  border: 0px; }
 
-/* Contenedores Principales */
+/* Index Containers */
 .cont-all-bg-video {
   position: absolute;
   overflow: hidden;
@@ -29,16 +29,28 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   height: 100vh;
   /* -- */
   display: grid;
-  grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr 1fr;
+  grid-template-rows: auto auto 2fr 0.5fr 1fr;
   grid-template-columns: auto;
 }
 
 .cont-all-index > div {
+  justify-self: stretch;
+  align-self: stretch;
+  position: relative;
 }
-/* -- */
+
+.cont-all-index { grid-column: 1 / 2; grid-row: 1 / 2;}
+.cont-index-buttons { grid-column: 1 / 2; grid-row: 2 / 3;}
+.cont-index-forms { grid-column: 1 / 2; grid-row: 3 / 4;}
+.cont-index-api { grid-column: 1 / 2; grid-row: 4 / 5;}
+.cont-index-footer { grid-column: 1 / 2; grid-row: 5 / 6;}
+
+/* -- Index Header */
 
 header {
   padding: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 25px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -52,7 +64,6 @@ header > div:first-child > svg {
 }
 
 header > div:nth-child(2) > h1 {
-  /*border: 1px solid red; background-color: yellow;*/
   padding: 0px;
   margin: 0px;
   font-family: 'Kanit', sans-serif;
@@ -94,12 +105,77 @@ header > ul > li > i {
   font-size: 1.8em;
 }
 
-/* -- Form Searcher Register -- */
-#cont-searcher-register, #cont-searcher-login,
-#cont-sponsor-register, #cont-sponsor-login { /* Important, function with JS */
-  display: none;
+/* -- Index Forms -- */
+.cont-index-forms > div[class*='cont-'] {
+  display: none; /* Important, function with JS */
+  height: 100%;
+  /* -- */
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
 }
 
+.cont-index-forms > div[class*='cont-'] > form {
+  background-color: rgba( 195, 112, 7, 0.8); /* -- MARRON -- */
+  border-radius: 4px;
+  margin: 25px auto;
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-index-forms > div[class*='cont-'] > form > h4 {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3em;
+  color:  rgb(223, 189, 146);
+}
+
+.cont-index-forms > div[class*='cont-'] > form > .field {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px 0px 0px;
+}
+
+.cont-index-forms > div[class*='cont-'] > form > .field > label {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color: rgb(223, 189, 146);
+}
+
+
+.cont-index-forms > div[class*='cont-'] > form > .field > input {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color: rgb(223, 189, 146);
+  /* -- */
+  border-radius: 0px;
+  padding: 15px;
+}
+
+.cont-index-forms > div[class*='cont-'] > form > button {
+  margin-top: 15px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3em;
+  color:  rgb(223, 189, 146);
+  background-color: #3c2c17;
+  border: 0px;
+  transition: 0.5s;
+}
+
+.cont-index-forms > div[class*='cont-'] > form > button:hover {
+  background-color: #1c0f03;
+  color: #FFF;
+}
+
+
+/* -- Footer -- */
+footer {
+  background-color: rgba(50, 50, 50, 0.8);
+}
 
 
 

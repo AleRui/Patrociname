@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
     //
     // Charts
-    if ( $("#cont-chart-01").length ) {
+    if ($("#cont-chart-01").length) {
         console.log('Funcionando Charts');
     }
 });
@@ -53,7 +53,6 @@ function setActionUpdate($numRow) {
 }
 
 
-
 /* -- Style -- */
 
 function showImageBeforeUpload(input) {
@@ -65,7 +64,7 @@ function showImageBeforeUpload(input) {
         //console.log(typeof(input));
         //console.log(input.attributes[1].nodeValue);
         let imageId = (input.attributes[1].nodeValue).replace('Input', '');
-        imageId = '#'+imageId;
+        imageId = '#' + imageId;
         //console.log(imageId);
         reader.onload = function (value) {
             $(imageId).attr('src', value.target.result);
@@ -77,15 +76,25 @@ function showImageBeforeUpload(input) {
 
 
 function showContainer(element) {
-    console.log(element);
-    let container = '#'+element.id.replace("btnShow-", "");
-    console.log(container);
-    if ( $(container).css('display') === 'block') {
-        $(container).fadeOut(1000);
-    } else {
-        $(container).fadeIn(1000);
-    }
+    //console.log(element);
     //
+    let containerSelected = '#' + element.id.replace("btnShow-", "");
+    //console.log(containerSelected);
+    //
+    let allContainer = $(".cont-index-forms").children();
+    //console.log(allContainer);
+    $.each(allContainer, function (key, value) {
+        let container = "#" + value.id;
+        if (container === containerSelected) {
+            if ($(container).css('display') === 'block') {
+                $(container).fadeOut(400);
+            } else {
+                $(container).fadeIn(1400);
+            }
+        } else {
+            $(container).fadeOut(400);
+        }
+    });
 }
 
 //function showLogSearcher() {}
