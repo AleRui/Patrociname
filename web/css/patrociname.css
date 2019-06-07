@@ -14,6 +14,29 @@
 
 body {  padding: 0px;  margin: 0px;  border: 0px; }
 
+/* Contenedores Principales */
+.cont-all-bg-video {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.cont-all-index {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* -- */
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr 1fr;
+  grid-template-columns: auto;
+}
+
+.cont-all-index > div {
+}
+/* -- */
+
 header {
   padding: 0px;
   display: flex;
@@ -73,58 +96,10 @@ header > ul > li > i {
 
 /* -- Form Searcher Register -- */
 #cont-searcher-register, #cont-searcher-login,
-#cont-sponsor-register, #cont-sponsor-login {
+#cont-sponsor-register, #cont-sponsor-login { /* Important, function with JS */
   display: none;
 }
 
-#cont-form-searcher-register {
-  display: block; /* Important, function with JS */
-  background-color: yellow;
-  width: 350px;
-  height: 350px;
-  border-radius: 350px;
-}
-
-.form-searcher-register {
-  position: relative;
-  top: 10%;
-  left: 10%;
-  width: 80vh;
-  height: 80vh;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto;
-}
-
-
-.form-searcher-register > h4 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row: 1;
-  grid-row-end: 2
-}
-
-.form-searcher-register > div:nth-child(2) {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 2;
-  grid-row-end: 3;
-}
-
-.form-searcher-register > div:nth-child(3) {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 3;
-  grid-row-end: 4;
-}
-
-.form-searcher-register > button {
-  border: 1px solid red;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row: 4;
-  grid-row-end: 5;
-}
 
 
 

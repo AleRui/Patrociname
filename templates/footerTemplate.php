@@ -1,3 +1,6 @@
+<?php
+?>
+
 <footer>
     <div class="ui container">
         <div class="ui grid"
@@ -20,6 +23,3 @@
         </div>
     </div>
 </footer>
-</footer>
-</body>
-</html>

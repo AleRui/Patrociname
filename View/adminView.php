@@ -27,6 +27,6 @@ if (!empty($_SESSION['user'])) {
 }
 ?>
 <!-- -->
-<?php include_once 'templates/footerHTML.php'; ?>
+<?php include_once 'templates/tailHTML.php'; ?>
 <!-- -->
 

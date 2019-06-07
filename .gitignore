@@ -73,3 +73,8 @@ package-lock.json
 
 composer.phar
 /vendor/
+
+# -------- #
+#  Video   #
+# -------- #
+video/

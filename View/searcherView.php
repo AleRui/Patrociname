@@ -21,4 +21,4 @@ include_once 'templates/headHTML.php';
 
     </main>
 
-<?php include_once 'templates/footerHTML.php'; ?>
+<?php include_once 'templates/tailHTML.php'; ?>

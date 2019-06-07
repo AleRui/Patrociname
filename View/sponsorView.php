@@ -19,4 +19,4 @@ require_once 'Model/Sponsor.php';
   <!-- -->
 <?php require_once './templates/sponsorBoughtBundlesTemplates.php'; ?>
   <!-- -->
-<?php include_once 'templates/footerHTML.php'; ?>
+<?php include_once 'templates/tailHTML.php'; ?>
