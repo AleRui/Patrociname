@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/indexView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/indexView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footerTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footerTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherApiIndexTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/indexApiTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/patrociname.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/patrociname.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/patrociname.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/patrociname.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +61,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/footerTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
               <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="776">
+              <caret line="76" column="7" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -94,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Controller/SponsorBundleController.php" />
         <option value="$PROJECT_DIR$/Model/SponsorBuySponsoringModel.php" />
         <option value="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" />
         <option value="$PROJECT_DIR$/Model/ApiModel.php" />
@@ -145,17 +148,18 @@
         <option value="$PROJECT_DIR$/View/indexView.php" />
         <option value="$PROJECT_DIR$/templates/indexApiTemplate.php" />
         <option value="$PROJECT_DIR$/templates/footerTemplate.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="49" />
-    <option name="y" value="-2" />
-    <option name="width" value="986" />
-    <option name="height" value="1082" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="217" />
+    <option name="y" value="65" />
+    <option name="width" value="1091" />
+    <option name="height" value="946" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -270,15 +274,16 @@
       <workItem from="1559864439113" duration="137000" />
       <workItem from="1559901650316" duration="4446000" />
       <workItem from="1559916513269" duration="4656000" />
-      <workItem from="1559984035466" duration="7883000" />
+      <workItem from="1559984035466" duration="8491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267798000" />
+    <option name="totallyTimeSpent" value="268406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-2" width="986" height="1082" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26702127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -328,13 +333,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="40" column="63" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/imas/patrociname.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -670,6 +668,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="76" column="7" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
         </state>
       </provider>
     </entry>

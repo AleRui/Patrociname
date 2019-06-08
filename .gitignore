@@ -74,6 +74,8 @@ package-lock.json
 composer.phar
 /vendor/
 
+/config
+
 # -------- #
 #  Video   #
 # -------- #
