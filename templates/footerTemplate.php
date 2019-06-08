@@ -8,17 +8,27 @@
     </div>
     <!-- -->
     <div>
-        <p>Cliente: Semantic | JQuery </p>
+        <p>Cliente: HTML | CSS | JQuery </p>
     </div>
     <!-- -->
     <div>
-        <p>Despliegue: Heroku | GitHub: https://github.com/AleRui/desWebEntServ/tree/master/patrociname</p>
-    </div>
-    <!-- -->
-    - Alejandro Ruiz - <a href="https://github.com/AleRui">Alejandro Ruiz</a> -</p>
+        <p>
+            Github:
+            <a href="https://github.com/AleRui/Patrociname_V2">
+                <i class="fab fa-github"></i>
+                https://github.com/AleRui/Patrociname_V2
+            </a>
+        </p>
+        <p>
+            @uthor:
+            <a href="https://github.com/AleRui">
+                <i class="fab fa-github"></i>
+                Alejandro Ruiz
+            </a>
+        </p>
     </div>
     <!-- -->
     <div>
-        CopyUpRight &copy; <?php echo date("Y"); ?>
+        <p>Copyleft &copy; <?php echo date("Y"); ?></p>
     </div>
 </footer>

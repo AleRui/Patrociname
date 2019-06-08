@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/indexView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/indexView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/footerTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footerTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/searcherApiIndexTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/indexApiTemplate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/patrociname.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/patrociname.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/patrociname.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/patrociname.js" afterDir="false" />
     </list>
@@ -40,44 +39,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/indexView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/searcherRegisterTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="376">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sponsorRegisterTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sponsorLoginTemplate.php">
+        <entry file="file://$PROJECT_DIR$/templates/indexApiTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/searcherLoginTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -85,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="88" column="54" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="54" />
+            <state relative-caret-position="647">
+              <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -94,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/footerTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="465">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -122,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Model/SponsorModel.php" />
         <option value="$PROJECT_DIR$/Controller/SponsorBundleController.php" />
         <option value="$PROJECT_DIR$/Model/SponsorBuySponsoringModel.php" />
         <option value="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" />
@@ -167,12 +138,13 @@
         <option value="$PROJECT_DIR$/templates/headerTemplate.php" />
         <option value="$PROJECT_DIR$/templates/tailHTML.php" />
         <option value="$PROJECT_DIR$/templates/footerTemaplte.php" />
-        <option value="$PROJECT_DIR$/View/indexView.php" />
-        <option value="$PROJECT_DIR$/templates/footerTemplate.php" />
-        <option value="$PROJECT_DIR$/web/js/patrociname.js" />
         <option value="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" />
         <option value="$PROJECT_DIR$/templates/sponsorLoginTemplate.php" />
         <option value="$PROJECT_DIR$/templates/searcherRegisterTemplate.php" />
+        <option value="$PROJECT_DIR$/web/js/patrociname.js" />
+        <option value="$PROJECT_DIR$/View/indexView.php" />
+        <option value="$PROJECT_DIR$/templates/indexApiTemplate.php" />
+        <option value="$PROJECT_DIR$/templates/footerTemplate.php" />
       </list>
     </option>
   </component>
@@ -182,7 +154,7 @@
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="49" />
     <option name="y" value="-2" />
-    <option name="width" value="813" />
+    <option name="width" value="986" />
     <option name="height" value="1082" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -193,7 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,21 +172,11 @@
               <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,16 +270,17 @@
       <workItem from="1559864439113" duration="137000" />
       <workItem from="1559901650316" duration="4446000" />
       <workItem from="1559916513269" duration="4656000" />
+      <workItem from="1559984035466" duration="7883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259915000" />
+    <option name="totallyTimeSpent" value="267798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="-2" width="813" height="1082" extended-state="4" />
+    <frame x="49" y="-2" width="986" height="1082" extended-state="4" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2750978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26702127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -387,13 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searcherApiIndexTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -659,30 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/footerTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/indexView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="88" column="54" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/searcherLoginTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -700,7 +631,7 @@
     <entry file="file://$PROJECT_DIR$/templates/sponsorRegisterTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -708,6 +639,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/indexView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/indexApiTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/footerTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
         </state>
       </provider>
     </entry>

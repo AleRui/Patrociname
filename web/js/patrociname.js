@@ -5,7 +5,7 @@
 
 $(document).ready(function () {
     //
-    console.log('document ready');
+    //console.log('document ready');
     //
     $('#registerSearcherMail').blur(function () {
         //
@@ -76,15 +76,16 @@ function showImageBeforeUpload(input) {
 
 
 function showContainer(element) {
-    //console.log(element);
+    console.log(element);
     //
     let containerSelected = '#' + element.id.replace("btnShow-", "");
-    //console.log(containerSelected);
+    //console.log('containerSelected:' + containerSelected);
     //
     let allContainer = $(".cont-index-forms").children();
     //console.log(allContainer);
     $.each(allContainer, function (key, value) {
         let container = "#" + value.id;
+        //console.log(container);
         if (container === containerSelected) {
             if ($(container).css('display') === 'block') {
                 $(container).fadeOut(400);
@@ -97,7 +98,34 @@ function showContainer(element) {
     });
 }
 
-//function showLogSearcher() {}
-//function showRegSponsor() {}
-//function showLogSponsor() {}
+function showIndexButtons() {
+    //
+    if ($('#barButtons')) {
+        //
+        let stateDisplay = $('#barButtons').css('display');
+        //console.log(stateDisplay);
+        //
+        let newState;
+        if (stateDisplay === 'flex') {
+            newState = 'none';
+            // Hide Forms
+            let allContainer = $(".cont-index-forms").children();
+            //console.log(allContainer);
+            $.each(allContainer, function (key, value) {
+                let container = "#" + value.id;
+                $(container).fadeOut(400);
+            });
+        } else {
+            newState = 'flex';
+        }
+        //console.log(newState);
+        $('#barButtons').css('display', newState);
+        //
+        let stateAnimation = $('#btn-showButtons').css('animation-name');
+        //console.log(stateAnimation);
+        let newStateAnimation = (stateAnimation === 'none' || stateAnimation === 'rotateButtonReturn') ? 'rotateButtonGo' : 'rotateButtonReturn';
+        $('#btn-showButtons').css('animation-name', newStateAnimation);
+    }
+}
+
 

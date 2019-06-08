@@ -1,5 +1,6 @@
 /*
  * CSS Patrociname
+ * @uthor: Ale Ruiz
  */
 
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
@@ -10,6 +11,14 @@
  * font-family: 'Righteous', cursive;
  * font-family: 'Varela Round', sans-serif;
  * font-family: 'Kanit', sans-serif;
+ */
+
+/*
+ * Colors Monkey
+ * Light Brown: #f5f0da; RGB 245, 240, 218
+ * Clear Brown: #CAAE38; RGB 202, 174, 56 
+ * Dark Brown: #3E2211; RGB 62, 34, 17 
+ *
  */
 
 body {  padding: 0px;  margin: 0px;  border: 0px; }
@@ -29,14 +38,19 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   height: 100vh;
   /* -- */
   display: grid;
-  grid-template-rows: auto auto 2fr 0.5fr 1fr;
+  grid-template-rows: auto auto 3fr auto auto;
   grid-template-columns: auto;
 }
 
 .cont-all-index > div {
   justify-self: stretch;
+  justify-items: stretch;
+  justify-self: stretch;
+  align-content: stretch;
+  align-items: stretch;
   align-self: stretch;
   position: relative;
+  height: 100%;
 }
 
 .cont-all-index { grid-column: 1 / 2; grid-row: 1 / 2;}
@@ -45,17 +59,20 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
 .cont-index-api { grid-column: 1 / 2; grid-row: 4 / 5;}
 .cont-index-footer { grid-column: 1 / 2; grid-row: 5 / 6;}
 
+.cont-index-buttons, .cont-index-forms,
+.cont-index-api {
+  padding: 0px 50px;
+}
+
 /* -- Index Header */
 
 header {
-  padding: 0px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(245, 240, 218, 0.5);
   padding: 10px 25px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
   margin: 0 auto;
 }
 
@@ -105,6 +122,74 @@ header > ul > li > i {
   font-size: 1.8em;
 }
 
+/* -- Index Buttons -- */
+.cont-index-buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+}
+
+@keyframes rotateButtonGo {
+  from {transform: rotate(-90deg);}
+  to {transform: rotate(0deg);}
+}
+
+@keyframes rotateButtonReturn {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-90deg);}
+}
+
+.cont-index-buttons >.show-main-buttons > i {
+  color: #CAAE38;
+  padding: 0px;
+  font-size: 4em;
+  transform: rotate(-90deg);
+  transition: 0.5;
+  /* -- */
+  animation-name: none;
+  animation-duration: 0.5s;
+  /*animation-direction: reverse;*/
+  animation-fill-mode: forwards;
+}
+
+@keyframes showButtons {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.cont-index-buttons > .barButtons {
+  display: none;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+  /* -- */
+  animation-name: showButtons;
+  animation-duration: 1s;
+}
+
+.cont-index-buttons > .barButtons > button {
+  background-color: yellow;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.8em;
+  padding: 5px 10px;
+  color:  rgb(245, 240, 218);
+  border: 0px;
+  background-color: rgb(202, 174, 56);
+  margin: 0px 5px;
+}
+
+.cont-index-buttons > .barButtons > button:hover { 
+  background-color: #1c0f03;
+  color: #FFF;
+}
+
 /* -- Index Forms -- */
 .cont-index-forms > div[class*='cont-'] {
   display: none; /* Important, function with JS */
@@ -117,7 +202,7 @@ header > ul > li > i {
 }
 
 .cont-index-forms > div[class*='cont-'] > form {
-  background-color: rgba( 195, 112, 7, 0.8); /* -- MARRON -- */
+  background-color: rgba( 202, 174, 56, 0.8);
   border-radius: 4px;
   margin: 25px auto;
   width: 50%;
@@ -131,7 +216,7 @@ header > ul > li > i {
   margin: 0px;
   font-family: 'Varela Round', sans-serif;
   font-size: 3em;
-  color:  rgb(223, 189, 146);
+  color:  rgb(245, 240, 218);
 }
 
 .cont-index-forms > div[class*='cont-'] > form > .field {
@@ -143,7 +228,7 @@ header > ul > li > i {
 .cont-index-forms > div[class*='cont-'] > form > .field > label {
   font-family: 'Varela Round', sans-serif;
   font-size: 1em;
-  color: rgb(223, 189, 146);
+  color: rgb(245, 240, 218);
 }
 
 
@@ -160,8 +245,8 @@ header > ul > li > i {
   margin-top: 15px;
   font-family: 'Varela Round', sans-serif;
   font-size: 3em;
-  color:  rgb(223, 189, 146);
-  background-color: #3c2c17;
+  color:  rgb(202, 174, 56);
+  background-color: rgb(62, 34, 17);
   border: 0px;
   transition: 0.5s;
 }
@@ -171,11 +256,69 @@ header > ul > li > i {
   color: #FFF;
 }
 
+/* -- Api Bar -- */
+.cont-index-api {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cont-index-api > h3 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  rgb(245, 240, 218);
+}
+
+.cont-index-api > a {
+  margin: 5px 0px 15px 25px;
+  text-decoration: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2em;
+  padding: 5px 15px;
+  color:  rgb(202, 174, 56);
+  background-color: rgb(62, 34, 17);
+  border: 0px;
+  transition: 0.5s;
+}
+
+.cont-index-api > a:hover {
+  background-color: #1c0f03;
+  color: #FFF;
+}
+
 
 /* -- Footer -- */
 footer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* -- */
   background-color: rgba(50, 50, 50, 0.8);
 }
+
+footer > div > p {
+  padding: 3px 0px 3px 25px;
+  margin: 0px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  rgb(245, 240, 218);
+}
+
+footer > div > p > a {
+  text-decoration: none;
+  color:  rgb(245, 240, 218);
+}
+
+footer > div > p > a:hover {
+  text-decoration: none;
+  color:  rgb(245, 240, 218);
+  background-color: #1c0f03;
+  color: #FFF;
+  transition: 0.5s;
+}
+
+
 
 
 
