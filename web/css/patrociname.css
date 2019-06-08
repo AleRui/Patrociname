@@ -29,7 +29,6 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
 }
 
 .cont-all-index {
@@ -38,7 +37,7 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   height: 100vh;
   /* -- */
   display: grid;
-  grid-template-rows: auto auto 3fr auto auto;
+  grid-template-rows: auto 0.5fr 3fr auto auto;
   grid-template-columns: auto;
 }
 
@@ -51,18 +50,19 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   align-self: stretch;
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
-.cont-all-index { grid-column: 1 / 2; grid-row: 1 / 2;}
+.cont-index-header { grid-column: 1 / 2; grid-row: 1 / 2;}
 .cont-index-buttons { grid-column: 1 / 2; grid-row: 2 / 3;}
-.cont-index-forms { grid-column: 1 / 2; grid-row: 3 / 4;}
+.cont-index-forms { grid-column: 1 / 2; grid-row: 3 / 4;width: 80%;}
 .cont-index-api { grid-column: 1 / 2; grid-row: 4 / 5;}
 .cont-index-footer { grid-column: 1 / 2; grid-row: 5 / 6;}
 
-.cont-index-buttons, .cont-index-forms,
+/*.cont-index-buttons, .cont-index-forms,
 .cont-index-api {
   padding: 0px 50px;
-}
+}*/
 
 /* -- Index Header */
 
@@ -73,7 +73,6 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 auto;
 }
 
 header > div:first-child > svg {
@@ -125,7 +124,7 @@ header > ul > li > i {
 /* -- Index Buttons -- */
 .cont-index-buttons {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto;
 }
 
@@ -141,14 +140,13 @@ header > ul > li > i {
 
 .cont-index-buttons >.show-main-buttons > i {
   color: #CAAE38;
-  padding: 0px;
+  padding: 25px 0px 0px 25px;
   font-size: 4em;
   transform: rotate(-90deg);
   transition: 0.5;
   /* -- */
   animation-name: none;
   animation-duration: 0.5s;
-  /*animation-direction: reverse;*/
   animation-fill-mode: forwards;
 }
 
@@ -193,10 +191,8 @@ header > ul > li > i {
 /* -- Index Forms -- */
 .cont-index-forms > div[class*='cont-'] {
   display: none; /* Important, function with JS */
-  height: 100%;
   /* -- */
-  position: absolute;
-  width: 100%;
+  position: relative;
   top: 0px;
   left: 0px;
 }
@@ -265,13 +261,14 @@ header > ul > li > i {
 }
 
 .cont-index-api > h3 {
+  padding: 0px 0px 0px 25px;
   font-family: 'Varela Round', sans-serif;
   font-size: 1em;
   color:  rgb(245, 240, 218);
 }
 
 .cont-index-api > a {
-  margin: 5px 0px 15px 25px;
+  margin: 0px 0px 0px 25px;
   text-decoration: none;
   font-family: 'Varela Round', sans-serif;
   font-size: 2em;
@@ -318,6 +315,103 @@ footer > div > p > a:hover {
   transition: 0.5s;
 }
 
+/* ----------------- */
+/*                   */
+/* R E S P O S I V E */
+/*                   */
+/* ----------------- */
+
+@media only screen and (max-width: 600px) {
+  /* -- BG -- */
+  .cont-all-bg-video {
+    position: fixed;
+  }
+  
+  .cont-index-buttons, .cont-index-forms,
+  .cont-index-api {
+    padding: 0px;
+  }
+  
+  /* -- Index Header */
+  header {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  header > div:first-child { grid-column: 1 / 2; grid-row: 1 / 2; justify-self: stretch; padding: 5px;}
+  header > div:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; justify-self: stretch;}
+  header > div:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; justify-self: stretch;}
+  header > ul { grid-column: 3 / 4; grid-row: 2 / 3; justify-self: stretch;}
+  
+  /* -- Index Buttons -- */
+  .cont-index-buttons > .show-main-buttons {
+    padding: 0px 0px 0px 10px;
+  }
+  
+  .cont-index-buttons > .barButtons {
+    flex-direction: column;
+    padding: 10px 25px;
+  }
+  
+  .cont-index-buttons > .barButtons > button {
+    font-size: 1em;
+    padding: 15px 5px;
+    border: 0px;
+    background-color: rgb(202, 174, 56);
+    margin: 0px 0px 10px 0px;
+  }
+  
+  /* -- Index Forms -- */
+  
+  .cont-index-forms > div[class*='cont-'] > form {
+    margin: 10px auto;
+    width: 85%;
+    padding: 10px;
+  }
+  
+  .cont-index-forms > div[class*='cont-'] > form > h4 {
+    font-size: 1em;
+  }
+
+  .cont-index-forms > div[class*='cont-'] > form > .field {
+    margin: 10px 0px 0px 0px;
+  }
+
+  .cont-index-forms > div[class*='cont-'] > form > .field > label {
+    font-size: 1em;
+  }
+
+  .cont-index-forms > div[class*='cont-'] > form > .field > input {
+    font-size: 1em;
+    /* -- */
+    border-radius: 0px;
+    padding: 15px;
+  }
+
+  .cont-index-forms > div[class*='cont-'] > form > button {
+    margin-top: 15px;
+    font-size: 2em;
+    padding: 5px;
+  }
+  
+  /* -- Api Bar -- */
+
+  .cont-index-api > h3 {
+    font-size: 1em;
+    padding-left: 25px;
+  }
+
+  .cont-index-api > a {
+    margin: 5px 0px 15px 15px;
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+  
+}
 
 
 
