@@ -128,4 +128,15 @@ function showIndexButtons() {
     }
 }
 
+function showContainerUser() {
+    //
+    if ($('#cont-data-user')) {
+        let stateDisplay = $('#cont-data-user').css('display');
+        //
+        let newState = ( stateDisplay === 'flex' ) ? 'none' : 'flex' ;
+        //
+        $('#cont-data-user').css('display', newState);
+    }
+}
+
 

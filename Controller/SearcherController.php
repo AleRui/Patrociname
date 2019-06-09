@@ -53,9 +53,6 @@ class SearcherController extends BaseController
         //
         if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
             //
-            showPretty($_SESSION);
-            //die();
-            //
             $sponsorBundleObj = new SponsorBundleModel();
             //
             $createdSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());

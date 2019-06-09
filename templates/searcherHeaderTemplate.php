@@ -2,10 +2,10 @@
 
 require_once './Model/Searcher.php';
 
-if ($_SESSION) {
+//if ($_SESSION) {
     //showPretty($_SESSION);
     //showPretty()$_SESSION['user'];
-}
+//}
 
 ?>
 <div>

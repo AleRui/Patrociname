@@ -70,11 +70,8 @@ class Router
             $routeController = 'Controller/IndexController.php';
         }
         //
-        //echo 'Requiriendo:';
         require_once $routeController;
-        //echo $routeController . '<br>';
-        //echo $nameController . '<br>';
-        //die();
+        //
         if (class_exists($nameController)) {
             //
             $objController = new $nameController();

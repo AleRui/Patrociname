@@ -1,8 +1,8 @@
 <?php
-if (!empty($_SESSION)) {
-    echo 'Existe Session';
-    showPretty($_SESSION);
-}
+//if (!empty($_SESSION)) {
+//    echo 'Existe Session';
+//    showPretty($_SESSION);
+//}
 ?>
 <?php include_once 'templates/headHTML.php'; ?>
 <!-- -->
