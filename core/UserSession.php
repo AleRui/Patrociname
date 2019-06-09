@@ -27,10 +27,11 @@ class userSession
         return self::$instance;
     }
 
-    public function setUserSession($user)
+    public function setUserSession($user, $controller)
     {
         $_SESSION['time'] = time();
         $_SESSION['user'] = $user;
+        $_SESSION['userType'] = $controller;
     }
 
     public function __destroy()

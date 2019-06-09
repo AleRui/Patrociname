@@ -35,7 +35,7 @@ class SponsorController extends BaseController
             if (!empty($userSponsor) && $userSponsor->getIdSponsor()) {
                 //
                 userSession::getSession();
-                userSession::getSession()->setUserSession($userSponsor);
+                userSession::getSession()->setUserSession($userSponsor, $this->controller);
                 //
                 header('Location:?controller=sponsor&action=index');
             } else {

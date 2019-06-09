@@ -31,6 +31,11 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
   height: 100vh;
 }
 
+.cont-all-bg-video > video {
+  position: relative;
+  left: -25%;
+}
+
 .cont-all-index {
   position: absolute;
   width: 100vw;
@@ -42,33 +47,19 @@ body {  padding: 0px;  margin: 0px;  border: 0px; }
 }
 
 .cont-all-index > div {
-  justify-self: stretch;
-  justify-items: stretch;
-  justify-self: stretch;
-  align-content: stretch;
-  align-items: stretch;
-  align-self: stretch;
-  position: relative;
-  height: 100%;
-  width: 100%;
 }
 
 .cont-index-header { grid-column: 1 / 2; grid-row: 1 / 2;}
 .cont-index-buttons { grid-column: 1 / 2; grid-row: 2 / 3;}
-.cont-index-forms { grid-column: 1 / 2; grid-row: 3 / 4;width: 80%;}
+.cont-index-forms { grid-column: 1 / 2; grid-row: 3 / 4;}
 .cont-index-api { grid-column: 1 / 2; grid-row: 4 / 5;}
 .cont-index-footer { grid-column: 1 / 2; grid-row: 5 / 6;}
-
-/*.cont-index-buttons, .cont-index-forms,
-.cont-index-api {
-  padding: 0px 50px;
-}*/
 
 /* -- Index Header */
 
 header {
   background-color: rgba(245, 240, 218, 0.5);
-  padding: 10px 25px;
+  padding: 5px 25px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -79,7 +70,9 @@ header > div:first-child > svg {
   width: 70px;
 }
 
-header > div:nth-child(2) > h1 {
+header > div:nth-child(2) > a { text-decoration: none; }
+
+header > div:nth-child(2) > a > h1 {
   padding: 0px;
   margin: 0px;
   font-family: 'Kanit', sans-serif;
@@ -140,8 +133,7 @@ header > ul > li > i {
 
 .cont-index-buttons >.show-main-buttons > i {
   color: #CAAE38;
-  padding: 25px 0px 0px 25px;
-  font-size: 4em;
+  font-size: 5em;
   transform: rotate(-90deg);
   transition: 0.5;
   /* -- */
@@ -162,28 +154,36 @@ header > ul > li > i {
 }
 
 .cont-index-buttons > .barButtons {
-  display: none;
+  display: none; /* Important, function with JS */
   position: relative;
+  padding: 15px 25px;
+  /* -- Flex Javascript -- */
   flex-direction: row;
-  justify-content: center;
-  align-content: stretch;
+  justify-content: flex-start;
+  align-content: flex-start;
   /* -- */
   animation-name: showButtons;
   animation-duration: 1s;
 }
 
 .cont-index-buttons > .barButtons > button {
-  background-color: yellow;
+  /* -- Flex -- */
+  flex-grow: 1;
+  /* -- */
   font-family: 'Varela Round', sans-serif;
-  font-size: 1.8em;
-  padding: 5px 10px;
+  font-size: 1.4em;
+  padding: 0px 25px;
   color:  rgb(245, 240, 218);
   border: 0px;
   background-color: rgb(202, 174, 56);
-  margin: 0px 5px;
+  /*margin: 0px 5px;*/
+  transition: 1s;
 }
 
 .cont-index-buttons > .barButtons > button:hover { 
+  /* -- Flex -- */
+  flex-grow: 2;
+  /* -- */
   background-color: #1c0f03;
   color: #FFF;
 }
@@ -198,11 +198,13 @@ header > ul > li > i {
 }
 
 .cont-index-forms > div[class*='cont-'] > form {
+  width: 40%;
   background-color: rgba( 202, 174, 56, 0.8);
-  border-radius: 4px;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 4px solid rgb(62, 34, 17);
   margin: 25px auto;
-  width: 50%;
   padding: 50px;
+  /* -- Flex -- */
   display: flex;
   flex-direction: column;
 }
@@ -211,7 +213,7 @@ header > ul > li > i {
   padding: 0px;
   margin: 0px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 3em;
+  font-size: 2.2em;
   color:  rgb(245, 240, 218);
 }
 
@@ -223,24 +225,26 @@ header > ul > li > i {
 
 .cont-index-forms > div[class*='cont-'] > form > .field > label {
   font-family: 'Varela Round', sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   color: rgb(245, 240, 218);
 }
 
 
 .cont-index-forms > div[class*='cont-'] > form > .field > input {
   font-family: 'Varela Round', sans-serif;
-  font-size: 1em;
-  color: rgb(223, 189, 146);
+  font-size: 1.8em;
   /* -- */
+  margin: 8px 0px 0px 0px;
+  border: none;
   border-radius: 0px;
-  padding: 15px;
+  padding: 5px 25px;
 }
 
 .cont-index-forms > div[class*='cont-'] > form > button {
-  margin-top: 15px;
+  margin: 15px 15% 0px 15%;
+  padding: 10px 0px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   color:  rgb(202, 174, 56);
   background-color: rgb(62, 34, 17);
   border: 0px;
@@ -258,28 +262,29 @@ header > ul > li > i {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin: 0px 0px 10px 0px;
 }
 
 .cont-index-api > h3 {
   padding: 0px 0px 0px 25px;
   font-family: 'Varela Round', sans-serif;
   font-size: 1em;
-  color:  rgb(245, 240, 218);
+  color:  rgb(202, 174, 56);
 }
 
 .cont-index-api > a {
   margin: 0px 0px 0px 25px;
   text-decoration: none;
   font-family: 'Varela Round', sans-serif;
-  font-size: 2em;
-  padding: 5px 15px;
+  font-size: 1.4em;
+  padding: 10px 35px;
   color:  rgb(202, 174, 56);
-  background-color: rgb(62, 34, 17);
-  border: 0px;
+  border: 4px solid rgb(62, 34, 17);
   transition: 0.5s;
 }
 
 .cont-index-api > a:hover {
+  /*background-color: rgb(62, 34, 17);*/
   background-color: #1c0f03;
   color: #FFF;
 }
@@ -308,6 +313,7 @@ footer > div > p > a {
 }
 
 footer > div > p > a:hover {
+  padding: 10px;
   text-decoration: none;
   color:  rgb(245, 240, 218);
   background-color: #1c0f03;
@@ -337,15 +343,24 @@ footer > div > p > a:hover {
     width: 100%;
     padding: 0px;
     margin: 0px;
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: 1fr 1fr;
   }
   
-  header > div:first-child { grid-column: 1 / 2; grid-row: 1 / 2; justify-self: stretch; padding: 5px;}
-  header > div:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; justify-self: stretch;}
-  header > div:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; justify-self: stretch;}
-  header > ul { grid-column: 3 / 4; grid-row: 2 / 3; justify-self: stretch;}
+  header > div:first-child > svg { 
+    width: 50px;
+    padding: 5px;
+  }
+  
+  header > div:nth-child(2) > h1 {
+    font-size: 1.5em;
+  }
+  
+  header > div:nth-child(3) > h5 {
+    font-size: 0.6em;
+  }
+  
+  header > ul {
+    padding: 0px 10px 0px 0px;
+  }
   
   /* -- Index Buttons -- */
   .cont-index-buttons > .show-main-buttons {

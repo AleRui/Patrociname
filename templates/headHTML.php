@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Patrociname V2.0 | Busca encuentra Sponsor</title>
+    <!--  Responsive Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- -->
     <!-- JQuery-->
     <script src="web/js/jquery-3.3.1.js"></script>

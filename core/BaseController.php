@@ -36,6 +36,8 @@ class BaseController
         if ( userSession::getSession()->checkActiveSession() ) {
             userSession::getSession(unserialize($_SESSION['user']))->__destroy();
             header('Location:?controller=index&action=index');
+        } else {
+            header('Location:?controller=index&action=index');
         }
     }
 }

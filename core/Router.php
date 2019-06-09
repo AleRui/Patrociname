@@ -6,6 +6,11 @@
  * Time: 20:54
  */
 
+require_once './core/UserSession.php';
+require_once './Model/Searcher.php';
+require_once './Model/Sponsor.php';
+require_once './Model/Admin.php';
+
 class Router
 {
 
@@ -18,32 +23,44 @@ class Router
 
     public function basicRoute()
     {
-        //showPretty($_GET);
-        //die();
         //
         if (isset($_GET['controller']) && !empty($_GET['controller']) &&
             isset($_GET['action']) && !empty($_GET['action'])) {
             //
-            $this->controller = $_GET['controller'];
-            $this->action = $_GET['action'];
+            if (userSession::getSession()->checkActiveSession()) {
+                //
+                if (isset($_SESSION) && $_SESSION['user'] && $_SESSION['userType'] && $_GET['controller'] === 'index') {
+                    //
+                    $this->controller = $_SESSION['userType'];
+                    //
+                } else {
+                    //
+                    $this->controller = $_GET['controller'];
+                    $this->action = $_GET['action'];
+                    //
+                }
+            } else {
+                //
+                $this->controller = $_GET['controller'];
+                $this->action = $_GET['action'];
+                //
+            }
             //
-            //} else if ($_GET) {
-            //    showPretty($_GET);
-            //    die();
         } else {
             $this->controller = 'Index';
             $this->action = 'index';
-            //$this->charge_Controller('index', 'index');
         }
         //
         $this->charge_Controller();
+        //
     }
 
 
-    public function charge_Controller()
+    public
+    function charge_Controller()
     {
-        //echo 'Controller: '.$this->controller.'<br>';
-        //echo 'Action: '.$this->action.'<br>';
+        //echo 'Controller: ' . $this->controller . '<br>';
+        //echo 'Action: ' . $this->action . '<br>';
         //
         $nameController = ucwords($this->controller) . 'Controller';
         $routeController = 'Controller/' . $nameController . '.php';
@@ -53,12 +70,24 @@ class Router
             $routeController = 'Controller/IndexController.php';
         }
         //
+        //echo 'Requiriendo:';
         require_once $routeController;
-        $objController = new $nameController();
-        //
-        if (!method_exists($objController, $actionController)) {
-            $actionController = 'index';
-            $this->controller = '';
+        //echo $routeController . '<br>';
+        //echo $nameController . '<br>';
+        //die();
+        if (class_exists($nameController)) {
+            //
+            $objController = new $nameController();
+            //
+            if (!method_exists($objController, $actionController)) {
+                $actionController = 'index';
+                $this->controller = '';
+            }
+            //
+        } else {
+            //
+            header('Location:?controller=index&action=index');
+            //
         }
         //
         $objController->$actionController();

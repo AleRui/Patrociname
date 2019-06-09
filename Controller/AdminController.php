@@ -33,7 +33,7 @@ class AdminController extends BaseController
             if ( !empty($userAdmin) && $userAdmin->getIdAdmin() ) {
                 //
                 userSession::getSession();
-                userSession::getSession()->setUserSession($userAdmin);
+                userSession::getSession()->setUserSession($userAdmin, $this->controller);
                 //showPretty($_SESSION);
                 //
                 header('Location: ./?controller=admin&action=index');

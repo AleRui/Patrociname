@@ -34,7 +34,7 @@ class SearcherController extends BaseController
             if (!empty($userSearcher) && $userSearcher->getIdSearcher()) {
                 //
                 userSession::getSession();
-                userSession::getSession()->setUserSession($userSearcher);
+                userSession::getSession()->setUserSession($userSearcher, $this->controller);
                 //
                 header('Location:?controller=searcher&action=index');
             } else {
@@ -49,9 +49,12 @@ class SearcherController extends BaseController
 
     public function index()
     {
-        userSession::getSession();
+        //userSession::getSession();
         //
         if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
+            //
+            showPretty($_SESSION);
+            //die();
             //
             $sponsorBundleObj = new SponsorBundleModel();
             //
