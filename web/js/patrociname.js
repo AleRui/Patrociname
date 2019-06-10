@@ -58,14 +58,10 @@ function setActionUpdate($numRow) {
 function showImageBeforeUpload(input) {
     if (input.files && input.files[0]) {
         let reader = new FileReader();
-        //console.log(input.files);
-        //console.log(input.files[0]);
-        //console.log(reader);
-        //console.log(typeof(input));
-        //console.log(input.attributes[1].nodeValue);
+        //
         let imageId = (input.attributes[1].nodeValue).replace('Input', '');
         imageId = '#' + imageId;
-        //console.log(imageId);
+        //
         reader.onload = function (value) {
             $(imageId).attr('src', value.target.result);
         }

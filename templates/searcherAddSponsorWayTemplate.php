@@ -9,18 +9,20 @@ require_once './Model/SponsorBundle.php';
           method="POST"
           enctype="multipart/form-data"
           accept-charset="UTF-8">
-            <!-- Tittle -->
-            <div>
+        <!-- Tittle -->
+        <div>
             <h2>Añadir forma de Patrocinio a Paquete de Patrocinio</h2>
         </div>
 
         <!-- Sponsor Way Text-->
         <div class="field">
-            <label>Tipo de publicidad</label>
-            <input form="addSponsor"
-                   name="sponsorWay"
-                   type="text"
-                   required/>
+            <label class="addIma">Tipo de publicidad</label>
+            <textarea form="addSponsor"
+                      name="sponsorWay"
+                      rows="4"
+                      cols="50"
+                      required/>
+            </textarea>
         </div>
 
         <!-- Sponsor Cost -->
@@ -43,14 +45,17 @@ require_once './Model/SponsorBundle.php';
         </div>
 
         <!-- Sponsor Ima -->
-            <div class="field">
-            <label>Imagen:</label>
-            <input form="addSponsor"
-                   id="imaBeforeInput"
-                   name="sponsorIma"
-                   type="file"
-                   onchange="showImageBeforeUpload(this);"/>
-            <img id="imaBefore" src="#" alt="Product"/>
+        <div class="field">
+            <label>
+                <i class="far fa-image"></i>
+                Añadir imagen
+                <input form="addSponsor"
+                       id="imaBeforeInput"
+                       name="sponsorIma"
+                       type="file"
+                       onchange="showImageBeforeUpload(this);"/>
+            </label>
+            <img id="imaBefore" src="#" alt="Imagen"/>
         </div>
         <!-- -->
         <button form="addSponsor" class="ui button" type="submit">

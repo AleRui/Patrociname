@@ -2,6 +2,7 @@
 include_once 'templates/headHTML.php';
 
 ?>
+    <div class="cont-searcher-bg"></div>
 
     <?php require_once './templates/headerTemplate.php'; ?>
 
