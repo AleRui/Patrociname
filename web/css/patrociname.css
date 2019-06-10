@@ -1,17 +1,8 @@
 /*
  * CSS Patrociname
- * @uthor: Ale Ruiz
+ * @author: Ale Ruiz
  */
 
-/*@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Righteous|Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Kanit:500i|Righteous|Varela+Round&display=swap');*/
-
-/*
- * font-family: 'Righteous', cursive;
- * font-family: 'Varela Round', sans-serif;
- * font-family: 'Kanit', sans-serif;
- */
 
 /*
  * Colors Monkey
@@ -35,7 +26,7 @@
   src: url('../fonts/Kanit/Kanit-Medium.ttf') format('truetype');
 }
 
-body {  padding: 0px;  margin: 0px;  border: 0px; }
+body {  padding: 0;  margin: 0;  border: 0; }
 
 /* Index Containers */
 .cont-all-bg-video {
@@ -87,8 +78,8 @@ header > div:first-child > svg {
 header > div:nth-child(2) > a { text-decoration: none; }
 
 header > div:nth-child(2) > a > h1 {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-family: 'Kanit', sans-serif;
   color: #000;
 }
@@ -98,12 +89,12 @@ header > div:nth-child(2) {
 }
 
 header > div:nth-child(3) {
-  margin: 13px 0px 0px 5px;;
+  margin: 13px 0 0 5px;
 }
 
 header > div:nth-child(3) > h5 {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-family: 'Kanit', sans-serif;
   font-weight: lighter;
   color: #000;
@@ -112,7 +103,7 @@ header > div:nth-child(3) > h5 {
 header > ul {
   margin-left: auto;
   /* -- */
-  padding: 0px;
+  padding: 0;
   display: flex;
   flex-direction: row;
 }
@@ -123,7 +114,7 @@ header > ul > li {
 }
 
 header > ul > li:last-of-type {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 header > ul > li > i {
@@ -135,7 +126,7 @@ header >.contUserTag {
 }
 
 header >.contUserTag > .btn-show-user {
-  margin: 0px 0px 0px 25px;
+  margin: 0 0 0 25px;
 }
 
 header >.contUserTag > .btn-show-user > i {
@@ -146,7 +137,7 @@ header >.contUserTag > .btn-show-user > i {
 @keyframes showUser {
   from {
     opacity: 0;
-    top: 0px;
+    top: 0;
   }
   to {
     opacity: 1;
@@ -158,7 +149,7 @@ header > .contUserTag > #cont-data-user {
   display: none; /* Important JS */
   position: absolute;
   top:50px;
-  right: 0px;
+  right: 0;
   border: 2px solid #000;
   background-color: #FFF;
   transition: 2s;
@@ -245,9 +236,9 @@ header > .contUserTag > #cont-data-user > a:hover {
   /* -- */
   font-family: 'Varela Round', sans-serif;
   font-size: 1.4em;
-  padding: 0px 25px;
+  padding: 0 25px;
   color:  rgb(245, 240, 218);
-  border: 0px;
+  border: 0;
   background-color: rgb(202, 174, 56);
   /*margin: 0px 5px;*/
   transition: 1s;
@@ -266,14 +257,14 @@ header > .contUserTag > #cont-data-user > a:hover {
   display: none; /* Important, function with JS */
   /* -- */
   position: relative;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 .cont-index-forms > div[class*='cont-'] > form {
   width: 40%;
   background-color: rgba( 202, 174, 56, 0.8);
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0 0;
   border-bottom: 4px solid rgb(62, 34, 17);
   margin: 25px auto;
   padding: 50px;
@@ -283,8 +274,8 @@ header > .contUserTag > #cont-data-user > a:hover {
 }
 
 .cont-index-forms > div[class*='cont-'] > form > h4 {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 2.2em;
   color:  rgb(245, 240, 218);
@@ -293,7 +284,7 @@ header > .contUserTag > #cont-data-user > a:hover {
 .cont-index-forms > div[class*='cont-'] > form > .field {
   display: flex;
   flex-direction: column;
-  margin: 15px 0px 0px 0px;
+  margin: 15px 0 0 0;
 }
 
 .cont-index-forms > div[class*='cont-'] > form > .field > label {
@@ -307,20 +298,20 @@ header > .contUserTag > #cont-data-user > a:hover {
   font-family: 'Varela Round', sans-serif;
   font-size: 1.8em;
   /* -- */
-  margin: 8px 0px 0px 0px;
+  margin: 8px 0 0 0;
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 5px 25px;
 }
 
 .cont-index-forms > div[class*='cont-'] > form > button {
-  margin: 15px 15% 0px 15%;
-  padding: 10px 0px;
+  margin: 15px 15% 0 15%;
+  padding: 10px 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 2em;
   color:  rgb(202, 174, 56);
   background-color: rgb(62, 34, 17);
-  border: 0px;
+  border: 0;
   transition: 0.5s;
 }
 
@@ -335,18 +326,18 @@ header > .contUserTag > #cont-data-user > a:hover {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 
 .cont-index-api > h3 {
-  padding: 0px 0px 0px 25px;
+  padding: 0 0 0 25px;
   font-family: 'Varela Round', sans-serif;
   font-size: 1em;
   color:  rgb(202, 174, 56);
 }
 
 .cont-index-api > a {
-  margin: 0px 0px 0px 25px;
+  margin: 0 0 0 25px;
   text-decoration: none;
   font-family: 'Varela Round', sans-serif;
   font-size: 1.4em;
@@ -373,8 +364,8 @@ footer {
 }
 
 footer > div > p {
-  padding: 3px 0px 3px 25px;
-  margin: 0px;
+  padding: 3px 0 3px 25px;
+  margin: 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 1em;
   color:  rgb(245, 240, 218);
@@ -388,7 +379,6 @@ footer > div > p > a {
 footer > div > p > a:hover {
   padding: 10px;
   text-decoration: none;
-  color:  rgb(245, 240, 218);
   background-color: #1c0f03;
   color: #FFF;
   transition: 0.5s;
@@ -407,9 +397,9 @@ footer > div > p > a:hover {
 }
 
 .mainSearcher {
-  padding: 0px;
-  border: 0px;
-  margin: 0px;
+  padding: 0;
+  border: 0;
+  margin: 0;
   /* -- */
   display: grid;
   grid-template-columns: auto;
@@ -439,10 +429,9 @@ footer > div > p > a:hover {
 }
 
 .cont-form-AddSponsor > form > div {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  padding: 0px 10px 0px 0px;
+  margin: 0;
+  border: 0;
+  padding: 0 10px 0 0;
 }
 
 .cont-form-AddSponsor > form > div:first-child { grid-column: 1 / 6; grid-row: 1 / 2;}
@@ -453,7 +442,7 @@ footer > div > p > a:hover {
 .cont-form-AddSponsor > form > button { grid-column: 5 / 6; grid-row: 2 / 3;}
 
 .cont-form-AddSponsor > form > div:first-child > h2 {
-  margin: 0px;
+  margin: 0;
   padding: 5px 10px;
   font-size: 1em;
   color: #CCC;
@@ -478,13 +467,18 @@ footer > div > p > a:hover {
   border: 2px solid #CCC;
   height: 25px;
   font-size: 1.2em;
-  border-radius: 0px;
+  border-radius: 0;
+}
+
+.cont-form-AddSponsor > form > div:nth-child(2) > textarea:focus {
+  transition: 1s;
+  background-color: #CCC;
 }
 
 .cont-form-AddSponsor > form > div:nth-child(3) > input,
 .cont-form-AddSponsor > form > div:nth-child(4) > input{
   font-size: 1.4em;
-  border-radius: 0px;
+  border-radius: 0;
   width: 85%;
 }
 
@@ -511,7 +505,7 @@ footer > div > p > a:hover {
 }
 
 .cont-form-AddSponsor > form > div:nth-child(5) > img {
-  margin: 0px 0px 0px 10px;
+  margin: 0 0 0 10px;
   height: 80px;
   width: 80px;
   align-self: flex-end;
@@ -526,10 +520,9 @@ footer > div > p > a:hover {
 .cont-form-AddSponsor > form > button {
   justify-self: start;
   align-self: center;
-  border-radius: 0px;
-  border: 0px;
+  border-radius: 0;
   padding: 5px 30px;
-  margin: 0px 0px 0px 25px;
+  margin: 0 0 0 25px;
   text-decoration: none;
   font-family: 'Varela Round', sans-serif;
   font-size: 1.4em;
@@ -540,7 +533,6 @@ footer > div > p > a:hover {
 
 .cont-form-AddSponsor > form > button:hover {
   text-decoration: none;
-  color:  rgb(245, 240, 218);
   background-color: #3E2211;
   color: #FFF;
   transition: 0.5s;
@@ -557,8 +549,8 @@ footer > div > p > a:hover {
 }
 
 .cont-allSponsorBundle > div > h2 {
-  margin: 0px;
-  padding: 0px 10px 10px 0px;
+  margin: 0;
+  padding: 0 10px 10px 0;
   font-size: 1em;
   color: #CCC;
 }
@@ -573,7 +565,7 @@ footer > div > p > a:hover {
 
 .cont-allSponsorBundle > div > .cont-sponsorBundle {
   width: 22%;
-  margin: 0px 25px 25px 0px;
+  margin: 0 25px 25px 0;
   background-color: #FFF;
 }
 
@@ -586,7 +578,7 @@ footer > div > p > a:hover {
 }
 
 .cont-sponsorBundle >form > .field {
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 
 .cont-sponsorBundle >form > .field > label {
@@ -596,13 +588,12 @@ footer > div > p > a:hover {
 
 .cont-sponsorBundle >form > .field > input {
   font-size: 0.8em;
-  border-radius: 0px;
+  border-radius: 0;
   /*border: 1px solid #CCC;*/
   padding: 8px;
 }
 
 .cont-sponsorBundle >form > .field > img {
-  /*width: 120px;*/
   height: 100px;
   padding: 5px;
   margin: 0 auto;
@@ -664,7 +655,7 @@ footer > div > p > a:hover {
 .cont-sponsorBundle >form > .field:nth-child(6) > input {
   /*flex-grow: 1;*/
   border: 2px solid #CCC;
-  margin: 0px 0px 0px 0px;
+  margin: 0;
   width: 50%;
 }
 
@@ -699,8 +690,8 @@ footer > div > p > a:hover {
 
 .cont-sponsorBundle >form > .field > .cont-buttons > button {
   flex-basis: 46%;
-  border-radius: 0px;
-  padding: 5px 0px;
+  border-radius: 0;
+  padding: 5px 0;
   border: 2px solid #000;
   background-color: #FFF;
   color: #000;
@@ -727,15 +718,25 @@ footer > div > p > a:hover {
   
   .cont-index-buttons, .cont-index-forms,
   .cont-index-api {
-    padding: 0px;
+    padding: 0;
   }
   
   /* -- Index Header */
   header {
     width: 100%;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    /* -- */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
   }
+  
+  header > div:first-child { grid-column: 1 / 2; grid-row: 1 / 2; }
+  header > div:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+  header > div:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; }
+  header > ul { grid-column: 2 / 3; grid-row: 2 / 3; }
+  header > div:last-child { grid-column: 3 / 4; grid-row: 2 / 3; }
   
   header > div:first-child > svg { 
     width: 50px;
@@ -751,12 +752,12 @@ footer > div > p > a:hover {
   }
   
   header > ul {
-    padding: 0px 10px 0px 0px;
+    padding: 0 10px 0 0;
   }
   
   /* -- Index Buttons -- */
   .cont-index-buttons > .show-main-buttons {
-    padding: 0px 0px 0px 10px;
+    padding: 0 0 0 10px;
   }
   
   .cont-index-buttons > .barButtons {
@@ -767,9 +768,9 @@ footer > div > p > a:hover {
   .cont-index-buttons > .barButtons > button {
     font-size: 1em;
     padding: 15px 5px;
-    border: 0px;
+    border: 0;
     background-color: rgb(202, 174, 56);
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 10px 0;
   }
   
   /* -- Index Forms -- */
@@ -785,7 +786,7 @@ footer > div > p > a:hover {
   }
 
   .cont-index-forms > div[class*='cont-'] > form > .field {
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
   }
 
   .cont-index-forms > div[class*='cont-'] > form > .field > label {
@@ -795,7 +796,7 @@ footer > div > p > a:hover {
   .cont-index-forms > div[class*='cont-'] > form > .field > input {
     font-size: 1em;
     /* -- */
-    border-radius: 0px;
+    border-radius: 0;
     padding: 15px;
   }
 
@@ -813,10 +814,42 @@ footer > div > p > a:hover {
   }
 
   .cont-index-api > a {
-    margin: 5px 0px 15px 15px;
+    margin: 5px 0 15px 15px;
     font-size: 1em;
     padding: 10px 15px;
   }
+  
+  /* --------------- */
+  /* S E A R C H E R */
+  /* --------------- */
+  .cont-form-AddSponsor > form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont-form-AddSponsor > form > div {
+    margin: 0;
+    border: 0;
+    padding: 0 0 10px 0;
+    width: 100%;
+  }
+  
+  .cont-form-AddSponsor > form > div:nth-child(2) > textarea,
+  .cont-form-AddSponsor > form > div:nth-child(3) > input,
+  .cont-form-AddSponsor > form > div:nth-child(4) > input{
+    padding: 0;
+    width: 100%;
+  }
+  
+  .cont-allSponsorBundle > div > .cont-sponsorBundle {
+    width: 100%;
+    margin: 0 0 25px 0;
+  }
+  
+  .cont-allSponsorBundle > div > .cont-sponsorBundle > form > .field > .cont-buttons {
+    margin: 15px 0 0 0;
+  }
+
   
 }
 

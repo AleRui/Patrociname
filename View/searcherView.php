@@ -4,7 +4,7 @@ include_once 'templates/headHTML.php';
 ?>
     <div class="cont-searcher-bg"></div>
 
-    <?php require_once './templates/headerTemplate.php'; ?>
+<?php require_once './templates/headerTemplate.php'; ?>
 
     <main class="mainSearcher">
 
@@ -19,5 +19,10 @@ include_once 'templates/headHTML.php';
         <!-- -->
 
     </main>
+    <!-- -->
+    <div class="cont-index-footer">
+        <?php require_once './templates/footerTemplate.php'; ?>
+    </div>
+    <!-- -->
 
 <?php include_once 'templates/tailHTML.php'; ?>
