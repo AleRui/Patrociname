@@ -3,9 +3,9 @@
  * @uthor: Ale Ruiz
  */
 
-@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Righteous|Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Kanit:500i|Righteous|Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:500i|Righteous|Varela+Round&display=swap');*/
 
 /*
  * font-family: 'Righteous', cursive;
@@ -20,6 +20,20 @@
  * Dark Brown: #3E2211; RGB 62, 34, 17 
  *
  */
+@font-face {
+  font-family: 'Varela Round';
+  src: url('../fonts/Varela_Round/VarelaRound-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Righteous';
+  src: url('../fonts/Righteous/Righteous-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('../fonts/Kanit/Kanit-Medium.ttf') format('truetype');
+}
 
 body {  padding: 0px;  margin: 0px;  border: 0px; }
 
@@ -194,7 +208,7 @@ header > .contUserTag > #cont-data-user > a:hover {
   color: #CAAE38;
   font-size: 5em;
   transform: rotate(-90deg);
-  transition: 0.5;
+  transition: 0.5s;
   /* -- */
   animation-name: none;
   animation-duration: 0.5s;
@@ -627,7 +641,7 @@ footer > div > p > a:hover {
   border: 2px solid #CCC;
 }
 
-..cont-sponsorBundle >form > .field:nth-child() > textarea:focus {
+.cont-sponsorBundle >form > .field:nth-child(3) > textarea:focus {
   background-color: lightgray;
 }
 

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/View/searcherView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/searcherView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/patrociname.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/patrociname.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/patrociname.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/patrociname.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +31,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/searcherView.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="706">
@@ -53,11 +50,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+            <state relative-caret-position="2010">
+              <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -110,7 +116,6 @@
         <option value="$PROJECT_DIR$/templates/searcherLoginTemplate.php" />
         <option value="$PROJECT_DIR$/config/db_ws.php" />
         <option value="$PROJECT_DIR$/core/Connection.php" />
-        <option value="$PROJECT_DIR$/web/css/patrociname.css" />
         <option value="$PROJECT_DIR$/templates/tailHTML.php" />
         <option value="$PROJECT_DIR$/templates/footerTemaplte.php" />
         <option value="$PROJECT_DIR$/templates/sponsorRegisterTemplate.php" />
@@ -134,17 +139,17 @@
         <option value="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" />
         <option value="$PROJECT_DIR$/View/searcherView.php" />
         <option value="$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php" />
+        <option value="$PROJECT_DIR$/web/css/patrociname.css" />
       </list>
     </option>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="49" />
-    <option name="y" value="-2" />
-    <option name="width" value="778" />
-    <option name="height" value="1082" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="485" />
+    <option name="width" value="1144" />
+    <option name="height" value="997" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -154,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,29 +170,24 @@
             <path>
               <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,18 +284,19 @@
       <workItem from="1559984035466" duration="8491000" />
       <workItem from="1559995716272" duration="1056000" />
       <workItem from="1560078225991" duration="16146000" />
-      <workItem from="1560158034055" duration="10093000" />
+      <workItem from="1560158034055" duration="10493000" />
+      <workItem from="1560179233959" duration="2008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295701000" />
+    <option name="totallyTimeSpent" value="298109000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="-2" width="778" height="1082" extended-state="4" />
+    <frame x="49" y="-2" width="1871" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28089887" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28383562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -549,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1619">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/SponsorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -673,8 +668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+        <state relative-caret-position="2010">
+          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -682,6 +677,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="706">
           <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
         </state>
       </provider>
     </entry>
