@@ -50,7 +50,6 @@ class SponsorController extends BaseController
 
     public function index()
     {
-        //
         if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
             //
             $idSponsor=  $_SESSION['user']->getIdSponsor();
@@ -153,7 +152,10 @@ class SponsorController extends BaseController
             //
             $_SESSION['allAvailableBundle'] = array('show' => true, 'list' => $allAvailableBundle);
             //
-            header('Location:?controller=sponsor&action=index');
+            //$this->view($this->controller);
+            $this->index();
+            //
+            //header('Location:?controller=sponsor&action=index');
         } else {
             header('Location:?controller=index&action=index');
         }

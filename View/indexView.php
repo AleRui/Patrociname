@@ -1,9 +1,12 @@
+<!-- -->
 <?php
-//if (!empty($_SESSION)) {
-//    echo 'Existe Session';
+//if ( isset($_SESSION) && !empty($_SESSION) ) {
 //    showPretty($_SESSION);
+//} else {
+//    echo '<div>No existe $_SESSION</div>';
 //}
 ?>
+<!-- -->
 <?php include_once 'templates/headHTML.php'; ?>
 <!-- -->
 <div class="cont-all-bg-video">
@@ -25,7 +28,7 @@
 <!-- -->
 <div class="cont-all-index">
     <div class="cont-index-header">
-        <?php include_once 'templates/headerTemplate.php'; ?>
+        <?php include_once 'templates/indexHeaderTemplate.php'; ?>
     </div>
     <!-- -->
     <div class="cont-index-buttons">

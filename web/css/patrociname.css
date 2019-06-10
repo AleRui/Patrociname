@@ -401,17 +401,13 @@ footer > div > p > a:hover {
   border: 0;
   margin: 0;
   /* -- */
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* -- Add Sponsor -- */
 
 .cont-form-AddSponsor {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  /* -- */
   padding: 25px;
 }
 
@@ -538,7 +534,32 @@ footer > div > p > a:hover {
   transition: 0.5s;
 }
 
-/* -- All sposnsorsBundles */
+
+/* ------------- */
+/* S P O N S O R */
+/* ------------- */
+
+.cont-sponsor-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightyellow;
+  z-index: -1;
+}
+
+.mainSponsor {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  /* -- */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ---------------------------- */
+/* S P O N S O R    B U N D L E */
+/* ---------------------------- */
 
 .cont-allSponsorBundle {
   grid-column: 1 / 2;

@@ -132,7 +132,6 @@ class SponsorBundleModel extends BaseModel
 
     public function getAllBoughtBundle($idSponsor) // -- Sponsor
     {
-        echo '$idSponsor: ' . $idSponsor . '<br>';
         //
         $sql = "
             SELECT *

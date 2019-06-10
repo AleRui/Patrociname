@@ -4,9 +4,11 @@
 
 
 <div class="cont-allSponsorBundle">
+    <!-- -->
     <div>
-        <h2 class="ui header">Paquetes de patrocinio Disponibles:</h2>
+        <h2>Paquetes de patrocinio Disponibles:</h2>
     </div>
+    <!-- -->
     <div>
         <?php
         if (isset($_SESSION['createdSponsorBundle'])) {
@@ -17,10 +19,8 @@
                 ?>
                 <!-- -->
                 <div class="cont-sponsorBundle">
-                    <!-- SponsorWays -->
-                    <form
-                            class="ui form"
-                            id="sponsorWay-<?= $numRow ?>"
+                    <!--  -->
+                    <form   id="sponsorWay-<?= $numRow ?>"
                             method="POST"
                             action=""
                             enctype="multipart/form-data"
@@ -62,10 +62,9 @@
                         <div class="field">
                             <label>Forma: </label>
                             <textarea form="sponsorWay-<?= $numRow ?>"
-                                      type="textarea"
                                       name="sponsorWay"
                                       rows="4"
-                                      cols="30"><?= $createdSponsorBundle[$numRow]->getSponsorWay() ?>"
+                                      cols="30"><?= $createdSponsorBundle[$numRow]->getSponsorWay() ?>
                             </textarea>
                         </div>
                         <!-- Cost Sponsor Way -->
@@ -134,15 +133,13 @@
                                 </div>
                                 <?php
                                 //
-                            }
+                            } // End If bought
                             ?>
                         </div>
-
-
                     </form>
                     <!-- -->
                 </div>
-                <?php
+                <?php // End for
             }
         }
         ?>

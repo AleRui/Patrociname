@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffc85d-7e30-4af8-812c-eda7e82d77ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/indexHeaderTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SearcherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SearcherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SponsorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SponsorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/SponsorBundleModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/SponsorBundleModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/indexView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/indexView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/searcherView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/searcherView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/sponsorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/sponsorView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/headerTemplate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/searcherHeaderTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/searcherHeaderTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sponsorAvailableBundlesTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorAvailableBundlesTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sponsorBoughtBundlesTemplates.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorBoughtBundlesTemplates.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sponsorHeaderTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sponsorHeaderTemplate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/patrociname.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/patrociname.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,56 +45,46 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/View/searcherView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/indexView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="65" selection-start-line="65" selection-end-line="69" selection-end-column="12" />
-              <folding>
-                <element signature="e#6#32#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="816" column="17" lean-forward="true" selection-start-line="816" selection-start-column="17" selection-end-line="816" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/View/sponsorView.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#127#152#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/sponsorBoughtBundlesTemplates.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-148">
+                  <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1436">
+                  <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -101,11 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Model/ApiModel.php" />
-        <option value="$PROJECT_DIR$/templates/apiIndexTemplate.php" />
-        <option value="$PROJECT_DIR$/Controller/ApiController.php" />
-        <option value="$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php" />
-        <option value="$PROJECT_DIR$/CIF_to_test.txt" />
         <option value="$PROJECT_DIR$/web/imas/logoPatrociname.php" />
         <option value="$PROJECT_DIR$/Model/Searcher.php" />
         <option value="$PROJECT_DIR$/Model/Admin.php" />
@@ -119,7 +118,6 @@
         <option value="$PROJECT_DIR$/View/adminView.php" />
         <option value="$PROJECT_DIR$/Model/AdminModel.php" />
         <option value="$PROJECT_DIR$/Model/SponsorBundle.php" />
-        <option value="$PROJECT_DIR$/Model/SponsorBundleModel.php" />
         <option value="$PROJECT_DIR$/Model/adminChart01.php" />
         <option value="$PROJECT_DIR$/templates/adminHeadHTML.php" />
         <option value="$PROJECT_DIR$/templates/adminChartsTemplate.php" />
@@ -140,18 +138,24 @@
         <option value="$PROJECT_DIR$/core/UserSession.php" />
         <option value="$PROJECT_DIR$/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/core/BaseController.php" />
-        <option value="$PROJECT_DIR$/Controller/SponsorController.php" />
         <option value="$PROJECT_DIR$/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/templates/searcherHeaderTemplate.php" />
-        <option value="$PROJECT_DIR$/View/indexView.php" />
         <option value="$PROJECT_DIR$/core/Router.php" />
-        <option value="$PROJECT_DIR$/Controller/SearcherController.php" />
-        <option value="$PROJECT_DIR$/templates/headerTemplate.php" />
         <option value="$PROJECT_DIR$/web/js/patrociname.js" />
-        <option value="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" />
         <option value="$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php" />
         <option value="$PROJECT_DIR$/web/css/patrociname.css" />
+        <option value="$PROJECT_DIR$/Controller/SearcherController.php" />
+        <option value="$PROJECT_DIR$/Model/SponsorBundleModel.php" />
+        <option value="$PROJECT_DIR$/templates/searcherHeaderTemplate.php" />
+        <option value="$PROJECT_DIR$/View/indexView.php" />
         <option value="$PROJECT_DIR$/View/searcherView.php" />
+        <option value="$PROJECT_DIR$/templates/sponsorHeaderTemplate.php" />
+        <option value="$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php" />
+        <option value="$PROJECT_DIR$/templates/headerTemplate.php" />
+        <option value="$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php" />
+        <option value="$PROJECT_DIR$/Controller/SponsorController.php" />
+        <option value="$PROJECT_DIR$/templates/sponsorAvailableBundlesTemplate.php" />
+        <option value="$PROJECT_DIR$/View/sponsorView.php" />
+        <option value="$PROJECT_DIR$/templates/sponsorBoughtBundlesTemplates.php" />
       </list>
     </option>
   </component>
@@ -182,29 +186,17 @@
             <path>
               <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Patrociname_V2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Patrociname_V2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -307,18 +299,19 @@
       <workItem from="1559995716272" duration="1056000" />
       <workItem from="1560078225991" duration="16146000" />
       <workItem from="1560158034055" duration="10493000" />
-      <workItem from="1560179233959" duration="4560000" />
+      <workItem from="1560179233959" duration="4721000" />
+      <workItem from="1560199683253" duration="9212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300661000" />
+    <option name="totallyTimeSpent" value="310034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-2" width="1871" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28383562" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17150685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -340,7 +333,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.32960895" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21589041" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17150685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -366,42 +359,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Model/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Searcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="38" selection-start-line="38" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminLoginTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminHeaderTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminFooterHTML.php" />
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -419,24 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/SponsorBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/AdminModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/SponsorBundleModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="180" column="10" selection-start-line="180" selection-start-column="10" selection-end-line="180" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -566,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/SponsorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="37" column="89" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
@@ -615,20 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searcherHeaderTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/headHTML.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="61" lean-forward="true" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/UserSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -643,20 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/SearcherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/headerTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="74" lean-forward="true" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/patrociname.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -667,27 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="816" column="17" lean-forward="true" selection-start-line="816" selection-start-column="17" selection-end-line="816" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tailHTML.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -695,20 +582,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/patrociname.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="816" column="17" selection-start-line="816" selection-start-column="17" selection-end-line="816" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/SponsorModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/SponsorBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/SearcherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/SponsorBundleModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sponsorHeaderTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/searcherHeaderTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/indexHeaderTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/headHTML.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/View/indexView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="65" selection-start-line="65" selection-end-line="69" selection-end-column="12" />
+        <state relative-caret-position="135">
+          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
           <folding>
-            <element signature="e#6#32#0#PHP" expanded="true" />
+            <element signature="e#15#63#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sponsorApiCheckNifTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/searcherAddSponsorWayTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/SponsorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="155" column="27" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sponsorAvailableBundlesTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/View/searcherView.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="8" />
+          <folding>
+            <element signature="e#118#143#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/sponsorView.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="e#127#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/searcherCreatedBundleTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1436">
+          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sponsorBoughtBundlesTemplates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
