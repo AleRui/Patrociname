@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div>
+<div  id="cont-admin-login" class="cont-admin-login">
     <!-- -->
     <form id="formLoginAdmin"
           action="?controller=admin&action=login"
@@ -9,7 +9,7 @@
         <!-- -->
         <h4>Entrar Admin</h4>
         <!-- -->
-        <div>
+        <div class="field">
             <label>email</label>
             <input form="formLoginAdmin"
                    id="registerAdminMail"
@@ -19,7 +19,7 @@
             <span id="alertaMailSearcher"></span>
         </div>
         <!-- -->
-        <div>
+        <div class="field">
             <label>password</label>
             <input form="formLoginAdmin"
                    name="pass"

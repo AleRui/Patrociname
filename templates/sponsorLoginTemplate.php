@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div  id="cont-sponsor-login" class="cont-sponsor-login">
+<div id="cont-sponsor-login" class="cont-sponsor-login">
     <!-- -->
     <form id="formSponsor"
           class="ui form"
@@ -26,6 +26,6 @@
                    required>
         </div>
         <!-- -->
-        <button form="formSponsor" class="ui button" type="submit">Login</button>
+        <button form="formSponsor" type="submit">Login</button>
     </form>
 </div>

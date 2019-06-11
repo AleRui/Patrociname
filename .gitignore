@@ -76,6 +76,8 @@ composer.phar
 
 /config
 
+/garbage
+
 # -------- #
 #  Video   #
 # -------- #

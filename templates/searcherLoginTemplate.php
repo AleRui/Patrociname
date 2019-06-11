@@ -3,8 +3,6 @@
 
 <div  id="cont-searcher-login" class="cont-searcher-login">
     <!-- -->
-    <!-- <a class="ui button" id="showSer">Entrar Buscador</a> -->
-    <!-- -->
     <form id="formSearcher"
           class="ui form"
           action="?controller=searcher&action=login"
@@ -30,7 +28,6 @@
         </div>
         <!-- -->
         <button form="formSearcher"
-                class="ui button"
                 type="submit">
             Login
         </button>

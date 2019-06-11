@@ -29,6 +29,6 @@
                    required>
         </div>
         <!-- -->
-        <button form="registerSponsor" class="ui button" type="submit">Registrar</button>
+        <button form="registerSponsor" type="submit">Registrar</button>
     </form>
 </div>

@@ -253,6 +253,7 @@ header > .contUserTag > #cont-data-user > a:hover {
 }
 
 /* -- Index Forms -- */
+
 .cont-index-forms > div[class*='cont-'] {
   display: none; /* Important, function with JS */
   /* -- */
@@ -722,6 +723,14 @@ footer > div > p > a:hover {
 .cont-sponsorBundle >form > .field > .cont-buttons > button:hover {
   background-color: #000;
   color: #FFF; 
+}
+
+
+/* --------- */
+/* A D M I N */
+/* --------- */
+.cont-index-forms > div[class*='cont-admin-'] { 
+  display: block;
 }
 
 
