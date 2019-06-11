@@ -7,7 +7,7 @@ if (!isset($_SESSION['allAvailableBundle'])) {
     <!-- -->
     <div class="cont-allSponsorBundle">
         <div class="cont-btn-showAvailable">
-            <a href="?controller=sponsor&action=findAllAvailableBundle">
+            <a href="?controller=sponsor&action=findAllAvailableBundle&page=1">
                 <i class="fas fa-search"></i>
                 Buscar</a>
             <br>
@@ -103,6 +103,11 @@ if (!isset($_SESSION['allAvailableBundle'])) {
             ?>
         </div>
     </div>
+    <!-- -->
     <?php
+    //
+    // Pagination
+    require_once 'sponsorBundlePaginationTemplate.php';
+    //
 } // End Exist $_SESSION
 ?>

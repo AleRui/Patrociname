@@ -5,7 +5,7 @@
 <!-- -->
 <?php
 //if (isset($_SESSION)) {
-//    showPretty($_SESSION);
+//    showPretty($_SESSION['user']);
 //} else {
 //    echo '<div>No existe $_SESSION</div>';
 //}

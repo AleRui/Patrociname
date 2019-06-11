@@ -118,13 +118,32 @@ class SponsorBundleModel extends BaseModel
     {
         //
         $sql = "SELECT * FROM $this->table
-            WHERE idSponsorBundle !=
-                ALL(SELECT idSponsorBundle
+                WHERE idSponsorBundle !=
+                    ALL(SELECT idSponsorBundle
                     FROM sponsorbuysponsoring
-                    WHERE idSponsor = :idSponsor
-                ); ";
+                    WHERE idSponsor = :idSponsor)";
         //
         $params = array(':idSponsor' => $idSponsor);
+        //
+        return $this->executeQuery($sql, $params);
+    }
+
+
+    public function getAllAvailableBundleByPage($idSponsor, $beginSearch, $stopSearch) // -- Sponsor
+    {
+        // Pagination
+        //
+        $sql = "SELECT * FROM $this->table
+                WHERE idSponsorBundle !=
+                ALL(SELECT idSponsorBundle
+                    FROM sponsorbuysponsoring
+                    WHERE idSponsor = :idSponsor)
+                ORDER BY sponsorDateCreated DESC
+                LIMIT $beginSearch, $stopSearch";
+        //
+        $params = array(
+            ':idSponsor' => $idSponsor
+        );
         //
         return $this->executeQuery($sql, $params);
     }

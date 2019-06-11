@@ -148,11 +148,43 @@ class SponsorController extends BaseController
             $idSponsor = $_SESSION['user']->getIdSponsor();
             //
             $sponsorBundleModel = new SponsorBundleModel();
-            $allAvailableBundle = $sponsorBundleModel->getAllAvailableBundle($idSponsor);
+            $numAvailableBundle = count($sponsorBundleModel->getAllAvailableBundle($idSponsor));
             //
-            $_SESSION['allAvailableBundle'] = array('show' => true, 'list' => $allAvailableBundle);
+            // PAGINATION
             //
-            //$this->view($this->controller);
+            $numBundlesByPage = 8;
+            $page = ( isset($_GET['page']) ) ? $_GET['page'] : 1;
+            //echo 'Page: '.$page.'<br>';
+            $totalPages = ceil($numAvailableBundle / $numBundlesByPage);
+            //
+            // Validaciones de GET
+            if ( is_int( $page ) ) {
+                header('Location:?controller=sponsor&action=findAllAvailableBundle&page=1');
+            }
+
+            if ( (int)$page < 1 ) {
+                header('Location:?controller=sponsor&action=findAllAvailableBundle&page=1');
+            }
+
+            if ( (int)$page > (int)$totalPages ) {
+                header('Location:?controller=sponsor&action=findAllAvailableBundle&page='.$totalPages);
+            }
+            //
+            $beginSearch = ( (int)$page - 1) * $numBundlesByPage;
+            //echo '$beginSearch: '.$beginSearch.'<br>';
+            //echo '$totalPages: '.$totalPages.'<br>';
+            //
+            $allAvailableBundle = $sponsorBundleModel->getAllAvailableBundleByPage($idSponsor, $beginSearch, $numBundlesByPage);
+            //
+            $_SESSION['allAvailableBundle'] = array(
+                'show' => true,
+                'totalPages' => $totalPages,
+                'list' => $allAvailableBundle,
+                'actualPage' => $page
+            );
+            //
+            //echo 'Total de SponsorBundles Disponibles: '.count($allAvailableBundle);
+            //die();
             $this->index();
             //
             //header('Location:?controller=sponsor&action=index');
