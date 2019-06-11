@@ -6,11 +6,13 @@ if (!isset($_SESSION['allAvailableBundle'])) {
     ?>
     <!-- -->
     <div class="cont-allSponsorBundle">
-        <div class="cont-btn-showAvailable">
-            <a href="?controller=sponsor&action=findAllAvailableBundle&page=1">
-                <i class="fas fa-search"></i>
-                Buscar</a>
-            <br>
+        <div>
+            <div>
+                <a href="?controller=sponsor&action=findAllAvailableBundle&page=1">
+                    <i class="fas fa-search"></i>
+                    Buscar</a>
+                <br>
+            </div>
         </div>
     </div>
     <!-- -->
@@ -22,7 +24,12 @@ if (!isset($_SESSION['allAvailableBundle'])) {
         <!-- -->
         <div>
             <h2>Listado de ofertas de patrocinio</h2>
-            <a href="?controller=sponsor&action=hideAllAvailableBundle">Ocultar busqueda</a>
+            <div>
+                <a href="?controller=sponsor&action=hideAllAvailableBundle">
+                    <i class="far fa-eye-slash"></i>
+                    Ocultar busqueda
+                </a>
+            </div>
         </div>
         <!-- -->
         <div>
@@ -90,9 +97,12 @@ if (!isset($_SESSION['allAvailableBundle'])) {
                                        readonly>
                             </div>
                             <!-- Buttons -->
-                            <div class="field">
+                            <div class="field field-buttons-buyBundle">
                                 <div class="cont-buttons">
-                                    <button form="sponsorWayAvailable-<?= $numRow ?>" type="submit">Comprar</button>
+                                    <button class="btn-buyBundle" form="sponsorWayAvailable-<?= $numRow ?>" type="submit">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -107,7 +117,9 @@ if (!isset($_SESSION['allAvailableBundle'])) {
     <?php
     //
     // Pagination
+    echo '<div class="cont-pagination">';
     require_once 'sponsorBundlePaginationTemplate.php';
+    echo '</div>';
     //
 } // End Exist $_SESSION
 ?>

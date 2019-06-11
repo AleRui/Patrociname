@@ -8,10 +8,10 @@ if ( isset($_SESSION['allAvailableBundle']['totalPages']) ) {
     ?>
     <nav>
         <ul>
-            <li><a href="?controller=sponsor&action=findAllAvailableBundle&page=<?php
+            <a href="?controller=sponsor&action=findAllAvailableBundle&page=<?php
                 echo ( $_GET['page'] > 1 ) ? $_GET['page']-1 : 1;
-                ?>">Prev</a>
-            </li>
+                ?>"><li>Prev</li></a>
+
             <!-- -->
             <?php
             $totalPages = $_SESSION['allAvailableBundle']['totalPages'];
@@ -36,16 +36,19 @@ if ( isset($_SESSION['allAvailableBundle']['totalPages']) ) {
             //
             for ($i = $beginPagination; $i < $endPagination; $i++) {
                 $active = (int)$_GET['page'] === $i+1 ? 'active' : '';
+                echo '<a href="?controller=sponsor&action=findAllAvailableBundle&page=' . ($i + 1) . '">';
                 echo "<li class='$active'>";
-                echo '<a href="?controller=sponsor&action=findAllAvailableBundle&page=' . ($i + 1) . '">' . ($i + 1) . '</a>';
+                echo  ($i + 1);
                 echo '</li>';
+                echo '</a>';
             }
             ?>
             <!-- -->
-            <li><a href="?controller=sponsor&action=findAllAvailableBundle&page=<?php
+            <a href="?controller=sponsor&action=findAllAvailableBundle&page=<?php
                 echo ( $_GET['page'] < $totalPages ) ? $_GET['page']+1 : $totalPages;
-                ?>">Next</a>
-            </li>
+                ?>"><li>Next</li>
+            </a>
+
         </ul>
     </nav>
     <?php

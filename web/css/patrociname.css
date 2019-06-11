@@ -185,6 +185,11 @@ header > .contUserTag > #cont-data-user > a:hover {
   grid-template-rows: auto;
 }
 
+
+.cont-index-buttons >.show-main-buttons {
+  margin: 10px 0 0 10px;
+}
+
 @keyframes rotateButtonGo {
   from {transform: rotate(-90deg);}
   to {transform: rotate(0deg);}
@@ -548,7 +553,6 @@ footer > div > p > a:hover {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: lightyellow;
   z-index: -1;
 }
 
@@ -561,6 +565,8 @@ footer > div > p > a:hover {
   display: flex;
   flex-direction: column;
 }
+
+/* -- Check Nif -- */
 
 .cont-form-checkEnterprise,
 .cont-data-enterprise {
@@ -625,6 +631,82 @@ footer > div > p > a:hover {
   color: #FFF;
 }
 
+/* -- SponsorBundle Available -- */
+
+.cont-allSponsorBundle > div:first-child {
+  margin-bottom: 15px;
+}
+
+.cont-allSponsorBundle >  div:first-child {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.cont-allSponsorBundle > div:first-child > div > a {
+  border-radius: 0;
+  padding: 5px 30px;
+  text-decoration: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  #3E2211;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid #3E2211;
+  transition: 0.5s;
+}
+
+.cont-allSponsorBundle > div:first-child > div > a:hover {
+  text-decoration: none;
+  background-color: #3E2211;
+  color: #FFF;
+}
+
+/* -- Paginación -- */
+
+.cont-pagination > nav > ul {
+  list-style: none;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0;
+  /* -- */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:center;
+}
+
+
+.cont-pagination > nav > ul > a {
+  text-decoration: none;
+  color: #3E2211;
+  transition: 1s;
+}
+
+
+.cont-pagination > nav > ul > a:hover{
+  color: #FFF;
+}
+
+.cont-pagination > nav > ul > a > li {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px 25px;
+  margin: 0 5px;
+  border-bottom: 4px solid #3E2211;
+  transition: 1s;
+}
+
+.cont-pagination > nav > ul > a > li[class*='active'] {
+  background-color: rgba(245, 240, 218, 1);
+}
+
+.cont-pagination > nav > ul > a > li:hover {
+  padding: 10px 45px;
+  background-color: #3E2211;
+  color: #FFF;
+}
+
+
 
 /* ---------------------------- */
 /* S P O N S O R    B U N D L E */
@@ -636,24 +718,9 @@ footer > div > p > a:hover {
   /* -- */
   padding: 25px;
   font-family: 'Varela Round', sans-serif;
-}
-
-.cont-allSponsorBundle >.cont-btn-showAvailable > a {
-  border-radius: 0;
-  padding: 5px 30px;
-  margin: 0 0 0 25px;
-  text-decoration: none;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 1em;
-  color:  #3E2211;
-  border: 2px solid #3E2211;
-  transition: 0.5s;
-}
-
-.cont-allSponsorBundle >.cont-btn-showAvailable > a:hover {
-  text-decoration: none;
-  background-color: #3E2211;
-  color: #FFF;
+  /* -- */
+  display: flex;
+  flex-direction: column;
 }
 
 .cont-allSponsorBundle > div > h2 {
@@ -677,6 +744,7 @@ footer > div > p > a:hover {
   background-color: rgba(245, 240, 218, 0.8);
   border-bottom: 4px solid rgb(62, 34, 17);
 }
+
 
 /* -- sponsorBundle -- */
 
@@ -800,7 +868,7 @@ footer > div > p > a:hover {
   /* -- */
   display: flex;
   flex-direction: row;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .cont-sponsorBundle:hover >form > .field > .cont-buttons {
@@ -817,11 +885,11 @@ footer > div > p > a:hover {
 }
 
 .cont-sponsorBundle >form > .field > .cont-buttons > button:first-child {
-  background-color: lightyellow;
+  background-color: rgb(202, 174, 56);
 }
 
 .cont-sponsorBundle >form > .field > .cont-buttons > button:last-child {
-  background-color: darkred;
+  background-color: rgb(202, 174, 56);
 }
 
 
@@ -830,6 +898,21 @@ footer > div > p > a:hover {
   color: #FFF; 
 }
 
+.cont-sponsorBundle >form > .field:nth-child(6).field-buttons-buyBundle {
+  justify-content: center;
+}
+
+.cont-sponsorBundle > form > .field > .cont-buttons > .btn-buyBundle:last-child {
+  /* -- */
+  padding: 10px 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.cont-sponsorBundle > form > .field > .cont-buttons > .btn-buyBundle:last-child > i {
+  margin-right: 10px;
+}
 
 /* --------- */
 /* A D M I N */
@@ -934,7 +1017,7 @@ footer > div > p > a:hover {
   
   /* -- Index Buttons -- */
   .cont-index-buttons > .show-main-buttons {
-    padding: 0 0 0 10px;
+    padding: 8px 0 0 10px;
   }
   
   .cont-index-buttons > .barButtons {
@@ -1025,6 +1108,35 @@ footer > div > p > a:hover {
   
   .cont-allSponsorBundle > div > .cont-sponsorBundle > form > .field > .cont-buttons {
     margin: 15px 0 0 0;
+  }
+  
+  /* ------------- */
+  /* S P O N S O R */
+  /* ------------- */
+  
+  .cont-form-checkEnterprise > form > .field > input {
+    padding: 5px;
+    margin: 10px;
+    border: 0;
+    width: 250px;
+  }
+  
+  .cont-allSponsorBundle >  div:first-child {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  /* -- Paginación -- */
+  
+  .cont-pagination > nav > ul > a > li {
+    padding: 10px 15px;
+    margin: 1px;
+  }
+
+  .cont-pagination > nav > ul > a > li:hover {
+    padding: 10px 25px;
   }
   
   /* --------- */
