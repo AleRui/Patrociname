@@ -521,6 +521,7 @@ footer > div > p > a:hover {
 .cont-form-AddSponsor > form > button {
   justify-self: start;
   align-self: center;
+  /* -- */
   border-radius: 0;
   padding: 5px 30px;
   margin: 0 0 0 25px;
@@ -536,7 +537,6 @@ footer > div > p > a:hover {
   text-decoration: none;
   background-color: #3E2211;
   color: #FFF;
-  transition: 0.5s;
 }
 
 
@@ -562,13 +562,67 @@ footer > div > p > a:hover {
   flex-direction: column;
 }
 
-.cont-form-checkEnterprise {
+.cont-form-checkEnterprise,
+.cont-data-enterprise {
   padding: 25px;
 }
 
-.cont-form-checkEnterprise > form {
+.cont-form-checkEnterprise > form{
   padding: 25px;
-  background-color: rgba(255,255,255,0.5)
+  background-color: rgba(255,255,255,0.5);
+  border-bottom: 4px solid rgb(202, 174, 56);
+}
+
+.cont-form-checkEnterprise > form > .field > input {
+  padding: 5px;
+  margin: 0 0 0 10px;
+  border: 0;
+  border-bottom: 2px solid rgb(202, 174, 56);
+  width: 300px;
+  font-size: 2em;
+}
+
+.cont-form-checkEnterprise > form > .field >  button {
+  border-radius: 0;
+  padding: 5px 30px;
+  margin: 0 0 0 25px;
+  text-decoration: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  #3E2211;
+  border: 2px solid #3E2211;
+  transition: 0.5s;
+}
+
+.cont-form-checkEnterprise > form > .field >  button:hover {
+  text-decoration: none;
+  background-color: #3E2211;
+  color: #FFF;
+}
+
+.cont-data-enterprise >ul {
+  list-style: none;
+  padding: 25px;
+  background-color: rgba(255,255,255,0.5);
+  border-bottom: 4px solid rgb(202, 174, 56);
+}
+
+.cont-data-enterprise > a {
+  border-radius: 0;
+  padding: 5px 30px;
+  margin: 0 0 0 25px;
+  text-decoration: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  #3E2211;
+  border: 2px solid #3E2211;
+  transition: 0.5s;
+}
+
+.cont-data-enterprise > a:hover {
+  text-decoration: none;
+  background-color: #3E2211;
+  color: #FFF;
 }
 
 
@@ -582,6 +636,24 @@ footer > div > p > a:hover {
   /* -- */
   padding: 25px;
   font-family: 'Varela Round', sans-serif;
+}
+
+.cont-allSponsorBundle >.cont-btn-showAvailable > a {
+  border-radius: 0;
+  padding: 5px 30px;
+  margin: 0 0 0 25px;
+  text-decoration: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  color:  #3E2211;
+  border: 2px solid #3E2211;
+  transition: 0.5s;
+}
+
+.cont-allSponsorBundle >.cont-btn-showAvailable > a:hover {
+  text-decoration: none;
+  background-color: #3E2211;
+  color: #FFF;
 }
 
 .cont-allSponsorBundle > div > h2 {
@@ -605,6 +677,8 @@ footer > div > p > a:hover {
   background-color: rgba(245, 240, 218, 0.8);
   border-bottom: 4px solid rgb(62, 34, 17);
 }
+
+/* -- sponsorBundle -- */
 
 .cont-sponsorBundle > form {
   padding: 15px;

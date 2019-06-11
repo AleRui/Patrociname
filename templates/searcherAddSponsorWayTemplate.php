@@ -58,7 +58,7 @@ require_once './Model/SponsorBundle.php';
             <img id="imaBefore" src="#" alt="Imagen"/>
         </div>
         <!-- -->
-        <button form="addSponsor" class="ui button" type="submit">
+        <button form="addSponsor" type="submit">
             <i class="fas fa-plus"></i>
         </button>
         <!-- -->

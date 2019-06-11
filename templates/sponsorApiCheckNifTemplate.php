@@ -24,7 +24,7 @@
     } else {
         ?>
         <!-- -->
-        <div>
+        <div class="cont-data-enterprise">
             <ul>
                 <li>La empresa esta registrada en einformación.com</li>
                 <li>El nombre es <?= $_SESSION['info_empresa']->denominacion ?></li>

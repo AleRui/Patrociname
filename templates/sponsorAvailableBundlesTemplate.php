@@ -5,8 +5,13 @@
 if (!isset($_SESSION['allAvailableBundle'])) {
     ?>
     <!-- -->
-    <div>
-        <a href="?controller=sponsor&action=findAllAvailableBundle">Buscar</a><br>
+    <div class="cont-allSponsorBundle">
+        <div class="cont-btn-showAvailable">
+            <a href="?controller=sponsor&action=findAllAvailableBundle">
+                <i class="fas fa-search"></i>
+                Buscar</a>
+            <br>
+        </div>
     </div>
     <!-- -->
     <?php
@@ -34,11 +39,10 @@ if (!isset($_SESSION['allAvailableBundle'])) {
                     <!-- -->
                     <div class="cont-sponsorBundle">
                         <!-- -->
-                        <form
-                                id=" sponsorWay-<?= $numRow ?>"
-                                method="POST"
-                                action="?controller=sponsor&action=buySponsoring"
-                                accept-charset="UTF-8">
+                        <form id=" sponsorWay-<?= $numRow ?>"
+                              method="POST"
+                              action="?controller=sponsor&action=index"
+                              accept-charset="UTF-8">
                             <!-- ID Sponsor Way-->
                             <div class="field">
                                 <input form="sponsorWay-<?= $numRow ?>"
@@ -65,7 +69,8 @@ if (!isset($_SESSION['allAvailableBundle'])) {
                                 <textarea form="sponsorWay-<?= $numRow ?>"
                                           name="sponsorWay"
                                           rows="4"
-                                          cols="30"><?= $allAvailableBundle[$numRow]->getSponsorWay() ?>
+                                          cols="30"
+                                          readonly><?= $allAvailableBundle[$numRow]->getSponsorWay() ?>
                                 </textarea>
                             </div>
                             <!-- Cost Sponsor Way -->
@@ -84,13 +89,11 @@ if (!isset($_SESSION['allAvailableBundle'])) {
                                        value="<?= $allAvailableBundle[$numRow]->getSponsorDateCreated() ?>"
                                        readonly>
                             </div>
-                            <!-- -->
                             <!-- Buttons -->
                             <div class="field">
-                                <button form="sponsorWay-<?= $numRow ?>"
-                                        type="submit">
-                                    Comprar
-                                </button>
+                                <div class="cont-buttons">
+                                    <button form="sponsorWay-<?= $numRow ?>" type="submit">Comprar</button>
+                                </div>
                             </div>
                         </form>
                     </div>
