@@ -3,7 +3,6 @@
 <!-- -->
 <div class="cont-searcher-bg"></div>
 <!-- -->
-<!-- -->
 <?php
 //if (isset($_SESSION)) {
 //    showPretty($_SESSION);

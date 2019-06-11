@@ -389,11 +389,15 @@ footer > div > p > a:hover {
 /* S E A R C H E R */
 /* --------------- */
 
+
 .cont-searcher-bg {
   position: fixed;
-  width: 100vw;
+  overflow: hidden;
+  background-image: url('../imas/background-sabana.jpg');
+  background-position: center;
+  background-size: 100% 100%;
+  width: 100%;
   height: 100vh;
-  background-color: lightyellow;
   z-index: -1;
 }
 
@@ -413,9 +417,9 @@ footer > div > p > a:hover {
 }
 
 .cont-form-AddSponsor > form {
-  border: 2px solid #CCC;
+  border-bottom: 4px solid rgb(202, 174, 56);
   padding: 25px;
-  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.5);
   /* -- */
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr auto;
@@ -442,7 +446,7 @@ footer > div > p > a:hover {
   margin: 0;
   padding: 5px 10px;
   font-size: 1em;
-  color: #CCC;
+  color: rgb(202, 174, 56);
 }
 
 .cont-form-AddSponsor > form > div:nth-child(2),
@@ -552,9 +556,19 @@ footer > div > p > a:hover {
   padding: 0;
   border: 0;
   margin: 0;
+  font-family: 'Varela Round', sans-serif;
   /* -- */
   display: flex;
   flex-direction: column;
+}
+
+.cont-form-checkEnterprise {
+  padding: 25px;
+}
+
+.cont-form-checkEnterprise > form {
+  padding: 25px;
+  background-color: rgba(255,255,255,0.5)
 }
 
 
@@ -574,7 +588,7 @@ footer > div > p > a:hover {
   margin: 0;
   padding: 0 10px 10px 0;
   font-size: 1em;
-  color: #CCC;
+  color: rgb(202, 174, 56);
 }
 
 .cont-allSponsorBundle > div:nth-child(2) {
@@ -582,18 +596,18 @@ footer > div > p > a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .cont-allSponsorBundle > div > .cont-sponsorBundle {
   width: 22%;
   margin: 0 25px 25px 0;
-  background-color: #FFF;
+  background-color: rgba(245, 240, 218, 0.8);
+  border-bottom: 4px solid rgb(62, 34, 17);
 }
 
 .cont-sponsorBundle > form {
   padding: 15px;
-  border: 2px solid #CCC;
   /* -- */
   display: flex;
   flex-direction: column;
@@ -605,13 +619,12 @@ footer > div > p > a:hover {
 
 .cont-sponsorBundle >form > .field > label {
   font-size: 0.8em;
-  color: #888;
+  color: rgb(62, 34, 17);
 }
 
 .cont-sponsorBundle >form > .field > input {
   font-size: 0.8em;
   border-radius: 0;
-  /*border: 1px solid #CCC;*/
   padding: 8px;
 }
 
@@ -624,19 +637,20 @@ footer > div > p > a:hover {
 .cont-sponsorBundle >form > .field:nth-child(2) {
   display: flex;
   flex-direction: column;
-  border: 2px solid #CCC;
+  background-color: #FFF;
+  border-top: 2px solid rgb(202, 174, 56);
 }
 
 .cont-sponsorBundle >form > .field:nth-child(2) > label {
   text-align: center;
-  color: #CCC;
+  color: rgb(202, 174, 56);
   padding: 3px 8px;
   font-size: 0.8em;
-  border-top: 2px solid #CCC;
+  border: 2px solid rgb(202, 174, 56);
 }
 
 .cont-sponsorBundle >form > .field:nth-child(2) > label:hover {
-  background-color: #888;
+  background-color: rgb(202, 174, 56);
   color: #FFF;
   transition: 1s;
 }
@@ -651,7 +665,10 @@ footer > div > p > a:hover {
 }
 
 .cont-sponsorBundle >form > .field:nth-child(3) > textarea {
-  border: 2px solid #CCC;
+  border: 0;
+  border-bottom: 2px solid rgb(202, 174, 56);
+  padding: 5px;
+  
 }
 
 .cont-sponsorBundle >form > .field:nth-child(3) > textarea:focus {
@@ -663,22 +680,28 @@ footer > div > p > a:hover {
 .cont-sponsorBundle >form > .field:nth-child(6) {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .cont-sponsorBundle >form > .field:nth-child(4) > label,
 .cont-sponsorBundle >form > .field:nth-child(5) > label,
 .cont-sponsorBundle >form > .field:nth-child(6) > label {
   width: 35%;
-  /*flex-grow: 1;*/
 }
 
 .cont-sponsorBundle >form > .field:nth-child(4) > input,
 .cont-sponsorBundle >form > .field:nth-child(5) > input,
 .cont-sponsorBundle >form > .field:nth-child(6) > input {
-  /*flex-grow: 1;*/
-  border: 2px solid #CCC;
+  border: 0;
+  border-bottom: 2px solid rgb(202, 174, 56);
   margin: 0;
   width: 50%;
+}
+
+.cont-sponsorBundle >form > .field:nth-child(4)::after {
+  content: '€';
+  margin-left: 5px;
 }
 
 .cont-sponsorBundle >form > .field:nth-child(6) > input {
@@ -714,14 +737,22 @@ footer > div > p > a:hover {
   flex-basis: 46%;
   border-radius: 0;
   padding: 5px 0;
-  border: 2px solid #000;
-  background-color: #FFF;
-  color: #000;
+  border: 2px solid rgb(62, 34, 17);
+  color: rgb(62, 34, 17);
   transition: 0.8s;
 }
 
+.cont-sponsorBundle >form > .field > .cont-buttons > button:first-child {
+  background-color: darkyellow;
+}
+
+.cont-sponsorBundle >form > .field > .cont-buttons > button:last-child {
+  background-color: darkred;
+}
+
+
 .cont-sponsorBundle >form > .field > .cont-buttons > button:hover {
-  background-color: #000;
+  background-color: rgb(62, 34, 17);
   color: #FFF; 
 }
 
@@ -729,10 +760,53 @@ footer > div > p > a:hover {
 /* --------- */
 /* A D M I N */
 /* --------- */
+
+.cont-all-admin-bg {
+  position: fixed;
+  overflow: hidden;
+  background-image: url('../imas/background-jungle.jpg');
+  background-position: center;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.cont-all-admin {
+  font-family: 'Varela Round';
+  position: absolute;
+  width: 99vw;
+  height: 100vh;
+  /* -- */
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
+}
+
 .cont-index-forms > div[class*='cont-admin-'] { 
   display: block;
 }
 
+.cont-all-charts {
+  width: 95vw;
+  margin: 0 auto;
+  /* -- */
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-all-charts > h1 {
+  color: rgb(245, 240, 218);
+}
+
+.cont-all-charts > #cont-chart-01 {
+  background-color: #FFF;
+  border: 4px solid #CCC;
+  padding: 15px;
+  margin: 0 auto;
+  width: 70vw;
+  height: 100%;
+}
 
 /* ----------------- */
 /*                   */
@@ -879,8 +953,15 @@ footer > div > p > a:hover {
   .cont-allSponsorBundle > div > .cont-sponsorBundle > form > .field > .cont-buttons {
     margin: 15px 0 0 0;
   }
-
   
+  /* --------- */
+  /* A D M I N */
+  /* --------- */
+  .cont-all-charts > #cont-chart-01 {
+    padding: 15px;
+    margin: 0 auto;
+    width: 85vw;
+  }
 }
 
 

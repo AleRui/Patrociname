@@ -5,7 +5,7 @@
 <div class="cont-allSponsorBundle">
     <!-- -->
     <div>
-        <h4 class="ui header">Patrocinios Comprados</h4>
+        <h2>Patrocinios Comprados</h2>
     </div>
     <!-- -->
     <div>
@@ -49,12 +49,6 @@
                                  }
                                  ?>">
                         </div>
-                        <!-- Id Searcher -->
-                        <input form="sponsorBought-<?= $numRow ?>"
-                               type="hidden"
-                               name="idSearcher"
-                               value="<?= $allSponsorBought[$numRow]->getIdSearcher() ?>"
-                               readonly>
                         <!-- Text Sponsor Way  -->
                         <div class="field">
                             <label>Forma: </label>
@@ -98,6 +92,12 @@
                                    value="<?= $allSponsorBought[$numRow]->getBuyDateSponsorBundle() ?>"
                                    readonly>
                         </div>
+                        <!-- Id Searcher -->
+                        <input form="sponsorBought-<?= $numRow ?>"
+                               type="hidden"
+                               name="idSearcher"
+                               value="<?= $allSponsorBought[$numRow]->getIdSearcher() ?>"
+                               readonly>
                     </form>
                 </div>
                 <?php

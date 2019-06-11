@@ -3,30 +3,39 @@
 <!-- -->
 <?php include_once 'templates/adminHeadHTML.php'; ?>
 <!-- -->
-
-<?php
-if (!empty($_SESSION['user'])) {
-    //
-    //showPretty($_SESSION);
-    ?>
+    <div class="cont-all-admin-bg"></div>
+<!-- -->
+<div class="cont-all-admin">
     <!-- -->
-    <h1>Administrador:</h1>
-    <!-- -->
-    <?php require_once './templates/adminChartsTemplate.php'; ?>
-    <!-- -->
-    <?php
-} else {
-    ?>
-    <!-- -->
-    <div class="cont-index-forms">
-        <!-- -->
-        <?php require_once './templates/adminLoginTemplate.php'; ?>
-        <!-- -->
+    <div class="cont-admin-header">
+        <?php include_once 'templates/adminHeaderTemplate.php'; ?>
     </div>
     <!-- -->
-    <?php
-}
-?>
+    <main class="cont-main-Admin">
+        <?php
+        if (!empty($_SESSION['user'])) {
+            //
+            echo '<div class="cont-all-charts">';
+            require_once './templates/adminChartsTemplate.php';
+            echo '<div>';
+            //
+        } else {
+            //
+            echo '<div class="cont-index-forms">';
+            //
+            require_once './templates/adminLoginTemplate.php';
+            //
+            echo '</div>';
+            //
+        }
+        ?>
+    </main>
+    <!-- -->
+    <div class="cont-admin-footer">
+        <?php require_once './templates/footerTemplate.php'; ?>
+    </div>
+    <!-- -->
+</div>
 <!-- -->
 <?php include_once 'templates/tailHTML.php'; ?>
 <!-- -->

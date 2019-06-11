@@ -78,7 +78,7 @@
                         </div>
                         <!-- Duration Sponsor Way -->
                         <div class="field">
-                            <label>Duración: </label>
+                            <label>Duración: (meses) </label>
                             <input form="sponsorWay-<?= $numRow ?>"
                                    name="sponsorDuration"
                                    type="number"
@@ -87,7 +87,7 @@
                         </div>
                         <!-- Date Created Sponsor Way -->
                         <div class="field">
-                            <label>Fecha de Creación</label>
+                            <label>Fecha de Creación:</label>
                             <input form="sponsorWay-<?= $numRow ?>"
                                    type="datetime-local"
                                    value="<?= $createdSponsorBundle[$numRow]->getSponsorDateCreated() ?>"
