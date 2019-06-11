@@ -179,7 +179,6 @@ class SponsorController extends BaseController
         if (userSession::getSession()->checkActiveSession()) {
             //
             $idSponsor = $_SESSION['user']->getIdSponsor();
-            die();
             //
             $idSponsorBundle = $_POST['idSponsorBundle'];
             //

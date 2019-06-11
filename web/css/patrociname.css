@@ -817,7 +817,7 @@ footer > div > p > a:hover {
 }
 
 .cont-sponsorBundle >form > .field > .cont-buttons > button:first-child {
-  background-color: darkyellow;
+  background-color: lightyellow;
 }
 
 .cont-sponsorBundle >form > .field > .cont-buttons > button:last-child {
@@ -847,7 +847,6 @@ footer > div > p > a:hover {
 }
 
 .cont-all-admin {
-  font-family: 'Varela Round';
   position: absolute;
   width: 99vw;
   height: 100vh;

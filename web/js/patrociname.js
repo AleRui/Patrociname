@@ -5,7 +5,7 @@
 
 $(document).ready(function () {
     //
-    //console.log('document ready');
+    console.log('document ready');
     //
     $('#registerSearcherMail').blur(function () {
         //
@@ -26,16 +26,13 @@ $(document).ready(function () {
             }
         })
     });
-    //
-    // Charts
-    if ($("#cont-chart-01").length) {
-        console.log('Funcionando Charts');
-    }
 });
 
 
 function setActionDelete($numRow) {
-    //console.log('Funcionando setActionDelete()');
+    //
+    console.log('Funcionando setActionDelete()');
+    //
     $('#sponsorWay-' + $numRow).attr(
         'action',
         '?controller=SponsorBundle&action=deleteSponsorBundle'
@@ -44,7 +41,9 @@ function setActionDelete($numRow) {
 }
 
 function setActionUpdate($numRow) {
-    //console.log('Funcionando setActioUpdate()');
+    //
+    console.log('Funcionando setActioUpdate()');
+    //
     $('#sponsorWay-' + $numRow).attr(
         'action',
         '?controller=SponsorBundle&action=updateSponsorBundle'
@@ -56,6 +55,9 @@ function setActionUpdate($numRow) {
 /* -- Style -- */
 
 function showImageBeforeUpload(input) {
+    //
+    console.log('Function showImageBeforeUpload');
+    //
     if (input.files && input.files[0]) {
         let reader = new FileReader();
         //
@@ -72,6 +74,8 @@ function showImageBeforeUpload(input) {
 
 
 function showContainer(element) {
+    //
+    console.log('Function showContainer');
     console.log(element);
     //
     let containerSelected = '#' + element.id.replace("btnShow-", "");
@@ -95,6 +99,8 @@ function showContainer(element) {
 }
 
 function showIndexButtons() {
+    //
+    console.log('Function showIndexButtons');
     //
     if ($('#barButtons')) {
         //
@@ -125,6 +131,8 @@ function showIndexButtons() {
 }
 
 function showContainerUser() {
+    //
+    console.log('Function showContainerUser');
     //
     if ($('#cont-data-user')) {
         let stateDisplay = $('#cont-data-user').css('display');
