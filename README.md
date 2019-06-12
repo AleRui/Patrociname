@@ -65,23 +65,6 @@ Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
 	</tr>
 </table>
 
-### Zona de Buscador / Searcher
-
-En esta zona el buscador podrá crear sus paquetes de patrocinio ("SposnsorBundles").
-Para ello usará el formulario superior para crear el paquete.
-Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
-
-Cada paquete consta de:
-- Texto sobre como va a ser la manera de publicitar.
-- Coste de la publicidad.
-- Periodo de tiempo por el que se genera la publicidad.
-- La fecha en la que se creó.
-
-Además arriba a la izquierda de la barra de header se habilitar un boton de "Logout" para salir de la zona de buscador y acabar la sesión.
-
-
-![Index](screenshot/patrociname_04.png)
-
 ### Zona de Sponsor
 En la zona de Sponsor podemos realizar las siguientes acciones:
 - Comprobar mediante una Api externa un CIF de Empresa.
