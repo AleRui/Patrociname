@@ -11,7 +11,7 @@
 
 ---
 
-Patrociname es una aplicación que pone en contacto a  _**"Buscadores"**_ ('Searchers'): personas, clubes, organizaciones... busquen patrocinadores, pudiendo definir la manera, precio, duración... en la que pueden gestionar una publicidad, con  _**"Sponsors"**_: entidades, empresas... que quieran patrocinarse y busquen con quien o donde hacerlo.
+Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Buscadores"**_ ('Searchers'): personas, clubes, organizaciones... busquen patrocinadores, pudiendo definir la manera, precio, duración... en la que pueden gestionar una publicidad, con  _**"Sponsors"**_: entidades, empresas... que quieran patrocinarse y busquen con quien o donde hacerlo.
 <br><br>
    
 ## Zonas de la Aplicación
