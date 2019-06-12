@@ -44,10 +44,6 @@ Patrociname es una aplicación que pone en contacto a  _**"Buscadores"**_ ('Sear
 
 ### Zona de Buscador / Searcher
 
-En esta zona el buscador podrá crear sus paquetes de patrocinio ("SposnsorBundles").
-Para ello usará el formulario superior para crear el paquete.
-Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
-
 <table>
 	<tr>
 		<td style="width: 48%;">
@@ -65,17 +61,25 @@ Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
 	</tr>
 </table>
 
+---
+
 ### Zona de Sponsor
-En la zona de Sponsor podemos realizar las siguientes acciones:
-- Comprobar mediante una Api externa un CIF de Empresa.
-La API es la de einforma: https://www.einforma.com/marketing/api-empresas
-Si el CIF esta en su base de datos trerá la información de la empresa.
 
-A continuación se mostraran los paquetes de patrocinio comprados.
-Que incluyen la fecha de cuando fueron comprados.
+<table>
+	<tr>
+		<td style="width: 48%;">
+			<ul>En la zona de Sponsor podemos realizar las siguientes acciones:
+			<li>Comprobar mediante una Api externa un CIF de Empresa. La API es la de einforma: https://www.einforma.com/marketing/api-empresas. Si el CIF esta en su base de datos trerá la información de la empresa.</li>
+			<li>A continuación se mostraran los paquetes de patrocinio comprados. Que incluyen la fecha de cuando fueron comprados.</li>
+			<li>En la zona inferior podrá usar un boton para buscar más paquetes. Estos se mostrarán paginados con fecha de más reciente hasta el ultimo.</li>
+		</td>
+		<td style="width: 48%;">
+			<img src="screenshot/patrociname_04.png">
+		</td>
+	</tr>
+</table>
 
-En la zona inferior podrá usar un boton para buscar más paquetes.
-Estos se mostrarán paginados con fecha de más reciente hasta el ultimo.
+---
 
 ### Zona de Administrador
 
@@ -84,20 +88,43 @@ Para entrar a esta zona habra que introducir:
 https://patrociname.alerui.com/admin.php
 ```
 
-![Index_2](screenshot/patrociname_03.png)
-
-![Index_2](screenshot/patrociname_02.png)
+<table>
+	<tr>
+		<td style="width: 48%;">
+			<p>En esta zona el administrador podrá comprobrar estádísticas de el número de bundles creados por día.</p>
+		<td style="width: 48%;">
+			<img src="screenshot/patrociname_05.png">
+		</td>
+	</tr>
+</table>
 
 ## Resumen de Tecnologías Usadas:
 
-* Sistemas Informáticos:
-	- SO Desarrollo: Ubuntu LTS Desktop
-	- Despligegue AWS:  Ubuntu 18.10 LTS
-	- Despligue VirtualBox: Debian 8
+<table>
+	<tr>
+		<td style="width: 48%;">
+			<ul><h4>Sistemas Informáticos:</h4>
+			<li>SO Desarrollo: Ubuntu LTS Desktop</li>
+			<li>Despligegue AWS:  Ubuntu 18.10 LTS</li>
+			<li>Despligue VirtualBox: Debian 8</li>
+			</ul>
+		</td>
+		<td style="width: 48%;">
+			<ul><h4>Entorno de Desarrollo:</h4>
+			<li>IDE phpstorm</li>
+			<li>Editor de Texto: Sublime Text</li>
+			<li>Navegadores: Firefox y Chrome</li>
+			<li>Servidor páginas web: Apache 2</li>
+			<li>Servidor base de datos: MariaDB</li>
+			</ul>
+		</td>
+	</tr>
+</table>
+
 
 * Entorno de Desarrollo:
 	- IDE phpstorm
-	- Editorde Texto: Sublime Text
+	- Editor de Texto: Sublime Text
 	- Navegadores: Firefox y Chrome
 	- Servidor páginas web: Apache 2
 	- Servidor base de datos: MariaDB
