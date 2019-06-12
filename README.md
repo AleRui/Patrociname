@@ -18,16 +18,16 @@ Patrociname es una aplicación que pone en contacto a  _**"Buscadores"**_ ('Sear
 	<tr>
 		<td style="width: 48%;">
 			<ul>En la zona de index podras:
-				<li>- Registrarse como buscador
-				<li>- Registrarse como ponsor
-				<li>- Entrar mediante "login" a la zona de usuario usuario. 
-				<li>- Entrar mediante "login" a la zona de sponsor.
-				<li>- Consultar mediante un Api los paquetes de patrocinio disponibles.
-				<li>- Entrar a una zona de administrador para ver estadíticas.
+				<li>- Registrarse como buscador</li>
+				<li>- Registrarse como ponsor</li>
+				<li>- Entrar mediante "login" a la zona de usuario usuario. </li>
+				<li>- Entrar mediante "login" a la zona de sponsor.</li>
+				<li>- Consultar mediante un Api los paquetes de patrocinio disponibles.</li>
+				<li>- Entrar a una zona de administrador para ver estadíticas.</li>
 			</ul>
 			<ul>Para usar la aplicación sin registrarse hay creado los usuarios: 
-				 <li>Buscador: prueba@prueba.com | Pass: 123
-				 <li>Sponsor: prueba@prueba.com | Pass: 123
+				 <li>Buscador: prueba@prueba.com | Pass: 123</li>
+				 <li>Sponsor: prueba@prueba.com | Pass: 123</li>
 		</td>
 		<td style="width: 48%;">
 			<img src="screenshot/patrociname_01.png">
@@ -40,27 +40,34 @@ Patrociname es una aplicación que pone en contacto a  _**"Buscadores"**_ ('Sear
 	</tr>
 </table>
 
-Index
-
-En la zona de index podras:
-- Registrarse como buscador
-- Registrarse como ponsor
-- Entrar mediante "login" a la zona de usuario usuario. 
-- Entrar mediante "login" a la zona de sponsor.
-- Consultar mediante un Api los paquetes de patrocinio disponibles.
-- Entrar a una zona de administrador para ver estadíticas.
-
- Para usar la aplicación sin registrarse hay creado los usuarios: 
- * buscador: prueba@prueba.com | Pass: 123
- * Sponsor: prueba@prueba.com | Pass: 123
-
 ---
 
-![Index](screenshot/patrociname_01.png)
+### Zona de Buscador / Searcher
 
-![Index](screenshot/patrociname_06.png)
+En esta zona el buscador podrá crear sus paquetes de patrocinio ("SposnsorBundles").
+Para ello usará el formulario superior para crear el paquete.
+Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
 
-![Index](screenshot/patrociname_05.png)
+<table>
+	<tr>
+		<td style="width: 48%;">
+			En esta zona el buscador podrá crear sus paquetes de patrocinio ("SposnsorBundles").
+			Para ello usará el formulario superior para crear el paquete.
+			Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
+
+			<ul>Cada paquete consta de:
+			<li>Texto sobre como va a ser la manera de publicitar.</li>
+			<li>Coste de la publicidad.</li>
+			<li>Periodo de tiempo por el que se genera la publicidad.</li>
+			<li>La fecha en la que se creó.</li>
+
+			Además arriba a la izquierda de la barra de header se habilitar un boton de "Logout" para salir de la zona de buscador y 				acabar la sesión.
+		</td>
+		<td style="width: 48%;">
+			<img src="screenshot/patrociname_03.png">
+		</td>
+	</tr>
+</table>
 
 ### Zona de Buscador / Searcher
 
