@@ -95,7 +95,7 @@ https://patrociname.alerui.com/admin.php
 <table>
 	<tr>
 		<td style="width: 48%;">
-			<p>En esta zona el administrador podrá comprobrar estádísticas de el número de bundles creados por día.</p>
+			<p>En esta zona el administrador podrá comprobrar estádísticas de el número de paquetes creados por día.</p>
 		<td style="width: 48%;">
 			<img src="screenshot/patrociname_05.png">
 		</td>
