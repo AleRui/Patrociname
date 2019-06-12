@@ -34,7 +34,7 @@ Patrociname es una aplicación que pone en contacto a  _**"Buscadores"**_ ('Sear
 		</td>
 	</tr>
 	<tr>
-		<td style="width: 100%;">
+		<td colspan="2">
 			<img src="screenshot/patrociname_02.png">
 		</td>
 	</tr>
