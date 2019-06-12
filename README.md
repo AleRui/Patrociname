@@ -119,35 +119,51 @@ https://patrociname.alerui.com/admin.php
 			</ul>
 		</td>
 	</tr>
+	<tr>
+		<td style="width: 48%;">
+			<ul><h4>Desarrollo Web en Entorno Servidor:</h4>
+			<li>Lenguaje servidor: PHP 7.2</li>
+			<li>Patrones usados: MVC, Singleton</li>
+			<li>conexión con Base de datos: PDO</li>
+			</ul>
+		</td>
+		<td style="width: 48%;">
+			<ul><h4>Desarrollo Web en Entorno Cliente:</h4>
+			<li>Lenguaje de Marcas: HTML 5</li>
+			<li>Editor de estilos: CSS 3</li>
+			<li>Lenguaje cliente: Javascript</li>
+			<li>Framework cliente: JQuery</li>
+			<li>Conexiones con servidor: Ajax</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 48%;">
+			<ul><h4>Base de Datos:</h4>
+			<li>Base de datos relacional: MySQL</li>
+			<li>Gestor visual de base de datos: phpmyadmin</li>
+			<li>Gestor por línea comandos: MySQL-CLI</li>
+			</ul>
+		</td>
+		<td style="width: 48%;">
+			<ul><h4>Diseño de interfaces:</h4>
+			<li>Gráficas: Chart.JS</li>
+			<li>Gráficos Vectoriales: SVG, IncScape</li>
+			<li>Iconos: Font Awesome</li>
+			<li>Video web: mp4, ogg</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 48%;">
+			<ul><h4>Despliegue de Aplicaciones:</h4>
+			<li>hosting: Amazon Web Services</li>
+			<li>ssh y filezilla</li>
+			<li>Virtual Box -> OVA</li>
+			</ul>
+		</td>
+		<td style="width: 48%;">
+		</td>
+	</tr>
 </table>
-
-
-* Entorno de Desarrollo:
-	- IDE phpstorm
-	- Editor de Texto: Sublime Text
-	- Navegadores: Firefox y Chrome
-	- Servidor páginas web: Apache 2
-	- Servidor base de datos: MariaDB
-
-* Desarrollo Web en Entorno Servidor:
-	- Lenguaje servidor: PHP 7.2
-	- Patrones usados: MVC, Singleton
-	- conexión con Base de datos: PDO
-
-* Desarrollo Web en Entorno Cliente:
-	- Lenguaje de Marcas: HTML 5
-	- Editor de estilos: CSS 3
-	- Lenguaje cliente: Javascript
-	- Framework cliente: JQuery
-	- Conexiones con servidor: Ajax
-
-* Base de Datos:
-	- Base de datos relacional: MySQL
-	- Gestor de base de datos: phpmyadmin y mysql-cli
-
-* Diseño de interfaces:
-	- Iconos: Font Awesome
-	- Gráficas: Chart.JS
-	- Imágenes vectoriales: SVG
-	- Video web: mp4, ogg
 
