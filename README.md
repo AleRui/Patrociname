@@ -1,4 +1,4 @@
-# Proyecto Fin de Grado para el Ciclo de Grado formativo Susperior de Desarrollo de Aplicaciones Web
+# Proyecto Fin de Grado para el Ciclo de Grado formativo Superior de Desarrollo de Aplicaciones Web
 
 ##### @author: Alejandro Ruiz López
 ##### @Curso: 2º DAW 2018/2019
