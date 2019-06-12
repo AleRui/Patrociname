@@ -7,7 +7,7 @@
 
 ---
 
-## https://patrociname.alerui.com/
+## www.patrociname.alerui.com
 
 ---
 
