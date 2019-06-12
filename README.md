@@ -61,7 +61,8 @@ Y en la zona de abajo podrár ver los paquetes creados, editarlos o borrarlos.
 			<li>Periodo de tiempo por el que se genera la publicidad.</li>
 			<li>La fecha en la que se creó.</li>
 
-			Además arriba a la izquierda de la barra de header se habilitar un boton de "Logout" para salir de la zona de buscador y 				acabar la sesión.
+			Además arriba a la izquierda de la barra de header se habilitar
+			un boton de "Logout" para salir de la zona de buscador y acabar la sesión.
 		</td>
 		<td style="width: 48%;">
 			<img src="screenshot/patrociname_03.png">
