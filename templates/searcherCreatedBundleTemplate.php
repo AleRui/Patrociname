@@ -1,5 +1,12 @@
 <?php
-//showPretty( unserialize($_SESSION['createdSponsorBundle']) );
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
 
 
@@ -20,11 +27,11 @@
                 <!-- -->
                 <div class="cont-sponsorBundle">
                     <!--  -->
-                    <form   id="sponsorWay-<?= $numRow ?>"
-                            method="POST"
-                            action=""
-                            enctype="multipart/form-data"
-                            accept-charset="UTF-8">
+                    <form id="sponsorWay-<?= $numRow ?>"
+                          method="POST"
+                          action=""
+                          enctype="multipart/form-data"
+                          accept-charset="UTF-8">
                         <!-- ID Sponsor Way-->
                         <div class="field">
                             <input form="sponsorWay-<?= $numRow ?>"
@@ -99,19 +106,19 @@
                         <div class="field">
                             <?php
                             if ($createdSponsorBundle[$numRow]->getMailSponsor()) {
-                                //
+
                                 echo '<div class="bought">Producto comprado por: ';
                                 echo $createdSponsorBundle[$numRow]->getMailSponsor();
                                 echo '</div>';
-                                //
+
                                 echo '<div class="bought">La fecha de compra fue: ';
                                 echo $createdSponsorBundle[$numRow]->getBuyDateSponsorBundle();
                                 echo '</div>';
-                                //
+
                             } else {
-                                //
+
                                 echo '<div class="notBought">Actualmente este Sponsor Way no ha sido comprado.</div>';
-                                //
+
                                 ?>
                                 <div class="cont-buttons">
 
@@ -132,7 +139,7 @@
                                     </button>
                                 </div>
                                 <?php
-                                //
+
                             } // End If bought
                             ?>
                         </div>

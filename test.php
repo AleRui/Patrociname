@@ -1,9 +1,9 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Ale Ruiz
- * Date: 07/11/2018
- * Time: 13:45
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
  *
  */
 
@@ -46,23 +46,3 @@ require_once './Model/Searcher.php';
 $obj = $model->getObject($query, 'searcher');
 showPretty($obj);
 echo '<hr/>';
-
-// ---------------------------------------
-
-/*echo 'Prueba Query Mal<br>';
-
-require_once "core/BaseModel.php";
-
-$sql = 'SELECT * FROM searchr';
-
-$query = BaseModel::doQuery($sql);
-
-echo gettype($query);
-showPretty($query);
-
-$obj = BaseModel::getObject($query);
-showPretty($obj);
-
-echo '<hr/>';*/
-
-// ---------------------------------------

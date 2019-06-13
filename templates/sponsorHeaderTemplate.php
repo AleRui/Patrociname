@@ -1,5 +1,12 @@
-<!-- -->
 <?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 if (isset($_SESSION['user'])) {
     ?>
     <div class="contUserTag">
@@ -7,7 +14,6 @@ if (isset($_SESSION['user'])) {
             <i class="fas fa-user"></i>
         </div>
         <div id="cont-data-user">
-            <!--<div>idSearcher:<?= $_SESSION['user']->getIdSponsor() ?></div>-->
             <div><?= $_SESSION['user']->getMailSponsor() ?></div>
             <a href="?controller=sponsor&action=logout">Logout</a>
         </div>
@@ -15,4 +21,3 @@ if (isset($_SESSION['user'])) {
     <?php
 }
 ?>
-<!-- -->

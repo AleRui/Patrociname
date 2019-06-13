@@ -1,14 +1,16 @@
-<!-- -->
 <?php
-//if ( isset($_SESSION) && !empty($_SESSION) ) {
-//    showPretty($_SESSION);
-//} else {
-//    echo '<div>No existe $_SESSION</div>';
-//}
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
+include_once 'templates/headHTML.php';
+
 ?>
-<!-- -->
-<?php include_once 'templates/headHTML.php'; ?>
-<!-- -->
+
 <div class="cont-all-bg-video">
     <video id="video" autoplay muted loop>
         <source src="./web/video/patrociname_bg2_copr.mp4" type="video/mp4"/>
@@ -25,12 +27,12 @@
         </object>
     </video>
 </div>
-<!-- -->
+
 <div class="cont-all-index">
     <div class="cont-index-header">
         <?php include_once 'templates/indexHeaderTemplate.php'; ?>
     </div>
-    <!-- -->
+
     <div class="cont-index-buttons">
         <div id="show-main-buttons" class="show-main-buttons" onclick="showIndexButtons()">
             <i id="btn-showButtons" class="fas fa-caret-square-down"></i>
@@ -50,28 +52,28 @@
             </button>
         </div>
     </div>
-    <!-- -->
+
     <div class="cont-index-forms">
-        <!-- -->
+
         <?php require_once './templates/searcherRegisterTemplate.php'; ?>
-        <!-- -->
+
         <?php require_once './templates/searcherLoginTemplate.php'; ?>
-        <!-- -->
+
         <?php require_once './templates/sponsorRegisterTemplate.php'; ?>
-        <!-- -->
+
         <?php require_once './templates/sponsorLoginTemplate.php'; ?>
-        <!-- -->
+
     </div>
-    <!-- -->
+
     <div class="cont-index-api">
         <?php require_once './templates/indexApiTemplate.php'; ?>
     </div>
-    <!-- -->
+
     <div class="cont-index-footer">
         <?php require_once './templates/footerTemplate.php'; ?>
     </div>
-    <!-- -->
+
 </div>
-<!-- -->
+
 <?php include_once 'templates/tailHTML.php'; ?>
 

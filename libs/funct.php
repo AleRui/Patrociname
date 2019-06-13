@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ale
- * Date: 8/11/18
- * Time: 19:02
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 function showPretty($obj)
@@ -16,40 +17,31 @@ function showPretty($obj)
 function checkFileUploadValid($fileUploaded, $imagePath)
 {
     $validFile = 0;
-    //
-    echo '$imagePath: ' . $imagePath . '<br>';
-    //showPretty($fileUploaded);
-    //
+
     $imageFileType = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
-    //
+
     $check = getimagesize($fileUploaded["tmp_name"]);
-    //
+
     if ($check !== false) {
         $validFile = 1;
     } else {
         $validFile = 0;
     }
-    //
-    //if (file_exists($imagePath)) {
-    //    echo "Sorry, file already exists.";
-    //    $validFile = 0;
-    //}
-    //
+
     if ($fileUploaded["size"] > 500000) {
         $validFile = 0;
     }
-    //
+
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif") {
         $validFile = 0;
     }
-    //
+
     return $validFile;
 }
 
 function falseDataForApi()
 {
-    //
     return "{\"denominacion\":\"PANADERIA Y CONFITERIA ARTEPAN MALAGA SL.\"," .
         "\"nombreComercial\":[\"SOLO CLIENTES\"],\"domicilioSocial\":\"CA" .
         "LLE ALEJANDRO DUMAS, 17 - BL 1 PISO 2 E\",\"localidad\":\"29004 " .

@@ -1,7 +1,12 @@
 <?php
-//showPretty($_SESSION);
-?>
-<?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 if (!isset($_SESSION['allAvailableBundle'])) {
     ?>
     <!-- -->
@@ -35,10 +40,9 @@ if (!isset($_SESSION['allAvailableBundle'])) {
         <div>
             <?php
             if (isset($_SESSION['allAvailableBundle']['show'])) {
-                //
+
                 $allAvailableBundle = $_SESSION['allAvailableBundle']['list'];
-                //showPretty($allAvailableBundle);
-                //
+
                 for ($numRow = 0;
                      $numRow < count($allAvailableBundle);
                      $numRow++) {
@@ -115,8 +119,9 @@ if (!isset($_SESSION['allAvailableBundle'])) {
     </div>
     <!-- -->
     <?php
-    //
+
     // Pagination
+
     echo '<div class="cont-pagination">';
     require_once 'sponsorBundlePaginationTemplate.php';
     echo '</div>';

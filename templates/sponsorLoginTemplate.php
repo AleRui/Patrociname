@@ -1,4 +1,12 @@
 <?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
 
 <div id="cont-sponsor-login" class="cont-sponsor-login">

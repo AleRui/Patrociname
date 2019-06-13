@@ -1,5 +1,12 @@
 <?php
 
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 require_once 'core/BaseModel.php';
 require_once 'Model/SponsorBundleModel.php';
 
@@ -46,8 +53,6 @@ class adminChart01
         GROUP BY DATE_FORMAT(t1.sponsorDateCreated, '%Y-%m-%d')
         ";
         $params = array();
-        //
-        //echo $sql;
         //
         $baseModel = new BaseModel('sponsorBundle');
         //

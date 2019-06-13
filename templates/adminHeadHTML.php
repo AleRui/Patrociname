@@ -1,3 +1,12 @@
+<?php
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+?>
+
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
@@ -12,8 +21,6 @@
     <!-- -->
     <!-- JQuery-->
     <script src="web/js/jquery-3.3.1.js"></script>
-    <!-- Semantic -->
-    <!-- <link rel="stylesheet" type="text/css" href="web/semantic/dist/semantic.min.css"> -->
     <script src="web/semantic/dist/semantic.min.js"></script>
     <!-- Javascript -->
     <script src="web/js/patrociname-charts.js"></script>
@@ -47,8 +54,6 @@
     <meta name="theme-color" content="#ffffff">
     <!-- -->
 </head>
-<!-- -->
 
-<!-- -->
 <body>
 <!-- -->

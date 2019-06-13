@@ -1,5 +1,12 @@
 <?php
-//showPretty($_SESSION);
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
 
 <div class="cont-allSponsorBundle">
@@ -16,7 +23,6 @@
             <?php
         } else {
             $allSponsorBought = $_SESSION['allSponsorBought'];
-            //showPretty($allSponsorBought);
             //
             for ($numRow = 0;
                  $numRow < count($allSponsorBought);

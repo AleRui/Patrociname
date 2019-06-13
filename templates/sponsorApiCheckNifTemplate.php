@@ -1,8 +1,16 @@
 <?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
 
 <div class="cont-api-checkEnterprise">
-    <!-- Compruebar API eimforma -->
+    <!-- API einforma -->
     <?php
     if (!isset($_SESSION['info_empresa']) || $_SESSION['info_empresa'] == false) {
         ?>
@@ -11,7 +19,7 @@
             <form id="checkCIF"
                   method="POST"
                   action="?controller=sponsor&action=checkCIF">
-                <!-- Input CIF -->
+                <!-- CIF -->
                 <div class="field">
                     <label>Comprobar CIF</label>
                     <input form="checkCIF" name="cif" required>

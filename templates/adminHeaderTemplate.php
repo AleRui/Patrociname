@@ -1,12 +1,16 @@
 <?php
-//if (isset($_SESSION)) {
-//    showPretty($_SESSION);
-//} else {
-//    echo '<div>No existe $_SESSION</div>';
-//}
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
-<!-- -->
+
 <header>
+
     <div class="cont-logo-admin"><?php include_once './web/imas/logoPatrocinameAnimate.php'; ?></div>
     <div><a href="?controller=index&action=index"><h1>Patrociname</h1></a></div>
     <div><h5>V 0.3</h5></div>
@@ -14,7 +18,7 @@
         <li><i class="fab fa-facebook"></i></li>
         <li><i class="fab fa-linkedin"></i></li>
     </ul>
-    <!-- -->
+
     <?php
     if (isset($_SESSION['user'])) {
         ?>
@@ -30,5 +34,5 @@
         <?php
     }
     ?>
-    <!-- -->
+
 </header>

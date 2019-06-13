@@ -1,8 +1,16 @@
 <?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 ?>
 
 <footer>
-    <!-- -->
+
     <div>
         <p>
             Github:
@@ -23,4 +31,5 @@
     <div>
         <p>Esto es un un proyecto de fin de grado para el Ciclo Superior de Desarrollo de Aplicaciones Web, por lo que la aplicación es una "DEMO" de lo que se puede llegar a hacer. El contenido es ficticio, disculpen las molestias.</p>
     </div>
+
 </footer>

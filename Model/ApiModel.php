@@ -1,27 +1,17 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ale
- * Date: 24/11/18
- * Time: 11:14
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 function runAPI($cif)
 {
-    //echo 'Estoy en runAPI<br>';
-    //
-    // Conseguir info JSON (Página de información de empresas)
-    // einforma.com
-    // Usuario: alejandroruizlopez@hotmail.es
-    // contraseña: ein17418786
-    // clientid: s8w672cov0j3hs4xkktcj9xw7rxi54mpnpzoy7ei.api.einforma.com
-    // clientSecret: 6aZhFoQk181QbmydRt614-Xqn5Rne_qCPRlT3m_zp-E
-    //
-    // prueba de CIF: B93358778
-    // prueba de CIF: B93388668
 
     //Autentication OAuth 2.0
-    // 1º GET TOKEN
+
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://developers.einforma.com/api/v1/oauth/token?' .
@@ -41,21 +31,22 @@ function runAPI($cif)
             'cache-control: no-cache'
         ),
     ));
-    //
+
     $responseOne = curl_exec($curl);
     $err = curl_error($curl);
-    //
+
     curl_close($curl);
+
     // ----------------------//
+
     if ($err) {
         return "cURL Error #:" . $err;
     } else {
+
         // 2º GET DATA
-        //
-        //$token = json_decode($responseOne)->access_token;
-        //$token = "Authorization: Bearer " . $token;
+
         $token = "Authorization: Bearer " . json_decode($responseOne)->access_token;
-        //
+
         $url = "https://developers.einforma.com/api/v1/companies/" . $cif . "/test";
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -84,7 +75,7 @@ function runAPI($cif)
         } else {
             return $data;
         } // END GET DATA
-        //
+
     } // END GET TOKEN
 
 }

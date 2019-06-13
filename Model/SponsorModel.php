@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ale
- * Date: 17/11/18
- * Time: 20:42
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 require_once 'core/BaseModel.php';
@@ -27,7 +28,7 @@ class SponsorModel extends BaseModel
             ':mail' => $mail,
             ':pass' => $pass
         );
-        //
+
         return $this->executeQuery($sql, $params);
     }
 
@@ -36,28 +37,25 @@ class SponsorModel extends BaseModel
     {
         $sql = "SELECT mailSponsor FROM $this->table WHERE mailSponsor = :mail";
         $params = array(':mail' => $mail);
-        //
+
         return $this->executeQuery($sql, $params);
     }
 
 
     public function insertSponsor($mail, $pass)
     {
-        //
+
         $idAvailable = ($this->minIdAvailable()[0])->getMinid();
-        //
-        //showPretty( $idAvailable );
-        //die();
-        //
+
         $sql = "INSERT INTO $this->table (idSponsor, mailSponsor, passSponsor)
         VALUES ( :id, :mail, MD5(:pass) )";
-        //
+
         $params = array(
             ':id' => $idAvailable,
             ':mail' => $mail,
             ':pass' => $pass
         );
-        //
+
         return $this->executeQuery($sql, $params);
     }
 

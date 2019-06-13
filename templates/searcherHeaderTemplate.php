@@ -1,5 +1,12 @@
-<!-- -->
 <?php
+
+/**
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
+ */
+
 if (isset($_SESSION['user'])) {
     ?>
     <div class="contUserTag">
@@ -14,4 +21,3 @@ if (isset($_SESSION['user'])) {
     <?php
 }
 ?>
-<!-- -->
