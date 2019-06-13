@@ -8,7 +8,7 @@
 
 ## www.patrociname.alerui.com
 
-[Decargar OVAs con el despliegue de la Aplicación en una Red de Virtual Box](https://mega.nz/#F!UepBmY5A!dMB8Kuz993_c_74b4UuLCw)
+[Decargar OVAs con el despliegue de la Aplicación en una Red de Virtual Box](https://mega.nz/#!BHojHCCA!RkmGgJNeI7TXige6coT3GIEUPXobyfI9k6gsR7tumEA)
 
 
 Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Buscadores"**_ ('Searchers'): personas, clubes, organizaciones... busquen patrocinadores, pudiendo definir la manera, precio, duración... en la que pueden gestionar una publicidad, con  _**"Sponsors"**_: entidades, empresas... que quieran patrocinarse y busquen con quien o donde hacerlo.
@@ -187,7 +187,7 @@ https://patrociname.alerui.com/admin.php
 			<li><a href="DOCUMENTS/Despliegue_Praparacion_VBox.md"> + info Despliegue Vbox </a></li>
 			<li><a href="DOCUMENTS/Despliegue_Preparacion_AWS.md"> + info Despliegue AWS </a></li>
 			<li><a href="DOCUMENTS/DWES.md"> + info </a></li>
-			<li><a href"https://mega.nz/#F!UepBmY5A!dMB8Kuz993_c_74b4UuLCw">Descargar OVAs con despligue</a></li>
+			<li><a href="https://mega.nz/#!BHojHCCA!RkmGgJNeI7TXige6coT3GIEUPXobyfI9k6gsR7tumEA">Descargar OVAs con despligue</a></li>
 			<li>hosting: Amazon Web Services, Ec2</li>
 			<li>dominoi: Amazon Web Service, Route 53
 			<li>ssh y filezilla</li>
