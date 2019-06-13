@@ -47,7 +47,7 @@ $ git clone https://github.com/AleRui/Patrociname.git
 
 4 Por cuestión de peso el video de background del proyecto no se ha subido al repositorio, si se quiere insertar un video con formato: mpg, ogg, web... Debe crearse en web la carpeta video/ e insertar los archivos llamandolos video.mp4, video.ogg, video.web...
 
-5 Para que funcionen los gráficos del administrador hay que realizar una instalación de paquetes de Javascript con NPM.
+5 Para que funcionen los gráficos del administrador hay que realizar la instalación de paquetes de ChartJS de Javascript, con el gestor de paquetes NPM.
 	- Ir a la carpeta web/
 	- Instalar Chart.JS
 	```bash
