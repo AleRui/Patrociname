@@ -22,10 +22,11 @@ Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Busc
 	<tr>
 		<td style="width: 48%;">
 			<ul>En la zona de index podras:
-				<li>Registrarse como buscador</li>
-				<li>Registrarse como ponsor</li>
+				<li>Registrarse como buscador. Al poner un email que ya existe lo indica.</li>
+				<li>Registrarse como sponsor. Al poner un email que ya existe lo indeica.</li>
 				<li>Entrar mediante "login" a la zona de usuario usuario. </li>
 				<li>Entrar mediante "login" a la zona de sponsor.</li>
+				<li>Todos los formularios tienen validaciones en cliente.</li>
 				<li>Consultar mediante un Api los paquetes de patrocinio disponibles.</li>
 				<li>Entrar a una zona de administrador para ver estadíticas.</li>
 			</ul>
@@ -101,6 +102,19 @@ https://patrociname.alerui.com/admin.php
 		</td>
 	</tr>
 </table>
+
+---
+
+### Algunas consideraciones más a tener en cuenta:
+
+* El router es un componente que no permite poner en la url una dirección que no exista, ya que redirigirá al inicio, y una vez logueados si intentamos poner una controlador o acción en la url que no exista redirigirá al index de cada tipo de usuario.
+
+* Cuando el comprador compra un paquete patrocinio, suceden las siguientes acciones:
+	- El paquete de patrocinio se agrega a su comprador.
+	- El paquete de patrocinio deja de estar disponible para los demás compradores.
+	- El creador del paquete de patrocinio es notificado de que un paquete suyo ha sido comprado.
+
+---
 
 ## Resumen de Tecnologías Usadas:
 
