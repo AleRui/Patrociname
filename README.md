@@ -11,7 +11,7 @@
 [Decargar OVAs con el despliegue de la Aplicación en una Red de Virtual Box](https://mega.nz/#!BHojHCCA!RkmGgJNeI7TXige6coT3GIEUPXobyfI9k6gsR7tumEA)
 
 
-Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Buscadores"**_ ('Searchers'): personas, clubes, organizaciones... busquen patrocinadores, pudiendo definir la manera, precio, duración... en la que pueden gestionar una publicidad, con  _**"Sponsors"**_: entidades, empresas... que quieran patrocinarse y busquen con quien o donde hacerlo.
+Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Buscadores"**_ ('Searchers'): personas, clubes, organizaciones... que busquen patrocinadores, pudiendo definir la manera, precio, duración... en la que pueden gestionar una publicidad, con  _**"Sponsors"**_: entidades, empresas... que quieran patrocinarse y busquen con quien o donde hacerlo.
 <br><br>
    
 ## Zonas de la Aplicación
@@ -27,7 +27,7 @@ Patrociname es una aplicación web "responsiva" que pone en contacto a  _**"Busc
 				<li>Entrar mediante "login" a la zona de usuario usuario. </li>
 				<li>Entrar mediante "login" a la zona de sponsor.</li>
 				<li>Todos los formularios tienen validaciones en cliente.</li>
-				<li>Consultar mediante un Api los paquetes de patrocinio disponibles.</li>
+				<li>Consultar mediante una Api los paquetes de patrocinio disponibles.</li>
 				<li>Entrar a una zona de administrador para ver estadíticas.</li>
 			</ul>
 			<ul>Para usar la aplicación sin registrarse hay creado los usuarios: 
@@ -172,7 +172,7 @@ https://patrociname.alerui.com/admin.php
 		</td>
 		<td style="width: 48%;">
 			<ul><h4>Diseño de interfaces:</h4>
-			<li><a href="DOCUMENTS/DIW.md"> + info DIW</a></li<
+			<li><a href="DOCUMENTS/DIW.md"> + info DIW</a></li>
 			<li>Gráficas: Chart.JS</li>
 			<li>Gráficos Vectoriales: SVG, IncScape</li>
 			<li>Iconos: Font Awesome</li>
