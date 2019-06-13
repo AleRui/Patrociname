@@ -143,6 +143,7 @@ https://patrociname.alerui.com/admin.php
 	</tr>
 	<tr>
 		<td style="width: 48%;">
+			<a href="DOCUMENTS/DWES.md"> + info </a>
 			<ul><h4>Desarrollo Web en Entorno Servidor:</h4>
 			<li>Lenguaje servidor: PHP 7.2</li>
 			<li>Patrones usados: MVC, Singleton</li>
