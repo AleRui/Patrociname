@@ -109,7 +109,7 @@ https://patrociname.alerui.com/admin.php
 
 * El router es un componente que no permite poner en la url una dirección que no exista, ya que redirigirá al inicio, y una vez logueados si intentamos poner una controlador o acción en la url que no exista redirigirá al index de cada tipo de usuario.
 
-* Cuando el comprador compra un paquete patrocinio, suceden las siguientes acciones:
+* Cuando el comprador compra un paquete de patrocinio, suceden las siguientes acciones:
 	- El paquete de patrocinio se agrega a su comprador.
 	- El paquete de patrocinio deja de estar disponible para los demás compradores.
 	- El creador del paquete de patrocinio es notificado de que un paquete suyo ha sido comprado.
