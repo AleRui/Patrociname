@@ -175,7 +175,8 @@ https://patrociname.alerui.com/admin.php
 	<tr>
 		<td style="width: 48%;">
 			<ul><h4>Despliegue de Aplicaciones:</h4>
-			<li>hosting: Amazon Web Services</li>
+			<li>hosting: Amazon Web Services, Ec2</li>
+			<li>dominoi: Amazon Web Service, Route 53
 			<li>ssh y filezilla</li>
 			<li>Virtual Box -> OVA</li>
 			</ul>
