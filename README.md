@@ -143,8 +143,8 @@ https://patrociname.alerui.com/admin.php
 	</tr>
 	<tr>
 		<td style="width: 48%;">
-			<a href="DOCUMENTS/DWES.md"> + info </a>
 			<ul><h4>Desarrollo Web en Entorno Servidor:</h4>
+			<li><a href="DOCUMENTS/DWES.md"> + info DWES</a></li>
 			<li>Lenguaje servidor: PHP 7.2</li>
 			<li>Patrones usados: MVC, Singleton</li>
 			<li>conexión con Base de datos: PDO</li>
@@ -152,6 +152,7 @@ https://patrociname.alerui.com/admin.php
 		</td>
 		<td style="width: 48%;">
 			<ul><h4>Desarrollo Web en Entorno Cliente:</h4>
+			<li><a href="DOCUMENTS/DWEC.md"> + info DWEC</a></li>
 			<li>Lenguaje de Marcas: HTML 5</li>
 			<li>Editor de estilos: CSS 3</li>
 			<li>Lenguaje cliente: Javascript</li>
@@ -163,6 +164,7 @@ https://patrociname.alerui.com/admin.php
 	<tr>
 		<td style="width: 48%;">
 			<ul><h4>Base de Datos:</h4>
+			<li><a href="DOCUMENTS/Base_de_Datos.md"> + info BD</a></li>
 			<li>Base de datos relacional: MySQL</li>
 			<li>Gestor visual de base de datos: phpmyadmin</li>
 			<li>Gestor por línea comandos: MySQL-CLI</li>
@@ -170,6 +172,7 @@ https://patrociname.alerui.com/admin.php
 		</td>
 		<td style="width: 48%;">
 			<ul><h4>Diseño de interfaces:</h4>
+			<a href="DOCUMENTS/DIW.md"> + info DIW</a>
 			<li>Gráficas: Chart.JS</li>
 			<li>Gráficos Vectoriales: SVG, IncScape</li>
 			<li>Iconos: Font Awesome</li>
@@ -180,6 +183,10 @@ https://patrociname.alerui.com/admin.php
 	<tr>
 		<td style="width: 48%;">
 			<ul><h4>Despliegue de Aplicaciones:</h4>
+			<li><a href="DOCUMENTS/Despliegue_ Patrociname.md"> + info Despliegue </a></li>
+			<li><a href="DOCUMENTS/Despliegue_Praparacion_VBox.md"> + info Despliegue Vbox </a></li>
+			<li><a href="DOCUMENTS/Despliegue_Preparacion_AWS.md"> + info Despliegue AWS </a></li>
+			<a href="DOCUMENTS/DWES.md"> + info </a>
 			<li>hosting: Amazon Web Services, Ec2</li>
 			<li>dominoi: Amazon Web Service, Route 53
 			<li>ssh y filezilla</li>
