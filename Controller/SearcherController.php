@@ -2,10 +2,10 @@
 
 
 /**
- * Created by PhpStorm.
- * User: Ale Ruiz
- * Date: 27/10/18
- * Time: 20:31
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 require_once './core/BaseController.php';
@@ -27,22 +27,26 @@ class SearcherController extends BaseController
     public function login()
     {
         if ($_POST['mail'] && $_POST['pass']) {
-            //
+
             $searcherModel = new SearcherModel($this->controller);
             $userSearcher = $searcherModel->checkExitSearcher($_POST['mail'], $_POST['pass'])[0];
-            //
+
             if (!empty($userSearcher) && $userSearcher->getIdSearcher()) {
-                //
+
                 userSession::getSession();
                 userSession::getSession()->setUserSession($userSearcher, $this->controller);
-                //
+
                 header('Location:?controller=searcher&action=index');
+
             } else {
-                //
+
                 header('Location:?controller=index&action=index');
+
             }
         } else {
+
             header('Location:?controller=index&action=index');
+
         }
     }
 
@@ -50,16 +54,19 @@ class SearcherController extends BaseController
     public function index()
     {
         if (userSession::getSession()->checkActiveSession() && $_SESSION['user']) {
-            //
+
             $sponsorBundleObj = new SponsorBundleModel();
-            //
+
             $createdSponsorBundle = $sponsorBundleObj->getAllSponsorBundleById($_SESSION['user']->getIdSearcher());
-            //
+
             $_SESSION['createdSponsorBundle'] = serialize($createdSponsorBundle);
-            //
+
             $this->view($this->controller);
+
         } else {
+
             header('Location:?controller=index&action=index');
+
         }
     }
 
@@ -68,35 +75,36 @@ class SearcherController extends BaseController
     {
         $searcherModel = new SearcherModel;
         $checkMail = $searcherModel->checkExistEmail($_POST['registerSearcherMail']);
-        //
+
         if ($checkMail) {
             header('Location:?controller=index&action=index');
         } else {
-            //
+
             $insert = $searcherModel->insertSearcher(
                 $_POST['registerSearcherMail'],
                 $_POST['registerSearcherPass']
             );
-            //
+
             $_POST['mail'] = $_POST['registerSearcherMail'];
             $_POST['pass'] = $_POST['registerSearcherPass'];
-            //
+
             unset($_POST['registerSearcherMail']);
             unset($_POST['registerSearcherPass']);
-            //
+
             $this->login();
+
         }
     }
 
 
-    public function checkExistEmail() // -- Ajax
+    public function checkExistEmail() // Ajax
     {
         if (!empty($_POST['mailInserted'])) {
-            //
+
             $searcherModel = new SearcherModel;
             $response = $searcherModel->checkExistEmail($_POST['mailInserted']);
-            //
-            echo $response ? 'Si existe email' : '';
+
+            echo $response ? 'Email existente' : '';
             return $response;
         }
     }

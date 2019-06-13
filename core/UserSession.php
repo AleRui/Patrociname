@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Ale Ruiz
- * Date: 07/11/2018
- * Time: 12:16
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 
@@ -19,7 +20,7 @@ class userSession
     }
 
 
-    public static function getSession(/*$user*/)
+    public static function getSession()
     {
         if (is_null(self::$instance)) {
             self::$instance = new userSession();
@@ -52,9 +53,9 @@ class userSession
     private function checkExpired()
     {
         $timeBeginSession = $_SESSION["time"];
-        //
+
         $timeActual = time();
-        //
+
         return (($timeActual - $timeBeginSession) > $this->expire_time);
     }
 
@@ -68,14 +69,17 @@ class userSession
     public function checkActiveSession()
     {
         if ($this->isLogged()) {
-            //
+
             if ($this->checkExpired()) {
-                //
+
                 $this->__destroy();
+
                 return false;
+
             } else {
-                //
+
                 $_SESSION['time'] = time();
+
                 return true;
             }
         }

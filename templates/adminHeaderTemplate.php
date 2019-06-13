@@ -7,7 +7,7 @@
 ?>
 <!-- -->
 <header>
-    <div><?php include_once './web/imas/logoPatrociname.php'; ?></div>
+    <div class="cont-logo-admin"><?php include_once './web/imas/logoPatrocinameAnimate.php'; ?></div>
     <div><a href="?controller=index&action=index"><h1>Patrociname</h1></a></div>
     <div><h5>V 0.3</h5></div>
     <ul>

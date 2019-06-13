@@ -4,14 +4,6 @@
 <footer>
     <!-- -->
     <div>
-        <p>Servidor: PHP | MVC | POO | PDO | Singleton | Ajax | API-Rest Query</p>
-    </div>
-    <!-- -->
-    <div>
-        <p>Cliente: HTML | CSS | JQuery </p>
-    </div>
-    <!-- -->
-    <div>
         <p>
             Github:
             <a href="https://github.com/AleRui/Patrociname_V2">
@@ -29,6 +21,6 @@
     </div>
     <!-- -->
     <div>
-        <p>Copyleft &copy; <?php echo date("Y"); ?></p>
+        <p>Esto es un un proyecto de fin de grado para el Ciclo Superior de Desarrollo de Aplicaciones Web, por lo que la aplicación es una "DEMO" de lo que se puede llegar a hacer. El contenido es ficticio, disculpen las molestias.</p>
     </div>
 </footer>

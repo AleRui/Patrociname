@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Ale Ruiz
- * Date: 31/10/2018
- * Time: 12:12
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 
@@ -29,9 +30,7 @@ class Connection // Singleton
 
     private function connection_PDO() // Singleton public static
     {
-        //$dataBaseConfig = require 'config/db_hp.php';
         $dataBaseConfig = require 'config/db_ws.php';
-        //$dataBaseConfig = require 'config/db_jawsdb.php';
 
         $driver = $dataBaseConfig["driver"];
         $host = $dataBaseConfig["host"];
@@ -40,18 +39,22 @@ class Connection // Singleton
         $pass = $dataBaseConfig["pass"];
         $database = $dataBaseConfig["database"];
         $charset = $dataBaseConfig['charset'];
-        //
+
         try {
+
             self::$connectionDB = new PDO(
                 "$driver:host=$host;port=$port;dbname=$database;charset=$charset", $user, $pass
             );
+
             return self::$connectionDB;
+
         } catch (PDOException $error) {
+
             die(
                 "**Error en la conexión: " . $error->getMessage()
             );
-        }
 
+        }
     }
 
 
@@ -67,7 +70,6 @@ class Connection // Singleton
     }
 
 
-
     public function __wakeup() //Singleton
     {
         throw new Exception('Feature disabled.');
@@ -76,11 +78,11 @@ class Connection // Singleton
 
     public function doQuery($sql, $params = array())
     {
-        //
+
         $prepared = self::$connectionDB->prepare($sql);
-        //
+
         $prepared->execute($params);
-        //
+
         return $prepared;
     }
 

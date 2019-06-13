@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ale
- * Date: 8/11/18
- * Time: 20:45
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 include_once 'core/BaseController.php';

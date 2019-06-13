@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ale
- * Date: 8/11/18
- * Time: 21:03
+ *
+ * @author: Ale Ruiz
+ * @Description Proyecto Fin de Grado DAW 2017-2019
+ *
  */
 
 require_once 'UserSession.php';
@@ -34,10 +35,15 @@ class BaseController
     public function logout() // -- Cualquier usuario
     {
         if ( userSession::getSession()->checkActiveSession() ) {
+
             userSession::getSession(unserialize($_SESSION['user']))->__destroy();
+
             header('Location:?controller=index&action=index');
+
         } else {
+
             header('Location:?controller=index&action=index');
+
         }
     }
 }

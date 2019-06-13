@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ale
- * Date: 24/11/18
- * Time: 17:55
- */
 
 require_once './Model/SponsorBundleModel.php';
 
