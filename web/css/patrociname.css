@@ -842,6 +842,7 @@ footer > div > p > a:hover {
     flex-direction: column;
     background-color: #FFF;
     border-top: 2px solid rgb(202, 174, 56);
+    overflow: hidden;
 }
 
 .cont-sponsorBundle > form > .field:nth-child(2) > label {
