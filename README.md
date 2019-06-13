@@ -137,6 +137,7 @@ https://patrociname.alerui.com/admin.php
 			<li>Navegadores: Firefox y Chrome</li>
 			<li>Servidor páginas web: Apache 2</li>
 			<li>Servidor base de datos: MariaDB</li>
+			<li>Control de versiones: Git Hub</li>
 			</ul>
 		</td>
 	</tr>
