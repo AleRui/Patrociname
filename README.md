@@ -114,6 +114,9 @@ https://patrociname.alerui.com/admin.php
 	- El paquete de patrocinio deja de estar disponible para los demás compradores.
 	- El creador del paquete de patrocinio es notificado de que un paquete suyo ha sido comprado.
 
+* La barra del inicio para ir a los distintos formularios de registro o logueo esta oculta y se activa con el cuadrado con un símbolo de play, que rota al estar activo.
+
+* Mientras que no se situa encima de una paquete de patrocinio no aparecen los botones que permiten modificar o borrar si eres el creador, o comprar si eres el Sponsor.
 ---
 
 ## Resumen de Tecnologías Usadas:
