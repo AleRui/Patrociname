@@ -4,14 +4,14 @@
 ##### @author Alejandro Ruiz
 ##### @ Proyecto Fin de Grado de DAW 2018/2019
 
+#### Esquema
+
+![Esquema DB](../screenshot/patrociname_db_schema.png)
+
 # Sentencias usadas MySQL
 
 ### Común a todas las bases de datos:
 * Selecciona el mínimo ID disponible en una base de datos cuando el mínimo es mayor que 1, si no pone el 1.
-
-#### Esquema
-
-![Esquema DB](../screenshot/patrociname_db_schema.png)
 
 ```mysql
 SELECT
