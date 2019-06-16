@@ -9,6 +9,10 @@
 ### Común a todas las bases de datos:
 * Selecciona el mínimo ID disponible en una base de datos cuando el mínimo es mayor que 1, si no pone el 1.
 
+#### Esquema
+
+![Esquema DB](../screenshot/patrociname_db_schema.png)
+
 ```mysql
 SELECT
   CASE ( SELECT MIN($id) FROM $this->table )
