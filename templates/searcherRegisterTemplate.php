@@ -33,6 +33,7 @@
             <label>password</label>
             <input form="registerSearcher"
                    name="registerSearcherPass"
+                   type="password"
                    required>
         </div>
 

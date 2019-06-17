@@ -34,6 +34,7 @@
             <label>password</label>
             <input form="registerSponsor"
                    name="registerSponsorPass"
+                   type="password"
                    required>
         </div>
         <!-- -->

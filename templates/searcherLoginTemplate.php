@@ -31,6 +31,7 @@
         <div class="field">
             <label>password</label>
             <input form="formSearcher"
+                   type="password"
                    name="pass"
                    required>
         </div>

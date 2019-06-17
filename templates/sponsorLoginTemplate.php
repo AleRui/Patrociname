@@ -30,6 +30,7 @@
         <div class="field">
             <label>password</label>
             <input form="formSponsor"
+                   type="password"
                    name="pass"
                    required>
         </div>

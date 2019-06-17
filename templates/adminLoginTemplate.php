@@ -31,6 +31,7 @@
             <label>password</label>
             <input form="formLoginAdmin"
                    name="pass"
+                   type="password"
                    required>
         </div>
         <!-- -->
